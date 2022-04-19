@@ -13,13 +13,11 @@ namespace PizzaProject
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
-        {
+        static void Main() 
+        { 
 
-            //todo Testing JSON Serialization and Deserialization
-            Address testAddress = new Address("GA", "atlanta", "30144", "1000 chastain rd", "leave at front desk","1112223333");
-            string output = JsonConvert.SerializeObject(testAddress);
-            Debug.WriteLine(output);
+
+
 
             //Once the following code is run, only events from the GUI will cause the code to progress forward; code after 'Application.Run' will not run until it is closed.
             Application.EnableVisualStyles();

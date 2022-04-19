@@ -16,5 +16,10 @@ namespace PizzaProject
         {
             InitializeComponent();
         }
+
+        private void anchovy_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -56,11 +56,5 @@ namespace PizzaProject {
             get { return customerPhone; }
             set { customerPhone = value; }
         }
-
-        //methods
-        public void addItemToOrder(Item item)
-        {
-            items.Add(item);
-        }
     }
 }

@@ -1,6 +1,7 @@
 namespace PizzaProject {
     public class Customer
     {
+        //todo add properties and constructor
         private int customerID { get; }
         private string name { get; set; }
         private string phoneNumber { get; set; }

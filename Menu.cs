@@ -41,11 +41,12 @@ namespace PizzaProject
             beverageFlavors.Add("Dr. Pepper");
             beverageFlavors.Add("Lemonade");
             beverageFlavors.Add("Root Beer");
-            beverageFlavors.Add("Fanta");
+            beverageFlavors.Add("Water");
 
             beverageSize.Add("Small");
             beverageSize.Add("Medium");
             beverageSize.Add("Large");
+            beverageSize.Add("2-Liter");
         }
     }
 }

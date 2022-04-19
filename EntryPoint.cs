@@ -14,10 +14,17 @@ namespace PizzaProject
         /// </summary>
         [STAThread]
         static void Main() 
-        { 
+        {
+            Menu m = new Menu();
+            m.InitializeMenu();
 
+            Manager testManager = new Manager("username", "password", "john", 0010);
 
-
+            Debug.WriteLine(testManager.Name);
+            Debug.WriteLine(testManager.UserID);
+            Debug.WriteLine(testManager.UserName);
+            Debug.WriteLine(testManager.Password);
+            Debug.WriteLine(testManager.ManagerOverrideCode);
 
             //Once the following code is run, only events from the GUI will cause the code to progress forward; code after 'Application.Run' will not run until it is closed.
             Application.EnableVisualStyles();

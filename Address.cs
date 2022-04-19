@@ -5,14 +5,42 @@ namespace PizzaProject
     /// </summary>
     public class Address
     {
-        private string street { get; }
-        private string city { get; }
-        private string state { get; }
-        private string additionalAddressInfo { get; }
-        private string zip { get; }
+        //fields
+        private string street { get; set; }
+        private string city { get; set; }
+        private string state { get; set; }
+        private string additionalAddressInfo { get; set; }
+        private string zip { get; set; }
 
         //Foreign key, links Address back to specific Customer
-        public string customerPhone { get; set; }  
+        public string customerPhone { get; set; }
+
+        //properties
+        public string Street
+        {
+            get { return street; }
+            set { street = value; }
+        }
+        public string State
+        {
+            get { return state; }
+            set { state = value; }
+        }
+        public string City
+        {
+            get { return city; }
+            set { city = value; }
+        }
+        public string AdditionalAddressInfo
+        {
+            get { return additionalAddressInfo; }
+            set { additionalAddressInfo = value; }
+        }
+        public string Zip
+        {
+            get { return zip; }
+            set { zip = value; }
+        }
 
         public Address(string state, string city, string zip, string street, string additionalInfo, string phone)
         {

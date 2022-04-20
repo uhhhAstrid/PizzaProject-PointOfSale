@@ -52,6 +52,18 @@
     <Compile Include="Address.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="Employee.cs" />
+    <Compile Include="GUI Pages\MakeOrderScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI Pages\MakeOrderScreen.Designer.cs">
+      <DependentUpon>MakeOrderScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI Pages\StartOrderScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI Pages\StartOrderScreen.Designer.cs">
+      <DependentUpon>StartOrderScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI Pages\HomeScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +93,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI Pages\LoginScreen.resx">
       <DependentUpon>LoginScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI Pages\MakeOrderScreen.resx">
+      <DependentUpon>MakeOrderScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI Pages\StartOrderScreen.resx">
+      <DependentUpon>StartOrderScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

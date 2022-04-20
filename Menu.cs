@@ -15,38 +15,54 @@ namespace PizzaProject
         //for this project, the above fields are hard-coded into the program; however, they could easily be read from a JSON file, text file, etc.
         public void InitializeMenu()
         {
-            toppings.Add("Extra Cheese");
-            toppings.Add("Pepperoni");
-            toppings.Add("Mushrooms");
-            toppings.Add("Onions");
-            toppings.Add("Sausage");
-            toppings.Add("Bacon");
-            toppings.Add("Black Olives");
-            toppings.Add("Green Peppers");
-            toppings.Add("Pineapple");
-            toppings.Add("Spinach");
-            toppings.Add("Jalapenos");
-            toppings.Add("Ham");
+            toppings = new List<string>
+            {
+                "Extra Cheese",
+                "Pepperoni",
+                "Mushrooms",
+                "Onions",
+                "Sausage",
+                "Bacon",
+                "Black Olives",
+                "Green Peppers",
+                "Pineapple",
+                "Spinach",
+                "Jalapenos",
+                "Ham"
+            };
 
-            crustType.Add("Hand Tossed");
-            crustType.Add("Deep Dish");
-            crustType.Add("Thin Crust");
+            crustType = new List<string>
+            {
+                "Hand Tossed",
+                "Deep Dish",
+                "Thin Crust"
+            };
 
-            pizzaSize.Add("12\"");
-            pizzaSize.Add("16\"");
-            pizzaSize.Add("18\"");
 
-            beverageFlavors.Add("Coke");
-            beverageFlavors.Add("Sprite");
-            beverageFlavors.Add("Dr. Pepper");
-            beverageFlavors.Add("Lemonade");
-            beverageFlavors.Add("Root Beer");
-            beverageFlavors.Add("Water");
+            pizzaSize = new List<string>
+            {
+                "12\"",
+                "16\"",
+                "18\""
+            };
 
-            beverageSize.Add("Small");
-            beverageSize.Add("Medium");
-            beverageSize.Add("Large");
-            beverageSize.Add("2-Liter");
+            beverageFlavors = new List<string>
+            {
+                "Coke",
+                "Sprite",
+                "Dr. Pepper",
+                "Lemonade",
+                "Root Beer",
+                "Water"
+            };
+
+            beverageSize = new List<string>
+            {
+                "Small",
+                "Medium",
+                "Large",
+                "2-Liter"
+            };
         }
     }
 }

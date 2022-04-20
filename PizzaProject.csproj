@@ -52,11 +52,29 @@
     <Compile Include="Address.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="Employee.cs" />
+    <Compile Include="GUI Pages\NewCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI Pages\NewCustomer.Designer.cs">
+      <DependentUpon>NewCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI Pages\ProcessPaymentScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI Pages\ProcessPaymentScreen.Designer.cs">
+      <DependentUpon>ProcessPaymentScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI Pages\MakeOrderScreen.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI Pages\MakeOrderScreen.Designer.cs">
       <DependentUpon>MakeOrderScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI Pages\ReceiptScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI Pages\ReceiptScreen.Designer.cs">
+      <DependentUpon>ReceiptScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI Pages\StartOrderScreen.cs">
       <SubType>Form</SubType>
@@ -96,6 +114,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI Pages\MakeOrderScreen.resx">
       <DependentUpon>MakeOrderScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI Pages\NewCustomer.resx">
+      <DependentUpon>NewCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI Pages\ProcessPaymentScreen.resx">
+      <DependentUpon>ProcessPaymentScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI Pages\ReceiptScreen.resx">
+      <DependentUpon>ReceiptScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI Pages\StartOrderScreen.resx">
       <DependentUpon>StartOrderScreen.cs</DependentUpon>

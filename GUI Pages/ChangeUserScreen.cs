@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PizzaProject
+namespace PizzaProject.GUI_Pages
 {
-    public partial class Form2 : Form
+    public partial class ChangeUserScreen : Form
     {
-        public Form2()
+        public ChangeUserScreen()
         {
             InitializeComponent();
         }

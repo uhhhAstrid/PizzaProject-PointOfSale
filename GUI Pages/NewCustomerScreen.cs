@@ -10,15 +10,21 @@ using System.Windows.Forms;
 
 namespace PizzaProject.GUI_Pages
 {
-    public partial class NewCustomer : Form
+    public partial class NewCustomerScreen : Form
     {
-        public NewCustomer()
+        public NewCustomerScreen()
         {
             InitializeComponent();
         }
 
         private void label12_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void NewCustomerScreen_Load(object sender, EventArgs e)
+        {
+
 
         }
     }

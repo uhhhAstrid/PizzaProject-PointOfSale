@@ -30,56 +30,111 @@ namespace PizzaProject
         /// </summary>
         private void InitializeComponent()
         {
-            this.anchovy = new System.Windows.Forms.CheckBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button6 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // anchovy
+            // button1
             // 
-            this.anchovy.AutoSize = true;
-            this.anchovy.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.anchovy.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.anchovy.Checked = true;
-            this.anchovy.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.anchovy.Location = new System.Drawing.Point(35, 40);
-            this.anchovy.Name = "anchovy";
-            this.anchovy.Size = new System.Drawing.Size(80, 17);
-            this.anchovy.TabIndex = 0;
-            this.anchovy.Text = "checkBox1";
-            this.anchovy.UseVisualStyleBackColor = true;
-            this.anchovy.CheckedChanged += new System.EventHandler(this.anchovy_CheckedChanged);
+            this.button1.Location = new System.Drawing.Point(179, 55);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(250, 56);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "New Order";
+            this.button1.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // button2
             // 
-            this.textBox1.Location = new System.Drawing.Point(35, 63);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(180, 20);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.Text = "now there\'s just text";
+            this.button2.Location = new System.Drawing.Point(179, 117);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(250, 56);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "New Customer";
+            this.button2.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // button3
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(35, 17);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(85, 17);
-            this.radioButton1.TabIndex = 2;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "radioButton1";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.button3.Location = new System.Drawing.Point(179, 179);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(250, 56);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "View Orders";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(179, 241);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(250, 56);
+            this.button4.TabIndex = 3;
+            this.button4.Text = "View/Edit Customers";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(179, 303);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(250, 56);
+            this.button5.TabIndex = 4;
+            this.button5.Text = "Change User";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.radioButton1);
+            this.panel1.Controls.Add(this.button6);
             this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.anchovy);
-            this.panel1.Location = new System.Drawing.Point(63, 56);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Location = new System.Drawing.Point(492, 101);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(254, 115);
-            this.panel1.TabIndex = 3;
+            this.panel1.Size = new System.Drawing.Size(249, 84);
+            this.panel1.TabIndex = 5;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(64, 8);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(126, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Quick Customer Look-Up";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 28);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(81, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Phone Number:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(90, 25);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(125, 20);
+            this.textBox1.TabIndex = 2;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(171, 51);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(60, 22);
+            this.button6.TabIndex = 3;
+            this.button6.Text = "Search";
+            this.button6.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -87,6 +142,11 @@ namespace PizzaProject
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
@@ -97,10 +157,16 @@ namespace PizzaProject
 
         #endregion
 
-        private System.Windows.Forms.CheckBox anchovy;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label2;
     }
 }
 

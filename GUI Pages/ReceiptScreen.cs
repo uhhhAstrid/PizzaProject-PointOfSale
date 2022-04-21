@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PizzaProject
+namespace PizzaProject.GUI_Pages
 {
-    public partial class Form2 : Form
+    public partial class ReceiptScreen : Form
     {
-        public Form2()
+        public ReceiptScreen()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

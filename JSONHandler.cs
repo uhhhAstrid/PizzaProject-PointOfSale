@@ -28,7 +28,7 @@ namespace PizzaProject
         //   }
         // }
         
-        //public void orderJSON(List<Customer> customers, string type) {
+        //public void customerJSON(List<Customer> customers, string type) {
         // if (type == "read" || type == "Read") {
         //    try/catch JsonConvert.SerializeObject(cusotmers);
         //   }
@@ -38,7 +38,7 @@ namespace PizzaProject
         //   }
         // }
         
-        //public void orderJSON(List<User> users, string type) {
+        //public void userJSON(List<User> users, string type) {
         // if (type == "read" || type == "Read") {
         //    try/catch JsonConvert.SerializeObject(users);
         //   }
@@ -46,6 +46,21 @@ namespace PizzaProject
         //    try/catch JsonConvert.DeserializeObject(User);
         //    return list of Users;
         //   }
+        // }
+        
+        //public void CheckJSONFile() {
+        // try { if (Application.datapath(orderDB) == null/false) {
+        //          Add Orders.json; }
+        //     }
+        // catch {}
+        // try { if (Application.datapath(customerDB) == null/false) {
+        //          Add Customers.json; }
+        //     }
+        // catch {}
+        // try { if (Application.datapath(userDB) == null/false) {
+        //          Add Users.json; }
+        //     }
+        // catch {}
         // }
     }
 }

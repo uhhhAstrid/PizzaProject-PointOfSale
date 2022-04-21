@@ -36,10 +36,10 @@ namespace PizzaProject
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.button6 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,6 +51,7 @@ namespace PizzaProject
             this.button1.TabIndex = 0;
             this.button1.Text = "New Order";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -101,15 +102,21 @@ namespace PizzaProject
             this.panel1.TabIndex = 5;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // label1
+            // button6
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(64, 8);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(126, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Quick Customer Look-Up";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.button6.Location = new System.Drawing.Point(171, 51);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(60, 22);
+            this.button6.TabIndex = 3;
+            this.button6.Text = "Search";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(90, 25);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(125, 20);
+            this.textBox1.TabIndex = 2;
             // 
             // label2
             // 
@@ -120,21 +127,15 @@ namespace PizzaProject
             this.label2.TabIndex = 1;
             this.label2.Text = "Phone Number:";
             // 
-            // textBox1
+            // label1
             // 
-            this.textBox1.Location = new System.Drawing.Point(90, 25);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(125, 20);
-            this.textBox1.TabIndex = 2;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(171, 51);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(60, 22);
-            this.button6.TabIndex = 3;
-            this.button6.Text = "Search";
-            this.button6.UseVisualStyleBackColor = true;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(64, 8);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(126, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Quick Customer Look-Up";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // Form1
             // 

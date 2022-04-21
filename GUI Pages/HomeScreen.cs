@@ -41,5 +41,11 @@ namespace PizzaProject
         {
 
         }
+
+        //User clicks "New Order" Button, opening "Start Order Screen"
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

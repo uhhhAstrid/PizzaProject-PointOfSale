@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 
 namespace PizzaProject
@@ -13,7 +12,7 @@ namespace PizzaProject
         static List<string> beverageSize { get; set; }
 
         //for this project, the above fields are hard-coded into the program; however, they could easily be read from a JSON file, text file, etc.
-        public void InitializeMenu()
+        public static void InitializeMenu()
         {
             toppings = new List<string>
             {

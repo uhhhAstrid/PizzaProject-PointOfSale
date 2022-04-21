@@ -2,7 +2,7 @@
 
 namespace PizzaProject
 {
-    partial class Form1
+    partial class HomeScreen
     {
         /// <summary>
         /// Required designer variable.
@@ -148,7 +148,7 @@ namespace PizzaProject
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Name = "Form1";
+            this.Name = "HomeScreen";
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

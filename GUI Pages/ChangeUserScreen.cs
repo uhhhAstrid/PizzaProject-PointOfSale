@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PizzaProject.GUI_Pages.PopUp_Pages;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,6 +25,9 @@ namespace PizzaProject.GUI_Pages
 
         private void loginButton_Click(object sender, EventArgs e)
         {
+            //temp code; shows error pop-up
+            var changeUserPopup = new ChangeUserInvalidLogin();
+            changeUserPopup.ShowDialog();
             //verify username and password with the User JSON information
             //loop through users in JSON, if username matches:
                 //if (password.equals) : log-in user

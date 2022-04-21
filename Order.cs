@@ -55,8 +55,8 @@ namespace PizzaProject {
         }
         public decimal SubTotal
         {
-            get { return subTotal; }
-            set { subTotal = value; }
+            get { return subtotal; }
+            set { subtotal = value; }
         }
         public string CustomerPhone
         {

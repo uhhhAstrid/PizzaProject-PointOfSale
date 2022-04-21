@@ -48,7 +48,7 @@ namespace PizzaProject
         //   }
         // }
         
-        //public void CheckJSONFile() {
+        //public void checkJSONFile() {
         // try { if (Application.datapath(orderDB) == null/false) {
         //          Add Orders.json; }
         //     }

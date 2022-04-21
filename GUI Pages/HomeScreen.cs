@@ -1,4 +1,5 @@
 ﻿using PizzaProject.GUI_Pages;
+using PizzaProject.GUI_Pages.PopUp_Pages;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -56,6 +57,9 @@ namespace PizzaProject
         //Search Customer Database for Customers matching the phone number in the search field
         private void searchCustomers_Click(object sender, EventArgs e)
         {
+            //temporary button test: Error popup
+            var customerNotFoundPopUp = new CustomerNotFound();
+            customerNotFoundPopUp.ShowDialog();
             //the content of "customerLookup" can be pulled and then searched through JSONhandler
             //string s = customerLookup.data
             //Customer c = JSONHandler.searchCustomers(s);

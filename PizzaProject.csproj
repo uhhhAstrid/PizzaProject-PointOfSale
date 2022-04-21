@@ -70,6 +70,24 @@
     <Compile Include="GUI Pages\PopUp Pages\ChangeUserInvalidLogin.Designer.cs">
       <DependentUpon>ChangeUserInvalidLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI Pages\PopUp Pages\CustomerFoundHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI Pages\PopUp Pages\CustomerFoundHome.Designer.cs">
+      <DependentUpon>CustomerFoundHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI Pages\PopUp Pages\CustomerNotFound.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI Pages\PopUp Pages\CustomerNotFound.Designer.cs">
+      <DependentUpon>CustomerNotFound.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI Pages\PopUp Pages\DeliverAddressIncomplete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI Pages\PopUp Pages\DeliverAddressIncomplete.Designer.cs">
+      <DependentUpon>DeliverAddressIncomplete.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI Pages\ProcessPaymentScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +165,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI Pages\PopUp Pages\ChangeUserInvalidLogin.resx">
       <DependentUpon>ChangeUserInvalidLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI Pages\PopUp Pages\CustomerFoundHome.resx">
+      <DependentUpon>CustomerFoundHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI Pages\PopUp Pages\CustomerNotFound.resx">
+      <DependentUpon>CustomerNotFound.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI Pages\PopUp Pages\DeliverAddressIncomplete.resx">
+      <DependentUpon>DeliverAddressIncomplete.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI Pages\ProcessPaymentScreen.resx">
       <DependentUpon>ProcessPaymentScreen.cs</DependentUpon>

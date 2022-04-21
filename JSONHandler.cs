@@ -20,10 +20,31 @@ namespace PizzaProject
         
         //public void orderJSON(List<Order> orders, string type) {
         // if (type == "read" || type == "Read") {
-        //    try/catch JsonConvert.SerializeObject(Order)
+        //    try/catch JsonConvert.SerializeObject(orders);
         //   }
         // if (type == "write" || type == "Write") {
-        //    try/catch JsonConvert.DeserializeObject(Order)
+        //    try/catch JsonConvert.DeserializeObject(Order);
+        //    return list of Orders;
+        //   }
+        // }
+        
+        //public void orderJSON(List<Customer> customers, string type) {
+        // if (type == "read" || type == "Read") {
+        //    try/catch JsonConvert.SerializeObject(cusotmers);
+        //   }
+        // if (type == "write" || type == "Write") {
+        //    try/catch JsonConvert.DeserializeObject(Customer);
+        //    return list of Customers;
+        //   }
+        // }
+        
+        //public void orderJSON(List<User> users, string type) {
+        // if (type == "read" || type == "Read") {
+        //    try/catch JsonConvert.SerializeObject(users);
+        //   }
+        // if (type == "write" || type == "Write") {
+        //    try/catch JsonConvert.DeserializeObject(User);
+        //    return list of Users;
         //   }
         // }
     }

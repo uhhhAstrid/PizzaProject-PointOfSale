@@ -1,5 +1,8 @@
 namespace PizzaProject
 {
+    /// <summary>
+    /// Creates new Manager instances, retrieves manager information during runtime.
+    /// </summary>
     public class Manager : User
     {
         int managerOverrideCode;

@@ -1,43 +1,40 @@
 namespace PizzaProject
 {
-    //todo: properties
+    /// <summary>
+    /// Each instance stores Payment information for a single customer instance.
+    /// </summary>
     public class Payment
     {
-        //fields
+            //fields
         private string cardType { get; set; }
         private string nameOnCard { get; set; }
         private string cardNumber { get; set; }
         private int cvv { get; set; }
         public string customerPhone { get; set; }
 
-        //properties
+            //properties
         public string CardType
         {
             get { return cardType; }
-            set { cardType = value; }
         }
         public string NameOnCard
         {
             get { return nameOnCard; }
-            set { nameOnCard = value; }
         }
         public string CardNumber
         {
             get { return cardNumber; }
-            set { cardNumber = value; }
         }
         public int CVV
         {
             get { return cvv; }
-            set { cvv = value; }
         }
         public string CustomerPhone
         {
             get { return customerPhone; }
-            set { customerPhone = value; }
         }
 
-        //constructor
+            //constructors
         public Payment(string type, string name, string number, int cv, string phone)
         {
             cardType = type;
@@ -45,6 +42,26 @@ namespace PizzaProject
             cardNumber = number;
             cvv = cv;
             customerPhone = phone;
+        }
+        //Blank constructor for customers without stored payment information.
+        public Payment(string phone)
+        {
+            cardType = "";
+            nameOnCard = "";
+            cardNumber = "";
+            cvv = 0;
+            customerPhone = phone;
+        }
+
+            //methods
+        //sets payment information; use if customer was created without payment info. 
+        public void setPayment(string cardType, string nameOnCard, string cardNumber, int cvv, string customerPhone)
+        {
+            this.cardType = cardType;
+            this.nameOnCard = nameOnCard;
+            this.cardNumber = cardNumber;
+            this.cvv = cvv;
+            this.customerPhone = customerPhone;
         }
     }
 }

@@ -119,7 +119,6 @@
     <Compile Include="GUI Pages\ViewOrdersScreen.Designer.cs">
       <DependentUpon>ViewOrdersScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUIHandler.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="JSONHandler.cs" />
     <Compile Include="Manager.cs" />

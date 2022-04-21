@@ -2,21 +2,28 @@ using System.Collections.Generic;
 using System;
 
 namespace PizzaProject {
-    //todo add constructor
+    /// <summary>
+    /// Creates new order instances and tracks relevant information
+    /// </summary>
     public class Order {
         
-        //fields
+            //fields
         private int orderID { get; set; }
         private static int nextOrderID { get; set; }
         private string payType { get; set; }
+        
+        //true = this is a delivery order
+        //false = this is a pickup order
         private bool delivery { get; set; }
+      
         private DateTime date { get; set; }
         private decimal total { get; set; }
         private List<Item> items { get; set; }
-        private decimal subTotal { get; set; }
+        private decimal subtotal { get; set; }
+        private decimal tax { get; set; }
         private string customerPhone { get; set; }
 
-        //properties
+            //properties
         public int OrderID 
         { 
             get { return orderID; } 
@@ -55,6 +62,19 @@ namespace PizzaProject {
         {
             get { return customerPhone; }
             set { customerPhone = value; }
+        }
+
+            //constructor
+        public Order(string payType, bool delivery, string phone)
+        {
+            this.payType = payType;
+            this.delivery = delivery;
+            date = DateTime.Now;
+            total = 0M;
+            subtotal = 0M;
+            tax = 0M;
+            items = new List<Item>();
+            customerPhone = phone;
         }
     }
 }

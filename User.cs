@@ -2,15 +2,16 @@ namespace PizzaProject
 {
     public class User
     {
-        //fields
+            //fields
+        //the fields (other than name) cannot be changed after a user is created.
         protected string username { get; }
         protected string password { get; }
-        protected string name { get; }
-        protected string userType { get; }
-        protected int userID { get; }
+        protected string name { get; set;}
+        protected string userType { get;}
+        protected int userID {get; }
         protected static int nextUserID { get; set; }
 
-        //properties
+            //properties (read-only).
         public string Name   
         {
             get { return name; }
@@ -37,7 +38,7 @@ namespace PizzaProject
             get { return userID; }
         }
 
-        //constructor
+            //constructor; creates a new user
         protected User(string user, string pass, string n, string type)
         {
             username = user;
@@ -45,6 +46,13 @@ namespace PizzaProject
             name = n;
             userType = type;
             userID = nextUserID++;
+        }
+
+            //methods
+        //This method is only here as an inside joke. Do not remove. 
+        public void setName(string newName)
+        {
+            name = newName;
         }
     }
 }

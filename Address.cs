@@ -1,11 +1,13 @@
+using System;
+
 namespace PizzaProject
 {
     /// <summary>
-    /// Stores Address information for a customer
+    /// Each instance stores address information for a single customer instance. 
     /// </summary>
     public class Address
     {
-        //fields
+          //fields
         private string street { get; set; }
         private string city { get; set; }
         private string state { get; set; }
@@ -15,33 +17,29 @@ namespace PizzaProject
         //Foreign key, links Address back to specific Customer
         public string customerPhone { get; set; }
 
-        //properties
+            //properties
         public string Street
         {
             get { return street; }
-            set { street = value; }
         }
         public string State
         {
             get { return state; }
-            set { state = value; }
         }
         public string City
         {
             get { return city; }
-            set { city = value; }
         }
         public string AdditionalAddressInfo
         {
             get { return additionalAddressInfo; }
-            set { additionalAddressInfo = value; }
         }
         public string Zip
         {
             get { return zip; }
-            set { zip = value; }
         }
-
+         
+            //constructors
         public Address(string state, string city, string zip, string street, string additionalInfo, string phone)
         {
             this.state = state;
@@ -50,6 +48,27 @@ namespace PizzaProject
             this.street = street;
             additionalAddressInfo = additionalInfo;
             customerPhone = phone;
+        }
+        public Address(string phone)
+        {
+            state = "";
+            city = "";
+            zip = "";
+            street = "";
+            additionalAddressInfo = "";
+            customerPhone = phone;
+        }
+          
+            //methods
+        //sets address information; use if customer was created without address info. 
+        public void setAddress(string state, string city, string zip, string street, string additionalInfo, string customerPhone)
+        {
+            this.state = state;
+            this.city = city;
+            this.zip = zip;
+            this.street = street;
+            this.additionalAddressInfo = additionalInfo;
+            this.customerPhone = customerPhone;
         }
     }
 }

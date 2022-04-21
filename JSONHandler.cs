@@ -9,6 +9,7 @@ namespace PizzaProject
     //Not sure if this class is necessary or not, but we'll find out soon :)
     public class JSONHandler
     {
+        // Hi will
         //Comment writing class outline idea
         
         //ALL WRONG but do not change

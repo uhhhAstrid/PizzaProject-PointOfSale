@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PizzaProject.GUI_Pages
 {
-    public partial class ReceiptScreen : Form
+    public partial class ViewCustomersScreen : Form
     {
-        public ReceiptScreen()
+        public ViewCustomersScreen()
         {
             InitializeComponent();
         }
@@ -23,6 +23,11 @@ namespace PizzaProject.GUI_Pages
             var homeScreen = new HomeScreen();
             homeScreen.Show();
             this.Hide();
+        }
+
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+            //search customers.json for customers with phone# matching the one in the textbox: phoneField
         }
     }
 }

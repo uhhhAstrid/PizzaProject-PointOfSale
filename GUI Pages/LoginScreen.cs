@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PizzaProject
 {
-    public partial class Form2 : Form
+    public partial class LoginScreen : Form
     {
-        public Form2()
+        public LoginScreen()
         {
             InitializeComponent();
         }
@@ -20,6 +20,11 @@ namespace PizzaProject
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void loginButton_Click(object sender, EventArgs e)
+        {
+            //copy + paste logic from change user, with minor edits (don't sign out current user, etc.)
         }
     }
 }

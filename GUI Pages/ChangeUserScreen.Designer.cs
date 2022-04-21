@@ -29,21 +29,22 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.loginButton = new System.Windows.Forms.Button();
+            this.passwordField = new System.Windows.Forms.TextBox();
+            this.usernameField = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pageHeader = new System.Windows.Forms.Label();
+            this.returnToHome = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.loginButton);
+            this.panel1.Controls.Add(this.passwordField);
+            this.panel1.Controls.Add(this.usernameField);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label1);
@@ -52,79 +53,96 @@
             this.panel1.Size = new System.Drawing.Size(242, 156);
             this.panel1.TabIndex = 0;
             // 
-            // label1
+            // loginButton
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(78, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Enter Credentials";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.loginButton.Location = new System.Drawing.Point(167, 112);
+            this.loginButton.Name = "loginButton";
+            this.loginButton.Size = new System.Drawing.Size(57, 27);
+            this.loginButton.TabIndex = 5;
+            this.loginButton.Text = "Login";
+            this.loginButton.UseVisualStyleBackColor = true;
+            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
-            // label2
+            // passwordField
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(363, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Change User";
+            this.passwordField.Location = new System.Drawing.Point(104, 77);
+            this.passwordField.Name = "passwordField";
+            this.passwordField.Size = new System.Drawing.Size(100, 20);
+            this.passwordField.TabIndex = 4;
             // 
-            // label3
+            // usernameField
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(32, 49);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 13);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Username:";
+            this.usernameField.Location = new System.Drawing.Point(104, 48);
+            this.usernameField.Name = "usernameField";
+            this.usernameField.Size = new System.Drawing.Size(100, 20);
+            this.usernameField.TabIndex = 3;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(34, 80);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(11, 75);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 13);
+            this.label4.Size = new System.Drawing.Size(82, 20);
             this.label4.TabIndex = 2;
             this.label4.Text = "Password:";
             // 
-            // textBox1
+            // label3
             // 
-            this.textBox1.Location = new System.Drawing.Point(98, 46);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 3;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(11, 46);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(87, 20);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Username:";
             // 
-            // textBox2
+            // label1
             // 
-            this.textBox2.Location = new System.Drawing.Point(98, 77);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 4;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(11, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(213, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Please enter your credentials";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // button1
+            // pageHeader
             // 
-            this.button1.Location = new System.Drawing.Point(167, 112);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(57, 27);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Login";
-            this.button1.UseVisualStyleBackColor = true;
+            this.pageHeader.BackColor = System.Drawing.SystemColors.Control;
+            this.pageHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pageHeader.Location = new System.Drawing.Point(278, 19);
+            this.pageHeader.Name = "pageHeader";
+            this.pageHeader.Size = new System.Drawing.Size(247, 49);
+            this.pageHeader.TabIndex = 1;
+            this.pageHeader.Text = "Change User";
+            this.pageHeader.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // returnToHome
+            // 
+            this.returnToHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.returnToHome.Location = new System.Drawing.Point(638, 401);
+            this.returnToHome.Name = "returnToHome";
+            this.returnToHome.Size = new System.Drawing.Size(148, 42);
+            this.returnToHome.TabIndex = 2;
+            this.returnToHome.Text = "Return to Home Page";
+            this.returnToHome.UseVisualStyleBackColor = true;
+            this.returnToHome.Click += new System.EventHandler(this.returnToHome_Click);
             // 
             // ChangeUserScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.returnToHome);
+            this.Controls.Add(this.pageHeader);
             this.Controls.Add(this.panel1);
             this.Name = "ChangeUserScreen";
-            this.Text = "ChangeUserScreen";
+            this.Text = "Change User";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -132,11 +150,12 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label pageHeader;
+        private System.Windows.Forms.Button loginButton;
+        private System.Windows.Forms.TextBox passwordField;
+        private System.Windows.Forms.TextBox usernameField;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button returnToHome;
     }
 }

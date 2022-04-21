@@ -101,11 +101,11 @@
     <Compile Include="GUI Pages\LoginScreen.Designer.cs">
       <DependentUpon>LoginScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI Pages\ViewCustScreen.cs">
+    <Compile Include="GUI Pages\ViewCustomersScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI Pages\ViewCustScreen.Designer.cs">
-      <DependentUpon>ViewCustScreen.cs</DependentUpon>
+    <Compile Include="GUI Pages\ViewCustomersScreen.Designer.cs">
+      <DependentUpon>ViewCustomersScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI Pages\ViewOrdersScreen.cs">
       <SubType>Form</SubType>
@@ -148,8 +148,8 @@
     <EmbeddedResource Include="GUI Pages\StartOrderScreen.resx">
       <DependentUpon>StartOrderScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI Pages\ViewCustScreen.resx">
-      <DependentUpon>ViewCustScreen.cs</DependentUpon>
+    <EmbeddedResource Include="GUI Pages\ViewCustomersScreen.resx">
+      <DependentUpon>ViewCustomersScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI Pages\ViewOrdersScreen.resx">
       <DependentUpon>ViewOrdersScreen.cs</DependentUpon>

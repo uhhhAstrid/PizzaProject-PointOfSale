@@ -31,5 +31,37 @@ namespace PizzaProject.GUI_Pages
         {
 
         }
+
+        private void returnToHome_Click(object sender, EventArgs e)
+        {
+            //depending on screen, may need to add logic for pop-up menu (this is copy and pasted)
+            var homeScreen = new HomeScreen();
+            homeScreen.Show();
+            this.Hide();
+        }
+
+        private void cancelOrder_Click(object sender, EventArgs e)
+        {
+            //pop up menu, y/n
+            //y: home
+            //n: stay
+        }
+
+        private void deliveryOrder_Click(object sender, EventArgs e)
+        {
+            var makeOrder = new MakeOrderScreen();
+            makeOrder.Show();
+            this.Hide();
+            //todo: add logic to carry over that this order is type 'delivery', add customer phone # to the order.
+            //also: add logic to prevent proceeding unless the 'delivery' fields are filled out
+        }
+
+        private void pickupOrder_Click(object sender, EventArgs e)
+        {
+            var makeOrder = new MakeOrderScreen();
+            makeOrder.Show();
+            this.Hide();
+            //todo: add logic to carry over that this order is type 'pickup', add customer phone # to the order.
+        }
     }
 }

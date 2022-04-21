@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PizzaProject.GUI_Pages;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -27,9 +28,11 @@ namespace PizzaProject
 
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void changeUserButton_Click(object sender, EventArgs e)
         {
-
+            var changeUserScreen = new ChangeUserScreen();
+            changeUserScreen.Show();
+            this.Hide();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -43,9 +46,42 @@ namespace PizzaProject
         }
 
         //User clicks "New Order" Button, opening "Start Order Screen"
-        private void button1_Click(object sender, EventArgs e)
+        private void newOrderButton_Click(object sender, EventArgs e)
         {
-            
+            var startOrderScreen = new StartOrderScreen();
+            startOrderScreen.Show();
+            this.Hide();
+        }
+
+        //Search Customer Database for Customers matching the phone number in the search field
+        private void searchCustomers_Click(object sender, EventArgs e)
+        {
+            //the content of "customerLookup" can be pulled and then searched through JSONhandler
+            //string s = customerLookup.data
+            //Customer c = JSONHandler.searchCustomers(s);
+            //if(customer found) : 'customer found!' > create pop-up menu, 'start order with customer?'
+            //if(customer not found) : 'no customers found!' > create pop-up menu, 'add new customer?'
+        }
+
+        private void viewCustomersButton_Click(object sender, EventArgs e)
+        {
+            var viewCustScreen = new ViewCustomersScreen();
+            viewCustScreen.Show();
+            this.Hide();
+        }
+
+        private void viewOrdersButton_Click(object sender, EventArgs e)
+        {
+            var viewOrdersScreen = new ViewOrdersScreen();
+            viewOrdersScreen.Show();
+            this.Hide();
+        }
+
+        private void newCustomerButton_Click(object sender, EventArgs e)
+        {
+            var newCustomerScreen = new NewCustomerScreen();
+            newCustomerScreen.Show();
+            this.Hide();
         }
     }
 }

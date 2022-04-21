@@ -16,7 +16,7 @@ namespace PizzaProject
         static void Main() 
         {
             Menu m = new Menu();
-            m.InitializeMenu();
+            Menu.InitializeMenu();
 
             Manager testManager = new Manager("username", "password", "john", 0010);
 
@@ -29,7 +29,7 @@ namespace PizzaProject
             //Once the following code is run, only events from the GUI will cause the code to progress forward; code after 'Application.Run' will not run until it is closed.
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new HomeScreen());
         }
     }
 }

@@ -64,11 +64,59 @@
     <Compile Include="GUI Pages\NewCustomerScreen.Designer.cs">
       <DependentUpon>NewCustomerScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI Pages\PopUp Pages\AddDrinkWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI Pages\PopUp Pages\AddDrinkWindow.Designer.cs">
+      <DependentUpon>AddDrinkWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI Pages\PopUp Pages\AddPizzaWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI Pages\PopUp Pages\AddPizzaWindow.Designer.cs">
+      <DependentUpon>AddPizzaWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI Pages\PopUp Pages\CancelOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI Pages\PopUp Pages\CancelOrder.Designer.cs">
+      <DependentUpon>CancelOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI Pages\PopUp Pages\CashAndCreditProcessWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI Pages\PopUp Pages\CashAndCreditProcessWindow.Designer.cs">
+      <DependentUpon>CashAndCreditProcessWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI Pages\PopUp Pages\ChangeUserInvalidLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI Pages\PopUp Pages\ChangeUserInvalidLogin.Designer.cs">
       <DependentUpon>ChangeUserInvalidLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI Pages\PopUp Pages\CreditCardProcessingWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI Pages\PopUp Pages\CreditCardProcessingWindow.Designer.cs">
+      <DependentUpon>CreditCardProcessingWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI Pages\PopUp Pages\CustomerAddedConfirmation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI Pages\PopUp Pages\CustomerAddedConfirmation.Designer.cs">
+      <DependentUpon>CustomerAddedConfirmation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI Pages\PopUp Pages\CustomerFoundConfirmation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI Pages\PopUp Pages\CustomerFoundConfirmation.Designer.cs">
+      <DependentUpon>CustomerFoundConfirmation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI Pages\PopUp Pages\CustomerFoundConfirmationCR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI Pages\PopUp Pages\CustomerFoundConfirmationCR.Designer.cs">
+      <DependentUpon>CustomerFoundConfirmationCR.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI Pages\PopUp Pages\CustomerFoundHome.cs">
       <SubType>Form</SubType>
@@ -93,6 +141,12 @@
     </Compile>
     <Compile Include="GUI Pages\PopUp Pages\DeliverAddressIncomplete.Designer.cs">
       <DependentUpon>DeliverAddressIncomplete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI Pages\PopUp Pages\FinilizeOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI Pages\PopUp Pages\FinilizeOrder.Designer.cs">
+      <DependentUpon>FinilizeOrder.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI Pages\ProcessPaymentScreen.cs">
       <SubType>Form</SubType>
@@ -169,8 +223,32 @@
     <EmbeddedResource Include="GUI Pages\NewCustomerScreen.resx">
       <DependentUpon>NewCustomerScreen.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI Pages\PopUp Pages\AddDrinkWindow.resx">
+      <DependentUpon>AddDrinkWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI Pages\PopUp Pages\AddPizzaWindow.resx">
+      <DependentUpon>AddPizzaWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI Pages\PopUp Pages\CancelOrder.resx">
+      <DependentUpon>CancelOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI Pages\PopUp Pages\CashAndCreditProcessWindow.resx">
+      <DependentUpon>CashAndCreditProcessWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI Pages\PopUp Pages\ChangeUserInvalidLogin.resx">
       <DependentUpon>ChangeUserInvalidLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI Pages\PopUp Pages\CreditCardProcessingWindow.resx">
+      <DependentUpon>CreditCardProcessingWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI Pages\PopUp Pages\CustomerAddedConfirmation.resx">
+      <DependentUpon>CustomerAddedConfirmation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI Pages\PopUp Pages\CustomerFoundConfirmation.resx">
+      <DependentUpon>CustomerFoundConfirmation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI Pages\PopUp Pages\CustomerFoundConfirmationCR.resx">
+      <DependentUpon>CustomerFoundConfirmationCR.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI Pages\PopUp Pages\CustomerFoundHome.resx">
       <DependentUpon>CustomerFoundHome.cs</DependentUpon>
@@ -183,6 +261,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI Pages\PopUp Pages\DeliverAddressIncomplete.resx">
       <DependentUpon>DeliverAddressIncomplete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI Pages\PopUp Pages\FinilizeOrder.resx">
+      <DependentUpon>FinilizeOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI Pages\ProcessPaymentScreen.resx">
       <DependentUpon>ProcessPaymentScreen.cs</DependentUpon>

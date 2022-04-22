@@ -43,6 +43,7 @@
             // 
             // panel1
             // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.searchButton);
             this.panel1.Controls.Add(this.phoneField);
             this.panel1.Controls.Add(this.label4);
@@ -67,7 +68,7 @@
             // 
             this.phoneField.Location = new System.Drawing.Point(109, 41);
             this.phoneField.Name = "phoneField";
-            this.phoneField.Size = new System.Drawing.Size(128, 20);
+            this.phoneField.Size = new System.Drawing.Size(115, 20);
             this.phoneField.TabIndex = 2;
             // 
             // label4
@@ -112,6 +113,7 @@
             // 
             // panel2
             // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.label3);
             this.panel2.Location = new System.Drawing.Point(295, 51);
             this.panel2.Name = "panel2";

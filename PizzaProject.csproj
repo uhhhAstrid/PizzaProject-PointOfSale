@@ -76,6 +76,12 @@
     <Compile Include="GUI Pages\PopUp Pages\CustomerFoundHome.Designer.cs">
       <DependentUpon>CustomerFoundHome.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI Pages\PopUp Pages\CustomerInfoIncomplete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI Pages\PopUp Pages\CustomerInfoIncomplete.Designer.cs">
+      <DependentUpon>CustomerInfoIncomplete.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI Pages\PopUp Pages\CustomerNotFound.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,6 +174,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI Pages\PopUp Pages\CustomerFoundHome.resx">
       <DependentUpon>CustomerFoundHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI Pages\PopUp Pages\CustomerInfoIncomplete.resx">
+      <DependentUpon>CustomerInfoIncomplete.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI Pages\PopUp Pages\CustomerNotFound.resx">
       <DependentUpon>CustomerNotFound.cs</DependentUpon>

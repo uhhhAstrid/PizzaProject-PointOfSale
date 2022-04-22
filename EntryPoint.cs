@@ -25,6 +25,12 @@ namespace PizzaProject
             //Debug.WriteLine(testManager.UserName);
             //Debug.WriteLine(testManager.Password);
             //Debug.WriteLine(testManager.ManagerOverrideCode);
+            
+            JSONHandler handler = new JSONHandler();
+            //handler.addCustomer(new Customer("Huan", "307-314-2718", "hmai10@students.kennesaw.edu"));
+            //handler.addCustomer(new Customer("Will", "123-456-7890", "wswift1@students.kennesaw.edu"));
+            //handler.writeToCustomers();
+            //handler.readAllCustomers();
 
             //Once the following code is run, only events from the GUI will cause the code to progress forward; code after 'Application.Run' will not run until it is closed.
             Application.EnableVisualStyles();

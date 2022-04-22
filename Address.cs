@@ -1,4 +1,6 @@
 using System;
+using Newtonsoft.Json;
+  
 
 namespace PizzaProject
 {
@@ -38,8 +40,9 @@ namespace PizzaProject
         {
             get { return zip; }
         }
-         
-            //constructors
+
+        //constructors
+        [JsonConstructor]
         public Address(string state, string city, string zip, string street, string additionalInfo, string phone)
         {
             this.state = state;

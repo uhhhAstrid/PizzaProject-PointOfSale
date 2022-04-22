@@ -8,82 +8,70 @@ using System.IO;
 namespace PizzaProject
 {
     //Not sure if this class is necessary or not, but we'll find out soon :)
+    // Yes, yes it was.
+    /* todo: retrieve lastest customerID to ensure all customerID are unique.
+     * create orders.json
+     * add new orders, matching by phone number
+     * same with managers and employees, but those don't change as often.
+     */
     public class JSONHandler
     {
+        private static string folderPath = "C:\\Users\\" + Environment.UserName + "\\Documents\\PizzaProject";
+        private static string customersPath = folderPath + "\\customersJSON.json";
+        private static string ordersPath = folderPath + "\\ordersJSON.json";
+        private static string usersPath = folderPath + "\\usersJSON.json";
 
-        private string orderDBPath = "whatever the file path is";
-        private string customerDBPath = "whatever the file path is";
-        private string userDBPath = "whatever the file path is";
+        List<Customer> customers = new List<Customer>(0);
+        List<Manager> managers = new List<Manager>(0);
+        List<Employee> employees = new List<Employee>(0);
 
-        public void orderJSON(List<Order> orders, string type)
-        {
-            if (type == "read" || type == "Read")
-            {
-               JsonConvert.SerializeObject(orders);
-            }
-            if (type == "write" || type == "Write")
-            {
-                JsonConvert.DeserializeObject(Order);
-                return list of Orders;
-            }
+        public JSONHandler(){
+            // On Startup, check JSON if exist
+            // Read in the current list of orders, customers and leave them in memory
+            checkJSON();
+            readAllCustomers();
         }
-    
-        
-
-        public void customerJSON(List<Customer> customers, string type)
-        {
-            if (type == "read" || type == "Read")
-            {
-                JsonConvert.SerializeObject(customers);
-            }
-            if (type == "write" || type == "Write")
-            {
-                JsonConvert.DeserializeObject();
-                return list of Customers;
-
-            }
-        }
-
-        public void userJSON(List<User> users, string type)
-        {
-            if (type == "read" || type == "Read")
-            {
-                JsonConvert.SerializeObject(users);
-            }
-            if (type == "write" || type == "Write")
-            {
-                JsonConvert.DeserializeObject(User);
-                return list of Users;
-
-            }
-        }
-
-        public void checkJSONFile()
+        public void checkJSON()
         {
             try
             {
-                if (File.Exists(orderDBPath) == false)
+                if (!System.IO.Directory.Exists(folderPath))
                 {
-                    File.Create(orderDBPath);
+                    System.IO.Directory.CreateDirectory(folderPath);
+                }
+                if (!File.Exists(customersPath))
+                {
+                    File.Create(customersPath);
                 }
             }
-            catch { }
-            try
+            catch (Exception ex)
             {
-                if (File.Exists(customerDBPath) == false)
-                {
-                    File.Create(customerDBPath);
-                }
+                Debug.WriteLine(ex.Message);
             }
-            catch { }
-            try
-            {
-                if (File.Exists(userDBPath) == false)
-                {
-                    File.Create(userDBPath);
-                }
-            }
-            catch { }
+        }
+        public void addCustomer(Customer cust)
+        {
+            customers.Add(cust);
+        }
+        // Overwite the current version on disk with current working list
+        public void writeToCustomers()
+        {
+            String toBeAdded = JsonConvert.SerializeObject(customers,Formatting.Indented);
+            File.WriteAllText(customersPath, toBeAdded);
+        }
+        // Will overwite current working list with last saved version from disk
+        public void readAllCustomers()
+        {
+            String readCustomers = File.ReadAllText(customersPath);
+            this.customers = JsonConvert.DeserializeObject<List<Customer>>(readCustomers);
+        }
+        public void addOrder(string phoneNumber, Order order)
+        {
+
+        }
+        ~JSONHandler()
+        {
+            writeToCustomers();
         }
     }
 }

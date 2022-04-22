@@ -1,3 +1,5 @@
+using Newtonsoft.Json;
+
 namespace PizzaProject
 {
     /// <summary>
@@ -34,7 +36,8 @@ namespace PizzaProject
             get { return customerPhone; }
         }
 
-            //constructors
+        //constructors
+        [JsonConstructor]
         public Payment(string type, string name, string number, int cv, string phone)
         {
             cardType = type;

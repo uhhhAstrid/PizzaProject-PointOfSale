@@ -1,3 +1,5 @@
+using Newtonsoft.Json;
+
 namespace PizzaProject {
 
     /// <summary>
@@ -26,7 +28,7 @@ namespace PizzaProject {
 
             //constructors
         //new customer with no payment or address info
-        Customer(string name, string phone, string email)
+        public Customer(string name, string phone, string email)
         {
             customerID = nextCustomerID++;
             this.name = name;
@@ -34,9 +36,8 @@ namespace PizzaProject {
             payment = new Payment(phone);
             address = new Address(phone);
         }
-
         //new customer with payment info, but not address info
-        Customer(string name, string phone, string email, string cardType, string nameOnCard, string cardNumber, int cvv)
+        public Customer(string name, string phone, string email, string cardType, string nameOnCard, string cardNumber, int cvv)
         {
             customerID = nextCustomerID++;
             this.name = name;
@@ -44,9 +45,8 @@ namespace PizzaProject {
             payment = new Payment(cardType, nameOnCard, cardNumber, cvv, phone);
             address = new Address(phone);
         }
-
         //new customer with address info, but not payment info
-        Customer(string name, string phone, string email, string state, string city, string zip, string street, string additionalInfo)
+        public Customer(string name, string phone, string email, string state, string city, string zip, string street, string additionalInfo)
         {
             customerID = nextCustomerID++;
             this.name = name;
@@ -54,9 +54,9 @@ namespace PizzaProject {
             payment = new Payment(phone);
             address = new Address(state, city, zip, street, additionalInfo, phone);
         }
-
+        [JsonConstructor]
         //new customer with both payment and address info
-        Customer(string name, string phone, string email, string cardType, string nameOnCard, string cardNumber, int cvv, string state, string city, string zip, string street, string additionalInfo)
+        public Customer(string name, string phone, string email, string cardType, string nameOnCard, string cardNumber, int cvv, string state, string city, string zip, string street, string additionalInfo)
         {
             customerID = nextCustomerID++;
             this.name = name;

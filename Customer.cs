@@ -87,5 +87,10 @@ namespace PizzaProject {
             address.setAddress(state, city, zip, street, additionalInfo, customerPhone);
         }
         public static void setNextCustomerID(int id) => nextcustomerID = id;
+
+        public override string ToString()
+        {
+            return base.ToString() ;
+        }
     }
 }

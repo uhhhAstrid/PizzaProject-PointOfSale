@@ -17,25 +17,31 @@ namespace PizzaProject
         private string zip { get; set; }
 
         //Foreign key, links Address back to specific Customer
+        [JsonProperty("customerPhone")]
         public string customerPhone { get; set; }
 
             //properties
+        [JsonProperty("Street")]
         public string Street
         {
             get { return street; }
         }
+        [JsonProperty("State")]
         public string State
         {
             get { return state; }
         }
+        [JsonProperty("City")]
         public string City
         {
             get { return city; }
         }
+        [JsonProperty("AdditionalAddressInfo")]
         public string AdditionalAddressInfo
         {
             get { return additionalAddressInfo; }
         }
+        [JsonProperty("Zip")]
         public string Zip
         {
             get { return zip; }

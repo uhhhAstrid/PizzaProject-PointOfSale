@@ -18,9 +18,14 @@ namespace PizzaProject
     public class JSONHandler
     {
         private static string folderPath = "C:\\Users\\" + Environment.UserName + "\\Documents\\PizzaProject";
+
         private static string customersPath = folderPath + "\\customersJSON.json";
         private static string ordersPath = folderPath + "\\ordersJSON.json";
-        private static string usersPath = folderPath + "\\usersJSON.json";
+        private static string employeesPath = folderPath + "\\employeesJSON.json";
+        private static string managersPath = folderPath + "\\managersJSON.json";
+
+
+        private static List<string> allFiles = new List<string> {customersPath,ordersPath,employeesPath,managersPath};
 
         List<Customer> customers;
         List<Order> orders;
@@ -45,17 +50,12 @@ namespace PizzaProject
                 {
                     System.IO.Directory.CreateDirectory(folderPath);
                 }
-                if (!File.Exists(customersPath))
+                for(int i = 0; i < allFiles.Count; i++)
                 {
-                    File.Create(customersPath);
-                }
-                if (!File.Exists(ordersPath))
-                {
-                    File.Create(ordersPath);
-                }
-                if (!File.Exists(usersPath))
-                {
-                    File.Create(usersPath);
+                    if (!File.Exists(allFiles[i]))
+                    {
+                        File.Create(allFiles[i]);
+                    }
                 }
             }
             catch (Exception ex)
@@ -65,7 +65,8 @@ namespace PizzaProject
         }
         public void addCustomer(Customer cust)
         {
-            customers.Add(cust);
+            if (cust != null)
+                customers.Add(cust);
         }
         // Overwite the current version on disk with current working list
         public void writeToCustomers()
@@ -98,10 +99,11 @@ namespace PizzaProject
         // ORDER Section
         public void addOrder(Order order)
         {
+            if (order != null) { }
             bool customerFound = false;
-            for(int i = 0; i < customers.Count; i++)
+            for (int i = 0; i < customers.Count; i++)
             {
-                if(customers[i].PhoneNumber != null && customers[i].PhoneNumber.Equals(order.CustomerPhone))
+                if (customers[i].PhoneNumber != null && customers[i].PhoneNumber.Equals(order.CustomerPhone))
                 {
                     orders.Add(order);
                     customerFound = true;
@@ -135,7 +137,51 @@ namespace PizzaProject
                 return new List<Order>(0);
             }
         }
-        // Manager Section
+        // Users Section
+        public void addUser(User emp)
+        {
+            if (emp != null)
+            {
+                if (String.Equals("employee", emp.UserType , StringComparison.OrdinalIgnoreCase))
+                {
+                    employees.Add((Employee) emp);
+                }
+                else if (String.Equals("Manager", emp.UserType, StringComparison.OrdinalIgnoreCase))
+                {
+                    managers.Add((Manager)emp);
+                }
+            }
+        }
+        public void writeToUsers(string type)
+        {
+            if (String.Equals("employee", type, StringComparison.OrdinalIgnoreCase))
+            {
+                try
+                {
+                    String toBeAdded = JsonConvert.SerializeObject(employees, Formatting.Indented);
+                    File.WriteAllText(employeesPath, toBeAdded);
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine(ex.Message);
+                }
+            }
+            else if (String.Equals("Manager", type, StringComparison.OrdinalIgnoreCase))
+            {
+                try
+                {
+                    String toBeAdded = JsonConvert.SerializeObject(managers, Formatting.Indented);
+                    File.WriteAllText(managersPath, toBeAdded);
+                }
+                catch(Exception ex)
+                {
+                    Debug.WriteLine(ex.Message);
+                }
+            }
+        }
+        public void readUsers()
+        {
 
+        }
     }
 }

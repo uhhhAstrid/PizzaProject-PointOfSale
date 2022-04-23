@@ -36,10 +36,14 @@ namespace PizzaProject
 
             //handler.readAllCustomers();
 
-            handler.addOrder(new Order("cash", false, "307-314-2718"));
-            handler.writeToOrders();
+            //handler.addOrder(new Order("cash", false, "307-314-2718"));
+            //handler.writeToOrders();
 
-            handler.addOrder(new Order("debit", true, "123-098123"));
+            //handler.addOrder(new Order("debit", true, "123-098123"));
+
+            handler.addUser(new Employee("huan", "123", "quan"));
+            handler.writeToUsers("employee");
+
 
             //Once the following code is run, only events from the GUI will cause the code to progress forward; code after 'Application.Run' will not run until it is closed.
             Application.EnableVisualStyles();

@@ -28,9 +28,9 @@ namespace PizzaProject {
         [JsonProperty("Email")]
         public string Email { get { return email; } }
         [JsonProperty("Payment")]
-        public Payment Payment { get { return payment; } }
+        public PizzaProject.Payment Payment { get { return payment; } }
         [JsonProperty("Address")]
-        public Address Address { get { return address; } }
+        public PizzaProject.Address Address { get { return address; } }
 
 
             //constructors

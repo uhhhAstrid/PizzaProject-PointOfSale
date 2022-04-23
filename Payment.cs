@@ -42,7 +42,7 @@ namespace PizzaProject
         }
 
         //constructors
-        [JsonConstructor]
+        
         public Payment(string type, string name, string number, int cv, string phone)
         {
             cardType = type;
@@ -52,15 +52,9 @@ namespace PizzaProject
             phoneNumber = phone;
         }
         //Blank constructor for customers without stored payment information.
-        public Payment(string phone)
+        public Payment(string phone) : this("", "", "", 0, phone)
         {
-            cardType = "";
-            nameOnCard = "";
-            cardNumber = "";
-            cvv = 0;
-            phoneNumber = phone;
         }
-
             //methods
         //sets payment information; use if customer was created without payment info. 
         public void setPayment(string cardType, string nameOnCard, string cardNumber, int cvv, string customerPhone)

@@ -11,8 +11,8 @@ namespace PizzaProject
     //Not sure if this class is necessary or not, but we'll find out soon :)
     // Yes, yes it was.
     /* todo: retrieve latest customerID to ensure all customerID are unique. done
-     * create orders.json . needs to write and test
-     * add new orders, matching by phone number
+     * create orders.json. done
+     * add new orders, matching by phone number done 
      * same with managers and employees, but those don't change as often.
      */
     public class JSONHandler
@@ -85,7 +85,7 @@ namespace PizzaProject
         {
             try
             {
-                String readCustomers = File.ReadAllText(customersPath, Encoding.UTF8);
+                String readCustomers = File.ReadAllText(customersPath) ;
                 List<Customer> existingCustomers = JsonConvert.DeserializeObject<List<Customer>>(readCustomers);
                 return existingCustomers;
             }
@@ -95,6 +95,7 @@ namespace PizzaProject
                 return new List<Customer>(0);
             }
         }
+        // ORDER Section
         public void addOrder(Order order)
         {
             bool customerFound = false;
@@ -133,7 +134,8 @@ namespace PizzaProject
                 Debug.WriteLine(ex.Message);
                 return new List<Order>(0);
             }
-
         }
+        // Manager Section
+
     }
 }

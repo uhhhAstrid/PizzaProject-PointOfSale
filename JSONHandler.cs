@@ -21,16 +21,16 @@ namespace PizzaProject
 
         private static string customersPath = folderPath + "\\customersJSON.json";
         private static string ordersPath = folderPath + "\\ordersJSON.json";
-        private static string employeesPath = folderPath + "\\employeesJSON.json";
-        private static string managersPath = folderPath + "\\managersJSON.json";
+        private static string usersPath = folderPath + "\\usersJSON.json";
 
 
-        private static List<string> allFiles = new List<string> {customersPath,ordersPath,employeesPath,managersPath};
+        private static List<string> allFiles = new List<string> {customersPath,ordersPath, usersPath};
 
         List<Customer> customers;
         List<Order> orders;
-        List<Manager> managers = new List<Manager>(0);
-        List<Employee> employees = new List<Employee>(0);
+        //List<Manager> managers = new List<Manager>(0);
+        //List<Employee> employees = new List<Employee>(0);
+        List<User> users = new List<User>(0);
 
         public JSONHandler(){
             // On Startup, check JSON if exist
@@ -38,9 +38,9 @@ namespace PizzaProject
             this.checkJSON();
             customers = this.readAllCustomers() ?? new List<Customer>(0);
             orders = this.readAllOrders() ?? new List<Order>(0);
+            users = this.readUsers() ?? new List<User>(0);
 
-            Customer.setNextCustomerID(customers.Count);
-            Order.setNextOrderID(orders.Count);
+
         }
         public void checkJSON()
         {
@@ -140,48 +140,38 @@ namespace PizzaProject
         // Users Section
         public void addUser(User emp)
         {
-            if (emp != null)
+            if (emp != null && emp.UserName != null && emp.Password != null)
+                users.Add(emp);
+        }
+        public void writeToUsers()
+        {
+            try
             {
-                if (String.Equals("employee", emp.UserType , StringComparison.OrdinalIgnoreCase))
-                {
-                    employees.Add((Employee) emp);
-                }
-                else if (String.Equals("Manager", emp.UserType, StringComparison.OrdinalIgnoreCase))
-                {
-                    managers.Add((Manager)emp);
-                }
+                var serializerWithTypesSetting = new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.All };
+                var usersToBeSaved = JsonConvert.SerializeObject(users,Formatting.Indented,serializerWithTypesSetting);
+                File.WriteAllText(usersPath,usersToBeSaved);
+            }
+            catch (Exception ex){ 
+                Debug.WriteLine(ex.Message);
+                Debug.WriteLine("Could not write users file.");
             }
         }
-        public void writeToUsers(string type)
+        public List<User> readUsers()
         {
-            if (String.Equals("employee", type, StringComparison.OrdinalIgnoreCase))
+            try
             {
-                try
-                {
-                    String toBeAdded = JsonConvert.SerializeObject(employees, Formatting.Indented);
-                    File.WriteAllText(employeesPath, toBeAdded);
-                }
-                catch (Exception ex)
-                {
-                    Debug.WriteLine(ex.Message);
-                }
+                var serializerWithTypesSetting = new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.All };
+                String existingUsers = File.ReadAllText(usersPath);
+                var processed = JsonConvert.DeserializeObject<List<User>>(existingUsers, serializerWithTypesSetting);
+                return processed;
             }
-            else if (String.Equals("Manager", type, StringComparison.OrdinalIgnoreCase))
+            catch (Exception ex)
             {
-                try
-                {
-                    String toBeAdded = JsonConvert.SerializeObject(managers, Formatting.Indented);
-                    File.WriteAllText(managersPath, toBeAdded);
-                }
-                catch(Exception ex)
-                {
-                    Debug.WriteLine(ex.Message);
-                }
+                Debug.WriteLine(ex.Message);
+                Debug.WriteLine("Could not load users file.");
+                return new List<User>(0);
             }
         }
-        public void readUsers()
-        {
 
-        }
     }
 }

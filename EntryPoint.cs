@@ -27,22 +27,23 @@ namespace PizzaProject
             //Debug.WriteLine(testManager.ManagerOverrideCode);
             
             JSONHandler handler = new JSONHandler();
-            //handler.addCustomer(new Customer("huan", "307-314-2718", "hmai10@students.kennesaw.edu", "ga", "tucker", "30084", "marietta pkwy", "no"));
-            //handler.addCustomer(new Customer("will", "123-456-7890", "wswift1@students.kennesaw.edu", "credit", "yeff", "1234567890", 420));
-            //handler.writeToCustomers();
+            handler.addCustomer(new Customer("huan", "307-314-2718", "hmai10@students.kennesaw.edu", "ga", "tucker", "30084", "marietta pkwy", "no"));
+            handler.addCustomer(new Customer("will", "123-456-7890", "wswift1@students.kennesaw.edu", "credit", "yeff", "1234567890", 420));
+            handler.writeToCustomers();
 
-            //handler.addCustomer(new Customer("will", "123-456-7890", "wswift1@students.kennesaw.edu", "credit", "yeff", "1234567890", 420));
-            //handler.writeToCustomers();
+            handler.addCustomer(new Customer("will", "123-456-7890", "wswift1@students.kennesaw.edu", "credit", "yeff", "1234567890", 420));
+            handler.writeToCustomers();
 
-            //handler.readAllCustomers();
 
-            //handler.addOrder(new Order("cash", false, "307-314-2718"));
-            //handler.writeToOrders();
+            handler.addOrder(new Order("cash", false, "307-314-2718"));
+            // Order with an invalid phone number.
+            handler.addOrder(new Order("debit", true, "123-098123"));
+            handler.writeToOrders();
 
-            //handler.addOrder(new Order("debit", true, "123-098123"));
 
-            handler.addUser(new Employee("huan", "123", "quan"));
-            handler.writeToUsers("employee");
+            handler.addUser(new Employee("huan", "password", "quan"));
+            handler.addUser(new Manager("tcarreo1", "bruhmoment", "tenonch", 9018));
+            handler.writeToUsers();
 
 
             //Once the following code is run, only events from the GUI will cause the code to progress forward; code after 'Application.Run' will not run until it is closed.

@@ -1,3 +1,4 @@
+using Newtonsoft.Json;
 namespace PizzaProject
 {
     public class User
@@ -12,27 +13,30 @@ namespace PizzaProject
         protected static int nextUserID { get; set; }
 
             //properties (read-only).
+        [JsonProperty("Name")]
         public string Name   
         {
             get { return name; }
 
         }
+        [JsonProperty("UserName")]
         public string UserName   
         {
             get { return username; }
 
         }
+        [JsonProperty("Password")]
         public string Password   
         {
-            get { return name; }
+            get { return password ; }
 
         }
-
+        [JsonProperty("UserType")]
         public string UserType
         {
             get { return userType; }
         }
-
+        [JsonProperty("UserID")]
         public int UserID
         {
             get { return userID; }

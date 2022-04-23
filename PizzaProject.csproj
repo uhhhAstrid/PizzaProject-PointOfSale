@@ -148,6 +148,24 @@
     <Compile Include="GUI Pages\PopUp Pages\FinilizeOrder.Designer.cs">
       <DependentUpon>FinilizeOrder.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI Pages\PopUp Pages\InvalidManagerOverride.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI Pages\PopUp Pages\InvalidManagerOverride.Designer.cs">
+      <DependentUpon>InvalidManagerOverride.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI Pages\PopUp Pages\LogOutAlert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI Pages\PopUp Pages\LogOutAlert.Designer.cs">
+      <DependentUpon>LogOutAlert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI Pages\PopUp Pages\ManagerOverrideRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI Pages\PopUp Pages\ManagerOverrideRequest.Designer.cs">
+      <DependentUpon>ManagerOverrideRequest.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI Pages\ProcessPaymentScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -264,6 +282,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI Pages\PopUp Pages\FinilizeOrder.resx">
       <DependentUpon>FinilizeOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI Pages\PopUp Pages\InvalidManagerOverride.resx">
+      <DependentUpon>InvalidManagerOverride.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI Pages\PopUp Pages\LogOutAlert.resx">
+      <DependentUpon>LogOutAlert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI Pages\PopUp Pages\ManagerOverrideRequest.resx">
+      <DependentUpon>ManagerOverrideRequest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI Pages\ProcessPaymentScreen.resx">
       <DependentUpon>ProcessPaymentScreen.cs</DependentUpon>

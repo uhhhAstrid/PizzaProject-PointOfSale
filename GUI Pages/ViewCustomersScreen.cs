@@ -32,6 +32,23 @@ namespace PizzaProject.GUI_Pages
             //temporary popup for if customer is found
             var customerFoundPopUp = new CustomerFoundConfirmationCR();
             customerFoundPopUp.ShowDialog();
+            // temporary popup for if customer is not found
+            var customerNotFoundPopUp = new CustomerNotFound();
+            customerNotFoundPopUp.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //temporary popup to request manager override
+            var managerOverridePopUp = new ManagerOverrideRequest();
+            managerOverridePopUp.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //temporary popup to request manager override
+            var managerOverridePopUp = new ManagerOverrideRequest();
+            managerOverridePopUp.ShowDialog();
         }
     }
 }

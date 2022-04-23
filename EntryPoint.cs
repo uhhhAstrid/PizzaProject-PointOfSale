@@ -30,13 +30,17 @@ namespace PizzaProject
             handler.addCustomer(new Customer("huan", "307-314-2718", "hmai10@students.kennesaw.edu", "ga", "tucker", "30084", "marietta pkwy", "no"));
             handler.addCustomer(new Customer("will", "123-456-7890", "wswift1@students.kennesaw.edu", "credit", "yeff", "1234567890", 420));
             handler.writeToCustomers();
-
+            
             handler.addOrder(new Order("cash", false, "307-314-2718"));
+            handler.writeToOrders();
 
             //Once the following code is run, only events from the GUI will cause the code to progress forward; code after 'Application.Run' will not run until it is closed.
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new HomeScreen());
+            
+            handler.writeToCustomers();
+            handler.writeToOrders();
         }
     }
 }

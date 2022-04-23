@@ -10,8 +10,7 @@ namespace PizzaProject
 {
     //Not sure if this class is necessary or not, but we'll find out soon :)
     // Yes, yes it was.
-    /* todo: retrieve lastest customerID to ensure all customerID are unique. done
-     * 
+    /* todo: retrieve latest customerID to ensure all customerID are unique. done
      * create orders.json . needs to write and test
      * add new orders, matching by phone number
      * same with managers and employees, but those don't change as often.
@@ -23,19 +22,20 @@ namespace PizzaProject
         private static string ordersPath = folderPath + "\\ordersJSON.json";
         private static string usersPath = folderPath + "\\usersJSON.json";
 
-        List<Customer> customers = new List<Customer>(0);
-        List<Order> orders = new List<Order>(0);
+        List<Customer> customers;
+        List<Order> orders;
         List<Manager> managers = new List<Manager>(0);
         List<Employee> employees = new List<Employee>(0);
 
         public JSONHandler(){
             // On Startup, check JSON if exist
             // Read in the current list of orders, customers and leave them in memory
-            checkJSON();
-            customers = readAllCustomers() ?? new List<Customer>(0);
-            orders = readAllOrders() ?? new List<Order>(0);
+            this.checkJSON();
+            customers = this.readAllCustomers() ?? new List<Customer>(0);
+            orders = this.readAllOrders() ?? new List<Order>(0);
 
             Customer.setNextCustomerID(customers.Count);
+            Order.setNextOrderID(orders.Count);
         }
         public void checkJSON()
         {
@@ -134,10 +134,6 @@ namespace PizzaProject
                 return new List<Order>(0);
             }
 
-        }
-        ~JSONHandler()
-        {
-            writeToCustomers();
         }
     }
 }

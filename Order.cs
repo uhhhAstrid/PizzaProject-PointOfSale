@@ -8,20 +8,19 @@ namespace PizzaProject {
     public class Order {
         
             //fields
-        private int orderID { get; set; }
-        private static int nextOrderID { get; set; }
-        private string payType { get; set; }
+        private int orderID;
+        private static int nextOrderID;
+        private string payType;
         
         //true = this is a delivery order
         //false = this is a pickup order
-        private bool delivery { get; set; }
-      
-        private DateTime date { get; set; }
-        private decimal total { get; set; }
-        private List<Item> items { get; set; }
-        private decimal subtotal { get; set; }
-        private decimal tax { get; set; }
-        private string customerPhone { get; set; }
+        private bool delivery;
+        private DateTime date;
+        private decimal total;
+        private List<Item> items;
+        private decimal subtotal;
+        private decimal tax;
+        private string customerPhone;
 
             //properties
         public int OrderID 
@@ -64,7 +63,11 @@ namespace PizzaProject {
             set { customerPhone = value; }
         }
 
-            //constructor
+        public static void setNextOrderID(int newID)
+        {
+            nextOrderID = newID;
+        }
+        //constructor
         public Order(string payType, bool delivery, string phone)
         {
             this.payType = payType;

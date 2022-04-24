@@ -7,12 +7,12 @@ namespace PizzaProject
     /// </summary>
     public class Payment
     {
-            //fields
-        private string cardType { get; set; }
-        private string nameOnCard { get; set; }
-        private string cardNumber { get; set; }
-        private int cvv { get; set; }
-        private string phoneNumber { get; set; }
+        //fields
+        private string cardType;
+        private string nameOnCard;
+        private string cardNumber;
+        private int cvv;
+        private string phoneNumber;
 
             //properties
         [JsonProperty("CardType")]
@@ -29,7 +29,8 @@ namespace PizzaProject
         public string CardNumber
         {
             get { return cardNumber; }
-        }
+            set { cardNumber = value; }
+        }   
         [JsonProperty("CVV")]
         public int CVV
         {
@@ -52,7 +53,7 @@ namespace PizzaProject
             phoneNumber = phone;
         }
         //Blank constructor for customers without stored payment information.
-        public Payment(string phone) : this("", "", "", 0, phone)
+        public Payment(string phone) : this("N/A", "N/A", "N/A", 0, phone)
         {
         }
             //methods

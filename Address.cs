@@ -58,14 +58,8 @@ namespace PizzaProject
             additionalAddressInfo = additionalInfo;
             customerPhone = phone;
         }
-        public Address(string phone)
+        public Address(string phone) : this("GA", "N/A", "N/A", "N/A", "N/A", phone)
         {
-            state = "";
-            city = "";
-            zip = "";
-            street = "";
-            additionalAddressInfo = "";
-            customerPhone = phone;
         }
           
             //methods

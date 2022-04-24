@@ -47,6 +47,7 @@ namespace PizzaProject
         //new pizza item; use logic to call the correct item constructor based on itemtype.
         public Item(List<string> toppings, string crust, string size)
         {
+            this.itemType = "Pizza";
             this.toppings = toppings;
             this.crustType = crust;
             this.size = size;
@@ -55,6 +56,7 @@ namespace PizzaProject
         //new soda item
         public Item(string size, string flavor)
         {
+            this.itemType = "Soda";
             this.size = size;
             this.flavor = flavor;
         }

@@ -24,7 +24,7 @@ namespace PizzaProject {
         [JsonProperty("Name")]
         public string Name { get { return name; } }
         [JsonProperty("PhoneNumber")]
-        public string PhoneNumber { get { return phoneNumber; } }
+        public string PhoneNumber { get { return phoneNumber; } set { phoneNumber = value; } }
         [JsonProperty("Email")]
         public string Email { get { return email; } }
         [JsonProperty("Payment")]
@@ -33,7 +33,7 @@ namespace PizzaProject {
         public PizzaProject.Address Address { get { return address; } }
 
 
-            //constructors
+        //constructors
         //new customer with no payment or address info
         public Customer(string name, string phone, string email)
         {
@@ -63,13 +63,12 @@ namespace PizzaProject {
             address = new Address(state, city, zip, street, additionalInfo, phone);
         }
         //new customer with both payment and address info
-        [JsonConstructor]
-        public Customer(string name, string phone, string email, string cardType, string nameOnCard, string cardNumber, int cvv, string state, string city, string zip, string street, string additionalInfo)
+        public Customer(string name, string phone, string email, string cardType, string nameOnCard, string cardNumber, int cvv, string state, string city, string zip, string street, string additionalInfo) : this(name, phone, email)
         {
-            customerID = nextcustomerID++;
-            this.name = name;
-            this.email = email;
-            this.phoneNumber = phone;
+            //customerID = nextcustomerID++;
+            //this.name = name;
+            //this.email = email;
+            //this.phoneNumber = phone;
             payment = new Payment(cardType, nameOnCard, cardNumber, cvv, phone);
             address = new Address(state, city, zip, street, additionalInfo, phone);
         }

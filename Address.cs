@@ -9,46 +9,50 @@ namespace PizzaProject
     /// </summary>
     public class Address
     {
-          //fields
-        private string street { get; set; }
-        private string city { get; set; }
-        private string state { get; set; }
-        private string additionalAddressInfo { get; set; }
-        private string zip { get; set; }
+        //fields
+        private string street;
+        private string city;
+        private string state;
+        private string additionalAddressInfo;
+        private string zip;
 
         //Foreign key, links Address back to specific Customer
         [JsonProperty("customerPhone")]
-        public string customerPhone { get; set; }
-
-            //properties
+        public string customerPhone;
+        //properties
         [JsonProperty("Street")]
         public string Street
         {
             get { return street; }
+            set { street = value; }
         }
         [JsonProperty("State")]
         public string State
         {
             get { return state; }
+            set { state = value; }
         }
         [JsonProperty("City")]
         public string City
         {
             get { return city; }
+            set { city = value; }
         }
         [JsonProperty("AdditionalAddressInfo")]
         public string AdditionalAddressInfo
         {
             get { return additionalAddressInfo; }
+            set { additionalAddressInfo = value; }
         }
         [JsonProperty("Zip")]
         public string Zip
         {
             get { return zip; }
+            set { zip = value; }
         }
 
         //constructors
-        [JsonConstructor]
+        public Address(){}
         public Address(string state, string city, string zip, string street, string additionalInfo, string phone)
         {
             this.state = state;

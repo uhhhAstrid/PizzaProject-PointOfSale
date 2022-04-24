@@ -20,17 +20,17 @@ namespace PizzaProject {
 
         //properties
         [JsonProperty("CustomerID")]
-        public int CustomerID { get { return customerID; } }
+        public int CustomerID { get { return customerID; } set { customerID = value; } }
         [JsonProperty("Name")]
-        public string Name { get { return name; } }
+        public string Name { get { return name; } set{ name = value; } }
         [JsonProperty("PhoneNumber")]
-        public string PhoneNumber { get { return phoneNumber; } }
+        public string PhoneNumber { get { return phoneNumber; } set { phoneNumber = value; } }
         [JsonProperty("Email")]
-        public string Email { get { return email; } }
+        public string Email { get { return email; } set { email = value; } }
         [JsonProperty("Payment")]
-        public PizzaProject.Payment Payment { get { return payment; } }
+        public PizzaProject.Payment Payment { get { return payment; } set { payment = value; } }
         [JsonProperty("Address")]
-        public PizzaProject.Address Address { get { return address; } }
+        public PizzaProject.Address Address { get { return address; } set { address = value; } }
 
 
             //constructors
@@ -63,7 +63,6 @@ namespace PizzaProject {
             address = new Address(state, city, zip, street, additionalInfo, phone);
         }
         //new customer with both payment and address info
-        [JsonConstructor]
         public Customer(string name, string phone, string email, string cardType, string nameOnCard, string cardNumber, int cvv, string state, string city, string zip, string street, string additionalInfo)
         {
             customerID = nextcustomerID++;
@@ -72,6 +71,11 @@ namespace PizzaProject {
             this.phoneNumber = phone;
             payment = new Payment(cardType, nameOnCard, cardNumber, cvv, phone);
             address = new Address(state, city, zip, street, additionalInfo, phone);
+        }
+        [JsonConstructor]
+        public Customer()
+        {
+
         }
        
             //methods

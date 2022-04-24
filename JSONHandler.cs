@@ -18,19 +18,17 @@ namespace PizzaProject
     public class JSONHandler
     {
         private static string folderPath = "C:\\Users\\" + Environment.UserName + "\\Documents\\PizzaProject";
-
         private static string customersPath = folderPath + "\\customersJSON.json";
         private static string ordersPath = folderPath + "\\ordersJSON.json";
         private static string usersPath = folderPath + "\\usersJSON.json";
-
-
         private static List<string> allFiles = new List<string> {customersPath,ordersPath, usersPath};
+        JsonSerializerSettings serializerWithTypesSetting = new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.All };
+
+
 
         List<Customer> customers;
         List<Order> orders;
-        //List<Manager> managers = new List<Manager>(0);
-        //List<Employee> employees = new List<Employee>(0);
-        List<User> users = new List<User>(0);
+        List<User> users;
 
         public JSONHandler(){
             // On Startup, check JSON if exist
@@ -41,6 +39,8 @@ namespace PizzaProject
             users = this.readUsers() ?? new List<User>(0);
 
 
+            Customer.setNextCustomerID(customers.Count);
+            Order.setNextOrderID(orders.Count);
         }
         public void checkJSON()
         {
@@ -73,7 +73,7 @@ namespace PizzaProject
         {
             try
             {
-                String toBeAdded = JsonConvert.SerializeObject(customers, Formatting.Indented);
+                String toBeAdded = JsonConvert.SerializeObject(customers, Formatting.Indented, serializerWithTypesSetting);
                 File.WriteAllText(customersPath, toBeAdded);
             }
             catch(Exception ex)
@@ -116,7 +116,7 @@ namespace PizzaProject
         {
             try
             {
-                String toBeAdded = JsonConvert.SerializeObject(orders, Formatting.Indented);
+                String toBeAdded = JsonConvert.SerializeObject(orders, Formatting.Indented, serializerWithTypesSetting);
                 File.WriteAllText(ordersPath, toBeAdded);
             }
             catch(Exception ex)
@@ -129,7 +129,7 @@ namespace PizzaProject
             try
             {
                 String readOrders = File.ReadAllText(ordersPath);
-                return JsonConvert.DeserializeObject<List<Order>>(readOrders);
+                return JsonConvert.DeserializeObject<List<Order>>(readOrders, serializerWithTypesSetting);
             }
             catch (Exception ex)
             {
@@ -147,7 +147,6 @@ namespace PizzaProject
         {
             try
             {
-                var serializerWithTypesSetting = new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.All };
                 var usersToBeSaved = JsonConvert.SerializeObject(users,Formatting.Indented,serializerWithTypesSetting);
                 File.WriteAllText(usersPath,usersToBeSaved);
             }
@@ -160,7 +159,6 @@ namespace PizzaProject
         {
             try
             {
-                var serializerWithTypesSetting = new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.All };
                 String existingUsers = File.ReadAllText(usersPath);
                 var processed = JsonConvert.DeserializeObject<List<User>>(existingUsers, serializerWithTypesSetting);
                 return processed;

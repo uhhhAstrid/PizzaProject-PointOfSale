@@ -8,33 +8,38 @@ namespace PizzaProject
     /// </summary>
     public class Item
     {
-            //fields
-        private string itemType { get; set; }
-        private List<string> toppings { get; set; }
-        private string crustType { get; set; }
-        private string size { get; set; }
-        private string flavor { get; set; }
+        //fields
+        private string itemType;
+        private List<string> toppings;
+        private string crustType;
+        private string size;
+        private string flavor;
         
             //properties (read only, call methods to write)
         public string ItemType
         {
             get { return itemType; }
+            set { itemType = value; }
         }
         public List<string> Toppings 
         {
             get { return toppings; }
+            set { toppings = value; }
         }
         public string CrustType
         {
             get { return crustType; }
+            set { crustType = value; }
         }
         public string Size 
         {
             get { return size; }
+            set { size = value; }
         }
         public string Flavor
         {
             get { return flavor; }
+            set { flavor = value; }
         }
           
             //constructors

@@ -63,7 +63,6 @@ namespace PizzaProject {
             address = new Address(state, city, zip, street, additionalInfo, phone);
         }
         //new customer with both payment and address info\
-        [JsonConstructor]
         public Customer(string name, string phone, string email, string cardType, string nameOnCard, string cardNumber, int cvv, string state, string city, string zip, string street, string additionalInfo) : this(name, phone, email)
         {
             //customerID = nextcustomerID++;

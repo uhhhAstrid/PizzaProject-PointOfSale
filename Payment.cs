@@ -46,7 +46,7 @@ namespace PizzaProject
         [JsonConstructor]
         public Payment(string type, string name, string number, int cv, string phone)
         {
-            cardType = type;
+             cardType = type;
             nameOnCard = name;
             cardNumber = number;
             cvv = cv;

@@ -61,6 +61,7 @@ namespace PizzaProject
             handler.writeToUsers();
 
 
+            handler.readAllCustomers();
             //Once the following code is run, only events from the GUI will cause the code to progress forward; code after 'Application.Run' will not run until it is closed.
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

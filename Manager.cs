@@ -1,3 +1,4 @@
+using Newtonsoft.Json;
 namespace PizzaProject
 {
     /// <summary>
@@ -5,7 +6,8 @@ namespace PizzaProject
     /// </summary>
     public class Manager : User
     {
-        int managerOverrideCode;
+        private int managerOverrideCode;
+        [JsonProperty("ManagerOverrideCode")]
         public int ManagerOverrideCode
         {
             get { return managerOverrideCode; }

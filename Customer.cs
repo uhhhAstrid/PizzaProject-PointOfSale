@@ -1,3 +1,5 @@
+using Newtonsoft.Json;
+
 namespace PizzaProject {
 
     /// <summary>
@@ -7,60 +9,66 @@ namespace PizzaProject {
     /// </summary>
     public class Customer
     {
-            //fields
-        private int customerID { get; set; }
-        private static int nextCustomerID { get; set; }
-        private string name { get; set; }
-        private string phoneNumber { get; set; }
-        private string email { get; set; }
-        private Payment payment { get; }
-        private Address address { get; }
+        //fields
+        private int customerID;
+        private static int nextcustomerID;
+        private string name;
+        private string phoneNumber;
+        private string email;
+        private Payment payment;
+        private Address address;
 
-            //properties
+        //properties
+        [JsonProperty("CustomerID")]
         public int CustomerID { get { return customerID; } }
+        [JsonProperty("Name")]
         public string Name { get { return name; } }
-        public string PhoneNumber { get { return phoneNumber; } }
+        [JsonProperty("PhoneNumber")]
+        public string PhoneNumber { get { return phoneNumber; } set { phoneNumber = value; } }
+        [JsonProperty("Email")]
         public string Email { get { return email; } }
-        public Payment Payment { get { return payment; } }
-        public Address Address { get { return address; } }
+        [JsonProperty("Payment")]
+        public PizzaProject.Payment Payment { get { return payment; } }
+        [JsonProperty("Address")]
+        public PizzaProject.Address Address { get { return address; } }
 
-            //constructors
+
+        //constructors
         //new customer with no payment or address info
-        Customer(string name, string phone, string email)
+        public Customer(string name, string phone, string email)
         {
-            customerID = nextCustomerID++;
+            customerID = nextcustomerID++;
             this.name = name;
             this.email = email;
+            this.phoneNumber = phone;
             payment = new Payment(phone);
             address = new Address(phone);
         }
-
         //new customer with payment info, but not address info
-        Customer(string name, string phone, string email, string cardType, string nameOnCard, string cardNumber, int cvv)
+        public Customer(string name, string phone, string email, string cardType, string nameOnCard, string cardNumber, int cvv) : this(name, phone, email)
         {
-            customerID = nextCustomerID++;
-            this.name = name;
-            this.email = email;
+            //customerID = nextcustomerID++;
+            //this.name = name;
+            //this.email = email;
+            //address = new Address(phone);
             payment = new Payment(cardType, nameOnCard, cardNumber, cvv, phone);
-            address = new Address(phone);
         }
-
         //new customer with address info, but not payment info
-        Customer(string name, string phone, string email, string state, string city, string zip, string street, string additionalInfo)
+        public Customer(string name, string phone, string email, string state, string city, string zip, string street, string additionalInfo): this(name, phone, email)
         {
-            customerID = nextCustomerID++;
-            this.name = name;
-            this.email = email;
-            payment = new Payment(phone);
+            //customerID = nextcustomerID++;
+            //this.name = name;
+            //this.email = email;
+            //payment = new Payment(phone);
             address = new Address(state, city, zip, street, additionalInfo, phone);
         }
-
         //new customer with both payment and address info
-        Customer(string name, string phone, string email, string cardType, string nameOnCard, string cardNumber, int cvv, string state, string city, string zip, string street, string additionalInfo)
+        public Customer(string name, string phone, string email, string cardType, string nameOnCard, string cardNumber, int cvv, string state, string city, string zip, string street, string additionalInfo) : this(name, phone, email)
         {
-            customerID = nextCustomerID++;
-            this.name = name;
-            this.email = email;
+            //customerID = nextcustomerID++;
+            //this.name = name;
+            //this.email = email;
+            //this.phoneNumber = phone;
             payment = new Payment(cardType, nameOnCard, cardNumber, cvv, phone);
             address = new Address(state, city, zip, street, additionalInfo, phone);
         }
@@ -76,6 +84,12 @@ namespace PizzaProject {
         void setAddress(string state, string city, string zip, string street, string additionalInfo, string customerPhone)
         {
             address.setAddress(state, city, zip, street, additionalInfo, customerPhone);
+        }
+        public static void setNextCustomerID(int id) => nextcustomerID = id;
+
+        public override string ToString()
+        {
+            return base.ToString() ;
         }
     }
 }

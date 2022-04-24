@@ -5,15 +5,13 @@ using System.Data;
 using System.Diagnostics;
 using System.IO;
 using System.Text;
+using System.Threading;
 
 namespace PizzaProject
 {
     //Not sure if this class is necessary or not, but we'll find out soon :)
     // Yes, yes it was.
-    /* todo: retrieve latest customerID to ensure all customerID are unique. done
-     * create orders.json. done
-     * add new orders, matching by phone number done 
-     * same with managers and employees, but those don't change as often.
+    /* TODO: Figure out why reading and writing cause nulls to happen.
      */
     public class JSONHandler
     {
@@ -23,6 +21,8 @@ namespace PizzaProject
         private static string usersPath = folderPath + "\\usersJSON.json";
         private static List<string> allFiles = new List<string> {customersPath,ordersPath, usersPath};
         JsonSerializerSettings serializerWithTypesSetting = new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.All };
+
+
 
 
 
@@ -55,6 +55,7 @@ namespace PizzaProject
                     if (!File.Exists(allFiles[i]))
                     {
                         File.Create(allFiles[i]);
+                        Thread.Sleep(1000);
                     }
                 }
             }
@@ -87,7 +88,7 @@ namespace PizzaProject
             try
             {
                 String readCustomers = File.ReadAllText(customersPath) ;
-                List<Customer> existingCustomers = JsonConvert.DeserializeObject<List<Customer>>(readCustomers);
+                List<Customer> existingCustomers = JsonConvert.DeserializeObject<List<Customer>>(readCustomers, serializerWithTypesSetting);
                 return existingCustomers;
             }
             catch (Exception ex)

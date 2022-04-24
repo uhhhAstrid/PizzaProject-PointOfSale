@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PizzaProject.GUI_Pages.PopUp_Pages;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -28,6 +29,26 @@ namespace PizzaProject.GUI_Pages
         private void searchButton_Click(object sender, EventArgs e)
         {
             //search customers.json for customers with phone# matching the one in the textbox: phoneField
+            //temporary popup for if customer is found
+            var customerFoundPopUp = new CustomerFoundConfirmationCR();
+            customerFoundPopUp.ShowDialog();
+            // temporary popup for if customer is not found
+            var customerNotFoundPopUp = new CustomerNotFound();
+            customerNotFoundPopUp.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //temporary popup to request manager override
+            var managerOverridePopUp = new ManagerOverrideRequest();
+            managerOverridePopUp.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //temporary popup to request manager override
+            var managerOverridePopUp = new ManagerOverrideRequest();
+            managerOverridePopUp.ShowDialog();
         }
     }
 }

@@ -60,6 +60,7 @@
             this.ClientSize = new System.Drawing.Size(264, 91);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.errorMessage);
+            this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ChangeUserInvalidLogin";
             this.ShowIcon = false;

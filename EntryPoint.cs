@@ -31,13 +31,28 @@ namespace PizzaProject
             handler.addCustomer(new Customer("will", "123-456-7890", "wswift1@students.kennesaw.edu", "credit", "yeff", "1234567890", 420));
             handler.writeToCustomers();
 
-            handler.addCustomer(new Customer("will", "123-456-7890", "wswift1@students.kennesaw.edu", "credit", "yeff", "1234567890", 420));
-            handler.writeToCustomers();
 
 
             handler.addOrder(new Order("cash", false, "307-314-2718"));
             // Order with an invalid phone number.
-            handler.addOrder(new Order("debit", true, "123-098123"));
+            Order credit = new Order("credit", true, "307-314-2718");
+
+
+            OrderHandler.currentOrder = credit;
+            OrderHandler.AddItemToOrder(new Item("2-Litre", "Pepsi"));
+            OrderHandler.AddItemToOrder(new Item(new List<string>{ "Extra-Cheese","Pepperoni","Pineapple" },"Thiccc","18"));
+
+
+            Order cash = new Order("cash", false, "123-456-7890");
+            OrderHandler.currentOrder = cash;
+            OrderHandler.AddItemToOrder(new Item("Small", "Lemonade"));
+            OrderHandler.AddItemToOrder(new Item(new List<string> { "Mushrooms","Pineapple","Meatballs"},"Detroit-Style","12" ));
+
+
+            handler.addOrder(credit);
+            handler.addOrder(cash);
+
+
             handler.writeToOrders();
 
 
@@ -50,9 +65,6 @@ namespace PizzaProject
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new HomeScreen());
-            
-            handler.writeToCustomers();
-            handler.writeToOrders();
         }
     }
 }

@@ -7,7 +7,8 @@ namespace PizzaProject {
 
         //takes data from GUI events, and processes changes to the order accordingly.
         //retrieves data from order for GUI
-        static Order currentOrder { get; set; }
+        public static Order currentOrder { get; set; }
+
         public static void AddItemToOrder(Item item)
         {
             currentOrder.Items.Add(item); //todo: test this

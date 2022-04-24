@@ -63,6 +63,7 @@
             // 
             // panel1
             // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.cancelButton);
             this.panel1.Controls.Add(this.submitButton);
             this.panel1.Controls.Add(this.phoneField);

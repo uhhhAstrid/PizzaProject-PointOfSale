@@ -46,6 +46,7 @@
             // 
             // panel1
             // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.nameSearch);
             this.panel1.Controls.Add(this.phoneSearch);
             this.panel1.Controls.Add(this.nameField);
@@ -125,6 +126,7 @@
             // 
             // panel2
             // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.label5);
             this.panel2.Location = new System.Drawing.Point(331, 46);
             this.panel2.Name = "panel2";

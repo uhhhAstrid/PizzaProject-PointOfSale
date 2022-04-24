@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PizzaProject.GUI_Pages.PopUp_Pages;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,6 +24,9 @@ namespace PizzaProject.GUI_Pages
             //search order.json using "name" as the parameter
             //call json handler, call orders by name, return a list
             //then call a method to add those orders to the gui
+            //temporary customer found popup
+            var customerFoundPopUp = new CustomerFoundConfirmation();
+            customerFoundPopUp.ShowDialog();
         }
 
         //implementing this method is mandatory though
@@ -31,6 +35,9 @@ namespace PizzaProject.GUI_Pages
             //search order.json using "phone#" as the parameter
             //call json handler, call ordersbyphone#, return a list
             //then call a method to add those orders to the gui
+            //temporary customer found popup
+            var customerFoundPopUp = new CustomerFoundConfirmation();
+            customerFoundPopUp.ShowDialog();
         }
 
         private void returnToHome_Click(object sender, EventArgs e)

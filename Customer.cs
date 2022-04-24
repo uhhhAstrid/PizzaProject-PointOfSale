@@ -33,7 +33,7 @@ namespace PizzaProject {
         public PizzaProject.Address Address { get { return address; } set { address = value; } }
 
 
-            //constructors
+        //constructors
         //new customer with no payment or address info
         public Customer(string name, string phone, string email)
         {
@@ -63,12 +63,14 @@ namespace PizzaProject {
             address = new Address(state, city, zip, street, additionalInfo, phone);
         }
         //new customer with both payment and address info
+        [JsonConstructor]
+        public Customer(string name, string phone, string email, string cardType, string nameOnCard, string cardNumber, int cvv, string state, string city, string zip, string street, string additionalInfo)
         public Customer(string name, string phone, string email, string cardType, string nameOnCard, string cardNumber, int cvv, string state, string city, string zip, string street, string additionalInfo)
         {
-            customerID = nextcustomerID++;
-            this.name = name;
-            this.email = email;
-            this.phoneNumber = phone;
+            //customerID = nextcustomerID++;
+            //this.name = name;
+            //this.email = email;
+            //this.phoneNumber = phone;
             payment = new Payment(cardType, nameOnCard, cardNumber, cvv, phone);
             address = new Address(state, city, zip, street, additionalInfo, phone);
         }

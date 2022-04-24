@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PizzaProject.GUI_Pages.PopUp_Pages;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -30,6 +31,12 @@ namespace PizzaProject.GUI_Pages
 
         private void submitButton_Click(object sender, EventArgs e)
         {
+            //temporary popup for incomplete customer information
+            var incompleteCustomerInfoPopUp = new CustomerInfoIncomplete();
+            incompleteCustomerInfoPopUp.ShowDialog();
+            //temporary popup customer added!
+            var customerAddedPopUp = new CustomerAddedConfirmation();
+            customerAddedPopUp.ShowDialog();
             //if (first set of fields filled out): add customer to database
                 //&if (second set of fields filled out): create new address, add to customer, add to database
                 //&if (third set of fields, but not second, filled out): create new payment, add to customer, add to database

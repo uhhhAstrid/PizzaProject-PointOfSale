@@ -45,6 +45,7 @@
             this.zipField = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label13 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.cancelOrder = new System.Windows.Forms.Button();
@@ -53,7 +54,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.returnToHome = new System.Windows.Forms.Button();
-            this.label13 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -200,6 +200,7 @@
             // 
             // panel1
             // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.label9);
@@ -224,6 +225,16 @@
             this.panel1.TabIndex = 16;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(10, 179);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(206, 20);
+            this.label13.TabIndex = 17;
+            this.label13.Text = "Required for delivery orders:";
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -236,6 +247,7 @@
             // 
             // panel2
             // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.cancelOrder);
             this.panel2.Controls.Add(this.pickupOrder);
             this.panel2.Controls.Add(this.deliveryOrder);
@@ -308,16 +320,6 @@
             this.returnToHome.Text = "Return to Home Page";
             this.returnToHome.UseVisualStyleBackColor = true;
             this.returnToHome.Click += new System.EventHandler(this.returnToHome_Click);
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(10, 179);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(206, 20);
-            this.label13.TabIndex = 17;
-            this.label13.Text = "Required for delivery orders:";
             // 
             // StartOrderScreen
             // 

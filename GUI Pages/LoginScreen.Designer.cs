@@ -92,6 +92,7 @@
             // 
             // panel1
             // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.loginButton);
             this.panel1.Controls.Add(this.passwordField);
             this.panel1.Controls.Add(this.usernameField);

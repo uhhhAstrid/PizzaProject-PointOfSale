@@ -28,6 +28,9 @@ namespace PizzaProject.GUI_Pages
             //temp code; shows error pop-up
             var changeUserPopup = new ChangeUserInvalidLogin();
             changeUserPopup.ShowDialog();
+            //temporary popup to confirm changing user
+            var changeUserConfirmation = new LogOutAlert();
+            changeUserConfirmation.ShowDialog();
             //verify username and password with the User JSON information
             //loop through users in JSON, if username matches:
                 //if (password.equals) : log-in user

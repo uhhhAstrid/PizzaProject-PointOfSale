@@ -101,6 +101,7 @@ namespace PizzaProject
             // 
             // panel1
             // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.searchCustomers);
             this.panel1.Controls.Add(this.customerLookup);
             this.panel1.Controls.Add(this.label2);

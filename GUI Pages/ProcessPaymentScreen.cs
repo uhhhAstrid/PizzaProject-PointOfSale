@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PizzaProject.GUI_Pages.PopUp_Pages;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,6 +20,9 @@ namespace PizzaProject.GUI_Pages
 
         private void returnToHome_Click(object sender, EventArgs e)
         {
+            //temp cancel order confirmation popup
+            var cancelOrderPopUp = new CancelOrder();
+            cancelOrderPopUp.ShowDialog();
             //depending on screen, may need to add logic for pop-up menu (this is copy and pasted)
             var homeScreen = new HomeScreen();
             homeScreen.Show();
@@ -30,6 +34,9 @@ namespace PizzaProject.GUI_Pages
             //todo: implement 
             //processpayment() call payment handler, etc
             //pull up credit card info if stored, otherwise a pop-up asks you to fill it in...
+            //temporary credit card info popup prompt
+            var creditCardProcessPopUp = new CreditCardProcessingWindow();
+            creditCardProcessPopUp.ShowDialog();
             //pop-up: payment collected y/n; if yes, proceed to final screen
 
             //temporary solution for testing purposes
@@ -42,7 +49,9 @@ namespace PizzaProject.GUI_Pages
         {
             //pop up: complete payment physically (phrase this better lollll)
             //pop-up: payment collected y/n; if yes, proceed to final screen
-
+            //temporary popup for payment collection
+            var collectPaymentPopUp = new CashAndCreditProcessWindow();
+            collectPaymentPopUp.ShowDialog();
             //temporary solution for testing purposes
             var receiptScreen = new ReceiptScreen();
             receiptScreen.Show();

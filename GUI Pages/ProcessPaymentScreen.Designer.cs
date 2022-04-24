@@ -30,15 +30,13 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.amountDue = new System.Windows.Forms.Label();
             this.checkPayment = new System.Windows.Forms.Button();
             this.cashPayment = new System.Windows.Forms.Button();
             this.creditPayment = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.returnToHome = new System.Windows.Forms.Button();
-            this.amountDue = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.subtotalField = new System.Windows.Forms.Label();
             this.taxField = new System.Windows.Forms.Label();
             this.totalField = new System.Windows.Forms.Label();
@@ -48,6 +46,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.returnToHome = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -65,6 +65,7 @@
             // 
             // panel1
             // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.amountDue);
             this.panel1.Controls.Add(this.checkPayment);
             this.panel1.Controls.Add(this.cashPayment);
@@ -75,6 +76,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(248, 330);
             this.panel1.TabIndex = 1;
+            // 
+            // amountDue
+            // 
+            this.amountDue.AutoSize = true;
+            this.amountDue.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.amountDue.Location = new System.Drawing.Point(135, 17);
+            this.amountDue.Name = "amountDue";
+            this.amountDue.Size = new System.Drawing.Size(93, 24);
+            this.amountDue.TabIndex = 6;
+            this.amountDue.Text = "$[amount]";
             // 
             // checkPayment
             // 
@@ -131,6 +142,7 @@
             // 
             // panel2
             // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.subtotalField);
             this.panel2.Controls.Add(this.taxField);
             this.panel2.Controls.Add(this.totalField);
@@ -145,37 +157,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(416, 352);
             this.panel2.TabIndex = 2;
-            // 
-            // returnToHome
-            // 
-            this.returnToHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.returnToHome.Location = new System.Drawing.Point(653, 434);
-            this.returnToHome.Name = "returnToHome";
-            this.returnToHome.Size = new System.Drawing.Size(148, 42);
-            this.returnToHome.TabIndex = 3;
-            this.returnToHome.Text = "Return to Home Page";
-            this.returnToHome.UseVisualStyleBackColor = true;
-            this.returnToHome.Click += new System.EventHandler(this.returnToHome_Click);
-            // 
-            // amountDue
-            // 
-            this.amountDue.AutoSize = true;
-            this.amountDue.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.amountDue.Location = new System.Drawing.Point(135, 17);
-            this.amountDue.Name = "amountDue";
-            this.amountDue.Size = new System.Drawing.Size(93, 24);
-            this.amountDue.TabIndex = 6;
-            this.amountDue.Text = "$[amount]";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(80, 10);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(299, 31);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "[receipt data goes here]";
             // 
             // subtotalField
             // 
@@ -266,6 +247,27 @@
             this.label10.Size = new System.Drawing.Size(105, 24);
             this.label10.TabIndex = 11;
             this.label10.Text = "[order data]";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(80, 10);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(299, 31);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "[receipt data goes here]";
+            // 
+            // returnToHome
+            // 
+            this.returnToHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.returnToHome.Location = new System.Drawing.Point(653, 434);
+            this.returnToHome.Name = "returnToHome";
+            this.returnToHome.Size = new System.Drawing.Size(148, 42);
+            this.returnToHome.TabIndex = 3;
+            this.returnToHome.Text = "Return to Home Page";
+            this.returnToHome.UseVisualStyleBackColor = true;
+            this.returnToHome.Click += new System.EventHandler(this.returnToHome_Click);
             // 
             // label11
             // 

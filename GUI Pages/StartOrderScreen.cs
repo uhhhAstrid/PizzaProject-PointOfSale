@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PizzaProject.GUI_Pages.PopUp_Pages;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -52,6 +53,12 @@ namespace PizzaProject.GUI_Pages
             var makeOrder = new MakeOrderScreen();
             makeOrder.Show();
             this.Hide();
+            //temporary popup for in address error
+            var invalidAddressPopUp = new DeliverAddressIncomplete();
+            invalidAddressPopUp.ShowDialog();
+            // temporary popup for customer information error
+            var invalidCustomerInfoPopUp = new CustomerInfoIncomplete();
+            invalidCustomerInfoPopUp.ShowDialog();
             //todo: add logic to carry over that this order is type 'delivery', add customer phone # to the order.
             //also: add logic to prevent proceeding unless the 'delivery' fields are filled out
         }
@@ -61,6 +68,9 @@ namespace PizzaProject.GUI_Pages
             var makeOrder = new MakeOrderScreen();
             makeOrder.Show();
             this.Hide();
+            // temporary popup for customer information error
+            var invalidCustomerInfoPopUp = new CustomerInfoIncomplete();
+            invalidCustomerInfoPopUp.ShowDialog();
             //todo: add logic to carry over that this order is type 'pickup', add customer phone # to the order.
         }
     }

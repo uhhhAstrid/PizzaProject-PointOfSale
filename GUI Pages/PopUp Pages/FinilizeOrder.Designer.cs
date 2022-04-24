@@ -1,6 +1,6 @@
 ﻿namespace PizzaProject.GUI_Pages.PopUp_Pages
 {
-    partial class ChangeUserInvalidLogin
+    partial class FinilizeOrder
     {
         /// <summary>
         /// Required designer variable.
@@ -28,44 +28,56 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.errorMessage = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // errorMessage
-            // 
-            this.errorMessage.AutoSize = true;
-            this.errorMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.errorMessage.Location = new System.Drawing.Point(25, 9);
-            this.errorMessage.Name = "errorMessage";
-            this.errorMessage.Size = new System.Drawing.Size(203, 20);
-            this.errorMessage.TabIndex = 0;
-            this.errorMessage.Text = "Error: Username/Password ";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(25, 29);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label1.Location = new System.Drawing.Point(37, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(171, 20);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "combination not found.";
+            this.label1.Size = new System.Drawing.Size(196, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Proceeding to payment will";
             // 
-            // ChangeUserInvalidLogin
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label2.Location = new System.Drawing.Point(54, 29);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(163, 20);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "finilize order contents.";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(98, 52);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Ok";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // FinilizeOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gold;
             this.ClientSize = new System.Drawing.Size(264, 91);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.errorMessage);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "ChangeUserInvalidLogin";
+            this.Name = "FinilizeOrder";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Error";
+            this.Text = "Finilize Order Contents";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -73,7 +85,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Label errorMessage;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button1;
     }
 }

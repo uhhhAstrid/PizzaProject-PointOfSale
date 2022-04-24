@@ -34,9 +34,9 @@ namespace PizzaProject
             // On Startup, check JSON if exist
             // Read in the current list of orders, customers and leave them in memory
             this.checkJSON();
-            customers = this.readAllCustomers() ?? new List<Customer>(0);
-            orders = this.readAllOrders() ?? new List<Order>(0);
-            users = this.readUsers() ?? new List<User>(0);
+            customers = this.readAllCustomers();
+            orders = this.readAllOrders();
+            users = this.readUsers();
 
 
             Customer.setNextCustomerID(customers.Count);
@@ -74,7 +74,7 @@ namespace PizzaProject
         {
             try
             {
-                String toBeAdded = JsonConvert.SerializeObject(customers, Formatting.Indented, serializerWithTypesSetting);
+                String toBeAdded = JsonConvert.SerializeObject(customers, serializerWithTypesSetting);
                 File.WriteAllText(customersPath, toBeAdded);
             }
             catch(Exception ex)
@@ -87,9 +87,10 @@ namespace PizzaProject
         {
             try
             {
-                String readCustomers = File.ReadAllText(customersPath) ;
+                String readCustomers = System.IO.File.ReadAllText(customersPath);
+                Debug.WriteLine(readCustomers);
                 List<Customer> existingCustomers = JsonConvert.DeserializeObject<List<Customer>>(readCustomers, serializerWithTypesSetting);
-                return existingCustomers;
+                return (existingCustomers == null) ? new List<Customer>(0) : existingCustomers;
             }
             catch (Exception ex)
             {

@@ -69,6 +69,10 @@ namespace PizzaProject
         {  
             if(cust != null) 
             {
+                if (!this.phoneNumberValidator(cust.PhoneNumber))
+                {
+                    throw new Exception("Phone Number is invalid");
+                }
                 for (int i = 0; i < customers.Count; i++)
                 {
                     if (customers[i].PhoneNumber == cust.PhoneNumber)
@@ -114,6 +118,10 @@ namespace PizzaProject
         //Searches customer list for specific customer
         public Customer retrieveCustomer(string phone)
         {
+            if (!this.phoneNumberValidator(phone))
+            {
+                throw new Exception("Phone Number is invalid");
+            }
             foreach (Customer c in customers)
             {
                 if (c.PhoneNumber == phone)
@@ -129,6 +137,10 @@ namespace PizzaProject
         {
             if (order != null)
             {
+                if (!phoneNumberValidator(order.CustomerPhone))
+                {
+                    throw new Exception("Phone Number is invalid");
+                }
                 bool customerFound = false;
                 int customerIndex = 0;
                 for (int i = 0; i < customers.Count; i++)
@@ -235,7 +247,7 @@ namespace PizzaProject
         }
         public bool phoneNumberValidator(string phone)
         {
-            return Regex.IsMatch("\\d{10,10}",phone);
+            return (phone != null && Regex.IsMatch("\\d{10,10}",phone));
         }
 
     }

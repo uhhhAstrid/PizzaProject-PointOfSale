@@ -53,6 +53,7 @@ namespace PizzaProject
         public Item(List<string> toppings, string crust, string size)
         {
             this.itemType = "Pizza";
+            this.flavor = "N/A"
             this.toppings = toppings;
             this.crustType = crust;
             this.size = size;
@@ -64,6 +65,7 @@ namespace PizzaProject
             this.itemType = "Soda";
             this.size = size;
             this.flavor = flavor;
+            this.crustType = "N/A";
         }
             //methods
         //set values of various item fields; not sure how this is different from setting in properties but it feels right. 

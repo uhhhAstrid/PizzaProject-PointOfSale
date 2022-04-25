@@ -32,14 +32,14 @@ namespace PizzaProject
             this.checkJSON();
             customers = this.readAllCustomers();
             orders = this.readAllOrders();
-            users = this.readUsers();
+            users = this.readAllUsers();
 
 
             Customer.setNextCustomerID(customers.Count);
             Order.setNextOrderID(orders.Count);
             User.setNextUserID(users.Count);
         }
-        public void checkJSON()
+        protected void checkJSON()
         {
             try
             {
@@ -63,6 +63,11 @@ namespace PizzaProject
         }
         public void addCustomer(Customer cust)
         {
+            for (int i = 0; i < customers.Count; i++)
+            {
+                if (customers[i].PhoneNumber == cust.PhoneNumber)
+                    throw new Exception("Customer already exists.");
+            }
             if (cust != null)
                 customers.Add(cust);
         }
@@ -77,6 +82,7 @@ namespace PizzaProject
             catch(IOException ex)
             {
                 Debug.WriteLine(ex.Message);
+                Debug.WriteLine("Could not write to customers.json.");
             }
         }
         // Will overwite current working list with last saved version from disk
@@ -97,18 +103,35 @@ namespace PizzaProject
         // ORDER Section
         public void addOrder(Order order)
         {
-            if (order != null) { }
-            bool customerFound = false;
-            for (int i = 0; i < customers.Count; i++)
+            if (order != null)
             {
-                if (customers[i].PhoneNumber != null && customers[i].PhoneNumber.Equals(order.CustomerPhone))
+                bool customerFound = false;
+                int customerIndex = 0;
+                for (int i = 0; i < customers.Count; i++)
+                {
+                    if (customers[i].PhoneNumber != null && customers[i].PhoneNumber.Equals(order.CustomerPhone))
+                    {
+                        customerFound = true;
+                        customerIndex = i;
+                        break;
+                    }
+                }
+                if (!customerFound)
+                {
+                    throw new Exception("Customer does not exist.");
+                }
+                else if (order.Delivery)
+                {
+                    if (customers[customerIndex].Address.Equals(new Address(customers[customerIndex].PhoneNumber)))
+                    {
+                        throw new Exception("Customer's address is blank and the order is for deivery");
+                    }
+                }
+                else
                 {
                     orders.Add(order);
-                    customerFound = true;
                 }
             }
-            if (!customerFound)
-                Debug.WriteLine("Customer does not exist");
         }
         public void writeToOrders()
         {
@@ -122,7 +145,7 @@ namespace PizzaProject
                 Debug.WriteLine(ex.Message);
             }
         }
-        public List<Order> readAllOrders()
+        protected List<Order> readAllOrders()
         {
             try
             {
@@ -138,8 +161,16 @@ namespace PizzaProject
         // Users Section
         public void addUser(User emp)
         {
-            if (emp != null && emp.UserName != null && emp.Password != null)
-                users.Add(emp);
+            if (emp != null)
+            {
+                for (int i = 0; i < users.Count; i++)
+                {
+                    if (users[i].UserID == emp.UserID)
+                        throw new Exception("User already exists.");
+                }
+                if (emp.UserName != null && emp.Password != null)
+                    users.Add(emp);
+            }
         }
         public void writeToUsers()
         {
@@ -148,12 +179,12 @@ namespace PizzaProject
                 var usersToBeSaved = JsonConvert.SerializeObject(users,Formatting.Indented,serializerWithTypesSetting);
                 File.WriteAllText(usersPath,usersToBeSaved);
             }
-            catch (Exception ex){ 
+            catch (IOException ex){ 
                 Debug.WriteLine(ex.Message);
-                Debug.WriteLine("Could not write users file.");
+                Debug.WriteLine("Could not write to users.json.");
             }
         }
-        public List<User> readUsers()
+        protected List<User> readAllUsers()
         {
             try
             {
@@ -167,6 +198,11 @@ namespace PizzaProject
                 Debug.WriteLine("Could not load users file.");
                 return new List<User>(0);
             }
+        }
+        public void phoneNumberValidator(String phone)
+        {
+            //var re = "/ ^([+] ? 1[\s] ?) ? ((?:[(](?:[2 - 9]1[02 - 9] |[2 - 9][02 - 8][0 - 9])[)][\s]?)| (?: (?:[2 - 9]1[02 - 9] |[2 - 9][02 - 8][0 - 9])[\s.-]?)){ 1} ([2 - 9]1[02 - 9] |[2 - 9][02 - 9]1 |[2 - 9][02 - 9]{ 2}[\s.-]?){ 1} ([0 - 9]{ 4}){ 1}$/";
+            //return re.test(str);
         }
 
     }

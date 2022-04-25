@@ -49,7 +49,7 @@ namespace PizzaProject
         //constructors
         public Payment(string type, string name, string number, int cv, string phone)
         {
-             cardType = type;
+            cardType = type;
             nameOnCard = name;
             cardNumber = number;
             cvv = cv;
@@ -59,7 +59,8 @@ namespace PizzaProject
         public Payment(string phone) : this("N/A", "N/A", "N/A", 0, phone)
         {
         }
-        public Payment() {}
+        public Payment() {
+        }
             //methods
         //sets payment information; use if customer was created without payment info. 
         public void setPayment(string cardType, string nameOnCard, string cardNumber, int cvv, string customerPhone)

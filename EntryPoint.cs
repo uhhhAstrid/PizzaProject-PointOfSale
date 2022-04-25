@@ -29,6 +29,11 @@ namespace PizzaProject
             JSONHandler handler = new JSONHandler();
             handler.addCustomer(new Customer("huan", "307-314-2718", "hmai10@students.kennesaw.edu", "ga", "tucker", "30084", "marietta pkwy", "no"));
             handler.addCustomer(new Customer("will", "123-456-7890", "wswift1@students.kennesaw.edu", "credit", "yeff", "1234567890", 420));
+            handler.addCustomer(new Customer("will", "123-456-7891", "tayloswift@kennesaw.edu", "credit", "baylor swift", "1234567890", 421));
+            handler.addCustomer(new Customer("well", "932-456-7891", "carlosswift@kennesaw.edu", "credit", "baylor swift", "1234567890", 422));
+            handler.addCustomer(new Customer("swill", "721-456-7891", "alejandroswift@kennesaw.edu", "credit", "baylor swift", "1234567890", 423));
+
+
             handler.writeToCustomers();
 
 
@@ -61,6 +66,7 @@ namespace PizzaProject
             handler.writeToUsers();
 
 
+            handler.readAllCustomers();
             //Once the following code is run, only events from the GUI will cause the code to progress forward; code after 'Application.Run' will not run until it is closed.
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

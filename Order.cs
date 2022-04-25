@@ -9,7 +9,7 @@ namespace PizzaProject {
         
             //fields
         private int orderID;
-        private static int nextOrderID;
+        private static int nextOrderID { get; set; }
         private string payType;
         
         //true = this is a delivery order
@@ -26,7 +26,7 @@ namespace PizzaProject {
         public int OrderID 
         { 
             get { return orderID; } 
-            set { orderID = nextOrderID++; } 
+            set { orderID = nextOrderID; } 
         }
         public string PayType
         {
@@ -51,6 +51,7 @@ namespace PizzaProject {
         public List<Item> Items
         {
             get { return items; }
+            set { items = value; }
         }
         public decimal SubTotal
         {
@@ -68,8 +69,12 @@ namespace PizzaProject {
             nextOrderID = newID;
         }
         //constructor
+        // reminder that this is a testing constructor
         public Order(string payType, bool delivery, string phone)
         {
+
+            orderID = nextOrderID;
+            nextOrderID++;
             this.payType = payType;
             this.delivery = delivery;
             date = DateTime.Now;
@@ -78,6 +83,10 @@ namespace PizzaProject {
             tax = 0M;
             items = new List<Item>();
             customerPhone = phone;
+        }
+        public Order()
+        {
+
         }
     }
 }

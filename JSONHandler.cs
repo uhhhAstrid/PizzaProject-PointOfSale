@@ -20,9 +20,10 @@ namespace PizzaProject
         private static List<string> allFiles = new List<string> {customersPath,ordersPath, usersPath};
         JsonSerializerSettings serializerWithTypesSetting = new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.All };
 
-        List<Customer> customers;
-        List<Order> orders;
-        List<User> users;
+        //ensures all instances of JSONHandler use the same data.
+        static List<Customer> customers;
+        static List<Order> orders;
+        static List<User> users;
 
             //constructor
         public JSONHandler(){
@@ -30,9 +31,9 @@ namespace PizzaProject
             // Read in the current list of orders, customers and leave them in memory
             this.checkJSON();
           
-            customers = this.readAllCustomers();
-            orders = this.readAllOrders();
-            users = this.readAllUsers();
+            customers = this.deserializeCustomerList();
+            orders = this.deserializeOrderList();
+            users = this.deserializeUserList();
 
 
             Customer.setNextCustomerID(customers.Count);
@@ -61,18 +62,25 @@ namespace PizzaProject
                 Debug.WriteLine(ex.Message);
             }
         }
-        public void addCustomer(Customer cust)
-        {
-            for (int i = 0; i < customers.Count; i++)
+
+        //verifies customer is not already in the system, then adds them
+        public void addCustomerToList(Customer cust)
+        {  
+            if(cust != null) 
             {
-                if (customers[i].PhoneNumber == cust.PhoneNumber)
-                    throw new Exception("Customer already exists.");
-            }
-            if (cust != null)
+                for (int i = 0; i < customers.Count; i++)
+                {
+                    if (customers[i].PhoneNumber == cust.PhoneNumber)
+                    {
+                        throw new Exception("Customer already exists.");
+                    }
+                }
                 customers.Add(cust);
+            }
         }
-        // Overwite the current version on disk with current working list
-        public void writeToCustomers()
+
+        //Overwrites JSON data with customer list
+        public void serializeCustomerList()
         {
             try
             {
@@ -85,8 +93,9 @@ namespace PizzaProject
                 Debug.WriteLine("Could not write to customers.json.");
             }
         }
-        // Will overwite current working list with last saved version from disk
-        public List<Customer> readAllCustomers()
+
+        //Overwrites customer list with stored JSON data
+        public List<Customer> deserializeCustomerList()
         {
             try
             {
@@ -115,7 +124,7 @@ namespace PizzaProject
         }
 
         // ORDER Section
-        public void addOrder(Order order)
+        public void addOrderToList(Order order)
         {
             if (order != null)
             {
@@ -147,7 +156,7 @@ namespace PizzaProject
                 }
             }
         }
-        public void writeToOrders()
+        public void serializeOrderList()
         {
             try
             {
@@ -159,7 +168,7 @@ namespace PizzaProject
                 Debug.WriteLine(ex.Message);
             }
         }
-        protected List<Order> readAllOrders()
+        protected List<Order> deserializeOrderList()
         {
             try
             {
@@ -172,8 +181,9 @@ namespace PizzaProject
                 return new List<Order>(0);
             }
         }
+        
         // Users Section
-        public void addUser(User emp)
+        public void addUserToList(User emp)
         {
             if (emp != null)
             {
@@ -186,7 +196,7 @@ namespace PizzaProject
                     users.Add(emp);
             }
         }
-        public void writeToUsers()
+        public void serializeUserList()
         {
             try
             {
@@ -198,7 +208,7 @@ namespace PizzaProject
                 Debug.WriteLine("Could not write to users.json.");
             }
         }
-        protected List<User> readAllUsers()
+        protected List<User> deserializeUserList()
         {
             try
             {

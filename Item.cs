@@ -53,7 +53,7 @@ namespace PizzaProject
         public Item(List<string> toppings, string crust, string size)
         {
             this.itemType = "Pizza";
-            this.flavor = "N/A"
+            this.flavor = "N/A";
             this.toppings = toppings;
             this.crustType = crust;
             this.size = size;

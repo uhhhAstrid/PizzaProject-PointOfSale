@@ -102,7 +102,7 @@ namespace PizzaProject
             {
                 String readCustomers = System.IO.File.ReadAllText(customersPath);
                 List<Customer> existingCustomers = JsonConvert.DeserializeObject<List<Customer>>(readCustomers, serializerWithTypesSetting);
-                return (existingCustomers == null) ? new List<Customer>(0) : existingCustomers;
+                return existingCustomers ?? new List<Customer>(0);
             }
             catch (IOException ex)
             {

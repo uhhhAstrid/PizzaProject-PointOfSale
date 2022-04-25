@@ -236,7 +236,7 @@ namespace PizzaProject
             {
                 String existingUsers = File.ReadAllText(usersPath);
                 var processed = JsonConvert.DeserializeObject<List<User>>(existingUsers, serializerWithTypesSetting);
-                return processed;
+                return processed ?? new List<User>(0);
             }
             catch (IOException ex)
             {

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PizzaProject.GUI_Pages.PopUp_Pages
 {
-    public partial class CustomerFoundConfirmation : Form
+    public partial class OrderSearchComplete : Form
     {
-        public CustomerFoundConfirmation()
+        public OrderSearchComplete()
         {
             InitializeComponent();
         }
@@ -23,6 +23,11 @@ namespace PizzaProject.GUI_Pages.PopUp_Pages
         }
 
         private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void OrderSearchComplete_Load(object sender, EventArgs e)
         {
 
         }

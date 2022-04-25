@@ -112,11 +112,11 @@
     <Compile Include="GUI Pages\PopUp Pages\CustomerAddedConfirmation.Designer.cs">
       <DependentUpon>CustomerAddedConfirmation.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI Pages\PopUp Pages\CustomerFoundConfirmation.cs">
+    <Compile Include="GUI Pages\PopUp Pages\OrderSearchComplete.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI Pages\PopUp Pages\CustomerFoundConfirmation.Designer.cs">
-      <DependentUpon>CustomerFoundConfirmation.cs</DependentUpon>
+    <Compile Include="GUI Pages\PopUp Pages\OrderSearchComplete.Designer.cs">
+      <DependentUpon>OrderSearchComplete.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI Pages\PopUp Pages\CustomerFoundConfirmationCR.cs">
       <SubType>Form</SubType>
@@ -270,8 +270,8 @@
     <EmbeddedResource Include="GUI Pages\PopUp Pages\CustomerAddedConfirmation.resx">
       <DependentUpon>CustomerAddedConfirmation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI Pages\PopUp Pages\CustomerFoundConfirmation.resx">
-      <DependentUpon>CustomerFoundConfirmation.cs</DependentUpon>
+    <EmbeddedResource Include="GUI Pages\PopUp Pages\OrderSearchComplete.resx">
+      <DependentUpon>OrderSearchComplete.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI Pages\PopUp Pages\CustomerFoundConfirmationCR.resx">
       <DependentUpon>CustomerFoundConfirmationCR.cs</DependentUpon>

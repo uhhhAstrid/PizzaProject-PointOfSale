@@ -15,9 +15,11 @@ namespace PizzaProject
         [STAThread]
         static void Main() 
         {
+            //initializes the current menu offerings
             Menu m = new Menu();
             Menu.InitializeMenu();
             
+            //initializes the data stored in JSON; creating dummy data if none is present
             JSONHandler handler = new JSONHandler();
 
             //Once the following code is run, only events from the GUI will cause the code to progress forward;

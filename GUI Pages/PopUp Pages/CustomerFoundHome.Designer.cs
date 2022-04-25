@@ -64,6 +64,7 @@
             this.button2.Size = new System.Drawing.Size(171, 28);
             this.button2.TabIndex = 2;
             this.button2.Text = "Start order with customer";
+            this.button2.UseCompatibleTextRendering = true;
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -82,7 +83,7 @@
             this.Name = "CustomerFoundHome";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CustomerFoundHome";
             this.ResumeLayout(false);
             this.PerformLayout();

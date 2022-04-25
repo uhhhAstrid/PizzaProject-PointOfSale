@@ -40,22 +40,71 @@ namespace PizzaProject
             Order.setNextOrderID(orders.Count);
             User.setNextUserID(users.Count);
         }
+
+        public void firstRunDataInitialization(int i)
+        {
+            switch (i)
+            {
+                //customer initialization
+                case 0:
+                    {
+                        addCustomerToList(new Customer("huan", "3073142718", "hmai10@students.kennesaw.edu", "ga", "tucker", "30084", "marietta pkwy", "no"));
+                        addCustomerToList(new Customer("will", "1234567890", "wswift1@students.kennesaw.edu", "credit", "yeff", "1234567890", 420));
+                        addCustomerToList(new Customer("will", "1234567891", "tayloswift@kennesaw.edu", "credit", "baylor swift", "1234567890", 421));
+                        addCustomerToList(new Customer("well", "9324567891", "carlosswift@kennesaw.edu", "credit", "baylor swift", "1234567890", 422));
+                        addCustomerToList(new Customer("swill", "7214567891", "alejandroswift@kennesaw.edu", "credit", "baylor swift", "1234567890", 423));
+                        serializeCustomerList();
+                        break;
+                    }
+                //orders initialization
+                case 1:
+                    {
+                        Order testOrderCredit = new Order("credit", true, "3073142718");
+
+                        OrderHandler.currentOrder = testOrderCredit;
+                        OrderHandler.AddItemToOrder(new Item("2-Litre", "Pepsi"));
+                        OrderHandler.AddItemToOrder(new Item(new List<string> { "Extra-Cheese", "Pepperoni", "Pineapple" }, "Deep Dish", "18"));
+
+                        Order testOrderCash = new Order("cash", false, "1234567890");
+                        OrderHandler.currentOrder = testOrderCash;
+                        OrderHandler.AddItemToOrder(new Item("Small", "Lemonade"));
+                        OrderHandler.AddItemToOrder(new Item(new List<string> { "Mushrooms", "Pineapple"}, "Thin Crust", "12"));
+
+                        addOrderToList(testOrderCredit);
+                        addOrderToList(testOrderCash);
+
+                        serializeOrderList();
+                        break;
+                    }
+                //users initialization
+                case 2:
+                    {
+                        addUserToList(new Employee("huan", "password", "quan"));
+                        addUserToList(new Manager("tcarreo1", "bruhmoment", "tenonch", 9018));
+                        serializeUserList();
+                        break;
+                    }
+            }
+        }
+        
         protected void checkJSON()
         {
             try
             {
-                if (!System.IO.Directory.Exists(folderPath))
+                if (!Directory.Exists(folderPath))
                 {
-                    System.IO.Directory.CreateDirectory(folderPath);
-                }
-                for(int i = 0; i < allFiles.Count; i++)
-                {
-                    if (!File.Exists(allFiles[i]))
+                    Directory.CreateDirectory(folderPath);
+                    for (int i = 0; i < allFiles.Count; i++)
                     {
-                        File.Create(allFiles[i]);
-                        Thread.Sleep(1000);
+                        if (!File.Exists(allFiles[i]))
+                        {
+                            File.Create(allFiles[i]);
+                            Thread.Sleep(1000);
+                            firstRunDataInitialization(i);
+                        }
                     }
                 }
+                
             }
             catch (IOException ex)
             {
@@ -99,7 +148,7 @@ namespace PizzaProject
         {
             try
             {
-                String readCustomers = System.IO.File.ReadAllText(customersPath);
+                String readCustomers = File.ReadAllText(customersPath);
                 List<Customer> existingCustomers = JsonConvert.DeserializeObject<List<Customer>>(readCustomers, serializerWithTypesSetting);
                 return (existingCustomers == null) ? new List<Customer>(0) : existingCustomers;
             }
@@ -173,7 +222,8 @@ namespace PizzaProject
             try
             {
                 String readOrders = File.ReadAllText(ordersPath);
-                return JsonConvert.DeserializeObject<List<Order>>(readOrders, serializerWithTypesSetting);
+                List<Order> existingOrders = JsonConvert.DeserializeObject<List<Order>>(readOrders, serializerWithTypesSetting);
+                return (existingOrders == null) ? new List<Order>(0) : existingOrders;
             }
             catch (IOException ex)
             {

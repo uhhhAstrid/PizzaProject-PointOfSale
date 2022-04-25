@@ -89,6 +89,7 @@
             this.MinimizeBox = false;
             this.Name = "CashAndCheckProcessWindow";
             this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Accept Payment";
             this.ResumeLayout(false);

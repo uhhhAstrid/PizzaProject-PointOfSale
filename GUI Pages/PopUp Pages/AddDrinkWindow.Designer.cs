@@ -95,6 +95,7 @@
             this.MinimizeBox = false;
             this.Name = "AddDrinkWindow";
             this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Add Drink";
             this.panel1.ResumeLayout(false);

@@ -146,6 +146,7 @@
             this.Controls.Add(this.pageHeader);
             this.Controls.Add(this.panel1);
             this.Name = "ChangeUserScreen";
+            this.ShowIcon = false;
             this.Text = "Change User";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

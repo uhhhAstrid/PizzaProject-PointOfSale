@@ -80,6 +80,7 @@
             this.MinimizeBox = false;
             this.Name = "CustomerAddedConfirmation";
             this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Customer Added";
             this.ResumeLayout(false);

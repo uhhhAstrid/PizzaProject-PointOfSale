@@ -295,6 +295,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Name = "ProcessPaymentScreen";
+            this.ShowIcon = false;
             this.Text = "Finalize Order";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

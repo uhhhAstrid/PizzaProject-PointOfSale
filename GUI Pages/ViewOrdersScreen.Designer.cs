@@ -179,6 +179,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "ViewOrdersScreen";
+            this.ShowIcon = false;
             this.Text = "View Order Record";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

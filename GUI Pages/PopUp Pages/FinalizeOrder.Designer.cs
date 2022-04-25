@@ -77,6 +77,7 @@
             this.MinimizeBox = false;
             this.Name = "FinalizeOrder";
             this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Finalize Order Contents";
             this.ResumeLayout(false);

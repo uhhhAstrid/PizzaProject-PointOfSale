@@ -65,6 +65,7 @@
             this.MinimizeBox = false;
             this.Name = "CustomerFoundConfirmationCR";
             this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Customer Found";
             this.ResumeLayout(false);

@@ -102,6 +102,8 @@
             this.Controls.Add(this.checkedListBox1);
             this.Controls.Add(this.panel1);
             this.Name = "AddPizzaWindow";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Add Pizza";
             this.panel1.ResumeLayout(false);

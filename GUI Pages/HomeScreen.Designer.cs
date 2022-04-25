@@ -180,6 +180,7 @@ namespace PizzaProject
             this.Controls.Add(this.newCustomerButton);
             this.Controls.Add(this.newOrderButton);
             this.Name = "HomeScreen";
+            this.ShowIcon = false;
             this.Text = "Home Page";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

@@ -356,6 +356,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "StartOrderScreen";
+            this.ShowIcon = false;
             this.Text = "Initial Order Info";
             this.Load += new System.EventHandler(this.StartOrderScreen_Load);
             this.panel1.ResumeLayout(false);

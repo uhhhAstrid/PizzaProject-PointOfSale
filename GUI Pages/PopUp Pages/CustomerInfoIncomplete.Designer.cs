@@ -85,6 +85,8 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "CustomerInfoIncomplete";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Error";
             this.ResumeLayout(false);

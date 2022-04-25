@@ -173,6 +173,7 @@
             this.MinimizeBox = false;
             this.Name = "CreditCardProcessingWindow";
             this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Proccess Credit Card";
             this.ResumeLayout(false);

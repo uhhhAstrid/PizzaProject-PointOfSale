@@ -81,6 +81,7 @@
             this.MinimizeBox = false;
             this.Name = "CustomerFoundHome";
             this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.Text = "CustomerFoundHome";
             this.ResumeLayout(false);
             this.PerformLayout();

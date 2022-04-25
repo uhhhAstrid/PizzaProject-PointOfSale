@@ -171,6 +171,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
             this.Name = "ViewCustomersScreen";
+            this.ShowIcon = false;
             this.Text = "View or Edit Customer Records";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

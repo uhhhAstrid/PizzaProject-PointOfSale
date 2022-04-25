@@ -303,12 +303,28 @@ namespace PizzaProject
             List<Order> foundOrders = new List<Order>(0);
             for(int i = 0; i < orders.Count; i++)
             {
-                if (orders[i].CustomerPhone.Equals(phone))
+                if (String.Equals(customers[i].PhoneNumber, phone, StringComparison.OrdinalIgnoreCase))
                 {
                     foundOrders.Add(orders[i]);
                 }
             }
             return orders;
+        }
+        public List<User> retrieveUsersByName(string name)
+        {
+            if(name == null)
+            {
+                throw new Exception("Name is invalid.");
+            }
+            List<User> foundUsers = new List<User>(0);
+            for (int i = 0; i < users.Count; i++)
+            {
+                if (String.Equals(users[i].Name,name,StringComparison.OrdinalIgnoreCase))
+                {
+                    foundUsers.Add(users[i]);
+                }
+            }
+            return foundUsers;
         }
         public bool phoneNumberValidator(string phone)
         {

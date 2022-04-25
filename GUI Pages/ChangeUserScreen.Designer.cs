@@ -42,6 +42,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.loginButton);
             this.panel1.Controls.Add(this.passwordField);
@@ -56,12 +57,15 @@
             // 
             // loginButton
             // 
+            this.loginButton.BackColor = System.Drawing.Color.LightBlue;
+            this.loginButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.loginButton.ForeColor = System.Drawing.SystemColors.ControlText;
             this.loginButton.Location = new System.Drawing.Point(167, 112);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(57, 27);
             this.loginButton.TabIndex = 5;
             this.loginButton.Text = "Login";
-            this.loginButton.UseVisualStyleBackColor = true;
+            this.loginButton.UseVisualStyleBackColor = false;
             this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
             // passwordField
@@ -122,24 +126,27 @@
             // 
             // returnToHome
             // 
+            this.returnToHome.BackColor = System.Drawing.Color.LightBlue;
             this.returnToHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.returnToHome.Location = new System.Drawing.Point(638, 401);
             this.returnToHome.Name = "returnToHome";
             this.returnToHome.Size = new System.Drawing.Size(148, 42);
             this.returnToHome.TabIndex = 2;
             this.returnToHome.Text = "Return to Home Page";
-            this.returnToHome.UseVisualStyleBackColor = true;
+            this.returnToHome.UseVisualStyleBackColor = false;
             this.returnToHome.Click += new System.EventHandler(this.returnToHome_Click);
             // 
             // ChangeUserScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.returnToHome);
             this.Controls.Add(this.pageHeader);
             this.Controls.Add(this.panel1);
             this.Name = "ChangeUserScreen";
+            this.ShowIcon = false;
             this.Text = "Change User";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

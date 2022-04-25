@@ -44,12 +44,14 @@
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.LightBlue;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.button1.Location = new System.Drawing.Point(53, 56);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(163, 23);
             this.button1.TabIndex = 9;
             this.button1.Text = "Start order with customer";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // CustomerFoundConfirmationCR
@@ -63,6 +65,7 @@
             this.MinimizeBox = false;
             this.Name = "CustomerFoundConfirmationCR";
             this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Customer Found";
             this.ResumeLayout(false);

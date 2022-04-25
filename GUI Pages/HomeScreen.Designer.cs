@@ -46,57 +46,62 @@ namespace PizzaProject
             // 
             // newOrderButton
             // 
+            this.newOrderButton.BackColor = System.Drawing.Color.LightBlue;
             this.newOrderButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.newOrderButton.Location = new System.Drawing.Point(179, 55);
+            this.newOrderButton.Location = new System.Drawing.Point(179, 71);
             this.newOrderButton.Name = "newOrderButton";
             this.newOrderButton.Size = new System.Drawing.Size(250, 56);
             this.newOrderButton.TabIndex = 0;
             this.newOrderButton.Text = "New Order";
-            this.newOrderButton.UseVisualStyleBackColor = true;
+            this.newOrderButton.UseVisualStyleBackColor = false;
             this.newOrderButton.Click += new System.EventHandler(this.newOrderButton_Click);
             // 
             // newCustomerButton
             // 
+            this.newCustomerButton.BackColor = System.Drawing.Color.LightBlue;
             this.newCustomerButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.newCustomerButton.Location = new System.Drawing.Point(179, 117);
+            this.newCustomerButton.Location = new System.Drawing.Point(179, 133);
             this.newCustomerButton.Name = "newCustomerButton";
             this.newCustomerButton.Size = new System.Drawing.Size(250, 56);
             this.newCustomerButton.TabIndex = 1;
             this.newCustomerButton.Text = "New Customer";
-            this.newCustomerButton.UseVisualStyleBackColor = true;
+            this.newCustomerButton.UseVisualStyleBackColor = false;
             this.newCustomerButton.Click += new System.EventHandler(this.newCustomerButton_Click);
             // 
             // viewOrdersButton
             // 
+            this.viewOrdersButton.BackColor = System.Drawing.Color.LightBlue;
             this.viewOrdersButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.viewOrdersButton.Location = new System.Drawing.Point(179, 179);
+            this.viewOrdersButton.Location = new System.Drawing.Point(179, 195);
             this.viewOrdersButton.Name = "viewOrdersButton";
             this.viewOrdersButton.Size = new System.Drawing.Size(250, 56);
             this.viewOrdersButton.TabIndex = 2;
             this.viewOrdersButton.Text = "View Orders";
-            this.viewOrdersButton.UseVisualStyleBackColor = true;
+            this.viewOrdersButton.UseVisualStyleBackColor = false;
             this.viewOrdersButton.Click += new System.EventHandler(this.viewOrdersButton_Click);
             // 
             // viewCustomersButton
             // 
+            this.viewCustomersButton.BackColor = System.Drawing.Color.LightBlue;
             this.viewCustomersButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.viewCustomersButton.Location = new System.Drawing.Point(179, 241);
+            this.viewCustomersButton.Location = new System.Drawing.Point(179, 257);
             this.viewCustomersButton.Name = "viewCustomersButton";
             this.viewCustomersButton.Size = new System.Drawing.Size(250, 56);
             this.viewCustomersButton.TabIndex = 3;
             this.viewCustomersButton.Text = "View/Edit Customers";
-            this.viewCustomersButton.UseVisualStyleBackColor = true;
+            this.viewCustomersButton.UseVisualStyleBackColor = false;
             this.viewCustomersButton.Click += new System.EventHandler(this.viewCustomersButton_Click);
             // 
             // changeUserButton
             // 
+            this.changeUserButton.BackColor = System.Drawing.Color.LightBlue;
             this.changeUserButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.changeUserButton.Location = new System.Drawing.Point(179, 303);
+            this.changeUserButton.Location = new System.Drawing.Point(179, 319);
             this.changeUserButton.Name = "changeUserButton";
             this.changeUserButton.Size = new System.Drawing.Size(250, 56);
             this.changeUserButton.TabIndex = 4;
             this.changeUserButton.Text = "Change User";
-            this.changeUserButton.UseVisualStyleBackColor = true;
+            this.changeUserButton.UseVisualStyleBackColor = false;
             this.changeUserButton.Click += new System.EventHandler(this.changeUserButton_Click);
             // 
             // panel1
@@ -114,12 +119,14 @@ namespace PizzaProject
             // 
             // searchCustomers
             // 
+            this.searchCustomers.BackColor = System.Drawing.Color.LightBlue;
+            this.searchCustomers.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.searchCustomers.Location = new System.Drawing.Point(186, 53);
             this.searchCustomers.Name = "searchCustomers";
             this.searchCustomers.Size = new System.Drawing.Size(60, 22);
             this.searchCustomers.TabIndex = 3;
             this.searchCustomers.Text = "Search";
-            this.searchCustomers.UseVisualStyleBackColor = true;
+            this.searchCustomers.UseVisualStyleBackColor = false;
             this.searchCustomers.Click += new System.EventHandler(this.searchCustomers_Click);
             // 
             // customerLookup
@@ -154,7 +161,7 @@ namespace PizzaProject
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(334, 9);
+            this.label3.Location = new System.Drawing.Point(317, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(185, 37);
             this.label3.TabIndex = 6;
@@ -173,6 +180,7 @@ namespace PizzaProject
             this.Controls.Add(this.newCustomerButton);
             this.Controls.Add(this.newOrderButton);
             this.Name = "HomeScreen";
+            this.ShowIcon = false;
             this.Text = "Home Page";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

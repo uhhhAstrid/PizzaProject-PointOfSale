@@ -39,9 +39,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label1.Location = new System.Drawing.Point(67, 8);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(132, 20);
+            this.label1.Size = new System.Drawing.Size(136, 20);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Customer Found!";
+            this.label1.Text = "Search Complete!";
             // 
             // label2
             // 
@@ -73,6 +73,7 @@
             this.MinimizeBox = false;
             this.Name = "CustomerFoundConfirmation";
             this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Customer Found";
             this.ResumeLayout(false);

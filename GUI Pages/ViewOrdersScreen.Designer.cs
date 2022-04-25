@@ -61,22 +61,26 @@
             // 
             // nameSearch
             // 
+            this.nameSearch.BackColor = System.Drawing.Color.LightBlue;
+            this.nameSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.nameSearch.Location = new System.Drawing.Point(166, 80);
             this.nameSearch.Name = "nameSearch";
             this.nameSearch.Size = new System.Drawing.Size(75, 23);
             this.nameSearch.TabIndex = 9;
             this.nameSearch.Text = "Search";
-            this.nameSearch.UseVisualStyleBackColor = true;
+            this.nameSearch.UseVisualStyleBackColor = false;
             this.nameSearch.Click += new System.EventHandler(this.nameSearch_Click);
             // 
             // phoneSearch
             // 
+            this.phoneSearch.BackColor = System.Drawing.Color.LightBlue;
+            this.phoneSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.phoneSearch.Location = new System.Drawing.Point(166, 49);
             this.phoneSearch.Name = "phoneSearch";
             this.phoneSearch.Size = new System.Drawing.Size(75, 23);
             this.phoneSearch.TabIndex = 7;
             this.phoneSearch.Text = "Search";
-            this.phoneSearch.UseVisualStyleBackColor = true;
+            this.phoneSearch.UseVisualStyleBackColor = false;
             this.phoneSearch.Click += new System.EventHandler(this.phoneSearch_Click);
             // 
             // nameField
@@ -155,13 +159,14 @@
             // 
             // returnToHome
             // 
+            this.returnToHome.BackColor = System.Drawing.Color.LightBlue;
             this.returnToHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.returnToHome.Location = new System.Drawing.Point(652, 408);
             this.returnToHome.Name = "returnToHome";
             this.returnToHome.Size = new System.Drawing.Size(148, 42);
             this.returnToHome.TabIndex = 10;
             this.returnToHome.Text = "Return to Home Page";
-            this.returnToHome.UseVisualStyleBackColor = true;
+            this.returnToHome.UseVisualStyleBackColor = false;
             this.returnToHome.Click += new System.EventHandler(this.returnToHome_Click);
             // 
             // ViewOrdersScreen
@@ -174,6 +179,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "ViewOrdersScreen";
+            this.ShowIcon = false;
             this.Text = "View Order Record";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

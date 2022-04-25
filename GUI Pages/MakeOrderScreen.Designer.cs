@@ -65,24 +65,26 @@
             // 
             // addDrink
             // 
+            this.addDrink.BackColor = System.Drawing.Color.LightBlue;
             this.addDrink.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addDrink.Location = new System.Drawing.Point(33, 183);
             this.addDrink.Name = "addDrink";
             this.addDrink.Size = new System.Drawing.Size(170, 56);
             this.addDrink.TabIndex = 3;
             this.addDrink.Text = "Drink";
-            this.addDrink.UseVisualStyleBackColor = true;
+            this.addDrink.UseVisualStyleBackColor = false;
             this.addDrink.Click += new System.EventHandler(this.addDrink_Click);
             // 
             // addPizza
             // 
+            this.addPizza.BackColor = System.Drawing.Color.LightBlue;
             this.addPizza.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addPizza.Location = new System.Drawing.Point(33, 95);
             this.addPizza.Name = "addPizza";
             this.addPizza.Size = new System.Drawing.Size(170, 56);
             this.addPizza.TabIndex = 2;
             this.addPizza.Text = "Pizza";
-            this.addPizza.UseVisualStyleBackColor = true;
+            this.addPizza.UseVisualStyleBackColor = false;
             this.addPizza.Click += new System.EventHandler(this.addPizza_Click);
             // 
             // label2
@@ -117,13 +119,14 @@
             // 
             // cancelOrder
             // 
+            this.cancelOrder.BackColor = System.Drawing.Color.LightBlue;
             this.cancelOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancelOrder.Location = new System.Drawing.Point(13, 309);
             this.cancelOrder.Name = "cancelOrder";
             this.cancelOrder.Size = new System.Drawing.Size(114, 30);
             this.cancelOrder.TabIndex = 11;
             this.cancelOrder.Text = "Cancel Order";
-            this.cancelOrder.UseVisualStyleBackColor = true;
+            this.cancelOrder.UseVisualStyleBackColor = false;
             this.cancelOrder.Click += new System.EventHandler(this.cancelOrder_Click);
             // 
             // subtotalField
@@ -218,13 +221,14 @@
             // 
             // proceedToPayment
             // 
+            this.proceedToPayment.BackColor = System.Drawing.Color.LightBlue;
             this.proceedToPayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.proceedToPayment.Location = new System.Drawing.Point(259, 309);
             this.proceedToPayment.Name = "proceedToPayment";
             this.proceedToPayment.Size = new System.Drawing.Size(168, 30);
             this.proceedToPayment.TabIndex = 1;
             this.proceedToPayment.Text = "Proceed to Payment";
-            this.proceedToPayment.UseVisualStyleBackColor = true;
+            this.proceedToPayment.UseVisualStyleBackColor = false;
             this.proceedToPayment.Click += new System.EventHandler(this.proceedToPayment_Click);
             // 
             // orderHeader
@@ -249,13 +253,14 @@
             // 
             // returnToHome
             // 
+            this.returnToHome.BackColor = System.Drawing.Color.LightBlue;
             this.returnToHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.returnToHome.Location = new System.Drawing.Point(652, 443);
             this.returnToHome.Name = "returnToHome";
             this.returnToHome.Size = new System.Drawing.Size(148, 42);
             this.returnToHome.TabIndex = 3;
             this.returnToHome.Text = "Return to Home Page";
-            this.returnToHome.UseVisualStyleBackColor = true;
+            this.returnToHome.UseVisualStyleBackColor = false;
             this.returnToHome.Click += new System.EventHandler(this.returnToHome_Click);
             // 
             // orderInfo
@@ -279,6 +284,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "MakeOrderScreen";
+            this.ShowIcon = false;
             this.Text = "Create Order";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

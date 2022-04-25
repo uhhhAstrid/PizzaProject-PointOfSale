@@ -63,7 +63,7 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "or add customer to database.";
             // 
-            // CustNotFound
+            // CustomerNotFound
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -74,8 +74,9 @@
             this.Controls.Add(this.errorMessage);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "CustNotFound";
+            this.Name = "CustomerNotFound";
             this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Error";
             this.ResumeLayout(false);

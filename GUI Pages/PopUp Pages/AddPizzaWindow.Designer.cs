@@ -82,12 +82,14 @@
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.LightBlue;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.button1.Location = new System.Drawing.Point(253, 442);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(118, 28);
             this.button1.TabIndex = 4;
             this.button1.Text = "Add Pizza";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // AddPizzaWindow
             // 
@@ -100,6 +102,8 @@
             this.Controls.Add(this.checkedListBox1);
             this.Controls.Add(this.panel1);
             this.Name = "AddPizzaWindow";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Add Pizza";
             this.panel1.ResumeLayout(false);

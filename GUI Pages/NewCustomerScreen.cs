@@ -23,12 +23,6 @@ namespace PizzaProject.GUI_Pages
 
         }
 
-        private void NewCustomerScreen_Load(object sender, EventArgs e)
-        {
-
-
-        }
-
         //this code could really be cleaned up; but it works for now.
         private void submitButton_Click(object sender, EventArgs e)
         {

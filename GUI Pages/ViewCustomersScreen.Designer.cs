@@ -57,13 +57,14 @@
             // 
             // searchButton
             // 
-            this.searchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchButton.BackColor = System.Drawing.Color.LightBlue;
+            this.searchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.searchButton.Location = new System.Drawing.Point(167, 67);
             this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(70, 22);
+            this.searchButton.Size = new System.Drawing.Size(70, 25);
             this.searchButton.TabIndex = 3;
             this.searchButton.Text = "Search";
-            this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.UseVisualStyleBackColor = false;
             this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
             // phoneField
@@ -126,33 +127,38 @@
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.Color.LightBlue;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.button2.Location = new System.Drawing.Point(173, 268);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 40);
+            this.button2.Size = new System.Drawing.Size(75, 43);
             this.button2.TabIndex = 4;
             this.button2.Text = "Edit";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.LightBlue;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.button1.Location = new System.Drawing.Point(16, 268);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 40);
+            this.button1.Size = new System.Drawing.Size(75, 43);
             this.button1.TabIndex = 3;
             this.button1.Text = "Manager View";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // returnToHome
             // 
-            this.returnToHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.returnToHome.BackColor = System.Drawing.Color.LightBlue;
+            this.returnToHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.returnToHome.Location = new System.Drawing.Point(654, 408);
             this.returnToHome.Name = "returnToHome";
-            this.returnToHome.Size = new System.Drawing.Size(148, 42);
+            this.returnToHome.Size = new System.Drawing.Size(148, 45);
             this.returnToHome.TabIndex = 4;
             this.returnToHome.Text = "Return to Home Page";
-            this.returnToHome.UseVisualStyleBackColor = true;
+            this.returnToHome.UseVisualStyleBackColor = false;
             this.returnToHome.Click += new System.EventHandler(this.returnToHome_Click);
             // 
             // ViewCustomersScreen

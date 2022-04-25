@@ -89,35 +89,38 @@
             // 
             // checkPayment
             // 
+            this.checkPayment.BackColor = System.Drawing.Color.LightBlue;
             this.checkPayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkPayment.Location = new System.Drawing.Point(35, 225);
             this.checkPayment.Name = "checkPayment";
             this.checkPayment.Size = new System.Drawing.Size(181, 54);
             this.checkPayment.TabIndex = 5;
             this.checkPayment.Text = "Check";
-            this.checkPayment.UseVisualStyleBackColor = true;
+            this.checkPayment.UseVisualStyleBackColor = false;
             this.checkPayment.Click += new System.EventHandler(this.checkPayment_Click);
             // 
             // cashPayment
             // 
+            this.cashPayment.BackColor = System.Drawing.Color.LightBlue;
             this.cashPayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cashPayment.Location = new System.Drawing.Point(35, 156);
             this.cashPayment.Name = "cashPayment";
             this.cashPayment.Size = new System.Drawing.Size(181, 54);
             this.cashPayment.TabIndex = 4;
             this.cashPayment.Text = "Cash";
-            this.cashPayment.UseVisualStyleBackColor = true;
+            this.cashPayment.UseVisualStyleBackColor = false;
             this.cashPayment.Click += new System.EventHandler(this.cashPayment_Click);
             // 
             // creditPayment
             // 
+            this.creditPayment.BackColor = System.Drawing.Color.LightBlue;
             this.creditPayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.creditPayment.Location = new System.Drawing.Point(35, 87);
             this.creditPayment.Name = "creditPayment";
             this.creditPayment.Size = new System.Drawing.Size(181, 54);
             this.creditPayment.TabIndex = 3;
             this.creditPayment.Text = "Credit";
-            this.creditPayment.UseVisualStyleBackColor = true;
+            this.creditPayment.UseVisualStyleBackColor = false;
             this.creditPayment.Click += new System.EventHandler(this.creditPayment_Click);
             // 
             // label3
@@ -260,13 +263,14 @@
             // 
             // returnToHome
             // 
+            this.returnToHome.BackColor = System.Drawing.Color.LightBlue;
             this.returnToHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.returnToHome.Location = new System.Drawing.Point(653, 434);
             this.returnToHome.Name = "returnToHome";
             this.returnToHome.Size = new System.Drawing.Size(148, 42);
             this.returnToHome.TabIndex = 3;
             this.returnToHome.Text = "Return to Home Page";
-            this.returnToHome.UseVisualStyleBackColor = true;
+            this.returnToHome.UseVisualStyleBackColor = false;
             this.returnToHome.Click += new System.EventHandler(this.returnToHome_Click);
             // 
             // label11
@@ -283,6 +287,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(800, 473);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.returnToHome);

@@ -88,5 +88,7 @@ namespace PizzaProject.GUI_Pages
             var cancelOrderPopUp = new CancelOrder();
             cancelOrderPopUp.ShowDialog(this);
         }
+
+       
     }
 }

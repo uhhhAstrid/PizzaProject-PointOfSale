@@ -142,12 +142,14 @@
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.LightBlue;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.button1.Location = new System.Drawing.Point(268, 256);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 11;
             this.button1.Text = "Pay";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // CreditCardProcessingWindow

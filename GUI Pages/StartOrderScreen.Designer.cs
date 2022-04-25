@@ -45,6 +45,7 @@
             this.zipField = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.addressField = new System.Windows.Forms.RichTextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -55,7 +56,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.returnToHome = new System.Windows.Forms.Button();
-            this.addressField = new System.Windows.Forms.RichTextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -228,6 +228,14 @@
             this.panel1.TabIndex = 16;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // addressField
+            // 
+            this.addressField.Location = new System.Drawing.Point(144, 328);
+            this.addressField.Name = "addressField";
+            this.addressField.Size = new System.Drawing.Size(100, 62);
+            this.addressField.TabIndex = 19;
+            this.addressField.Text = "";
+            // 
             // label14
             // 
             this.label14.AutoSize = true;
@@ -272,35 +280,38 @@
             // 
             // cancelOrder
             // 
+            this.cancelOrder.BackColor = System.Drawing.Color.LightBlue;
             this.cancelOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancelOrder.Location = new System.Drawing.Point(93, 284);
             this.cancelOrder.Name = "cancelOrder";
             this.cancelOrder.Size = new System.Drawing.Size(124, 34);
             this.cancelOrder.TabIndex = 3;
             this.cancelOrder.Text = "Cancel Order";
-            this.cancelOrder.UseVisualStyleBackColor = true;
+            this.cancelOrder.UseVisualStyleBackColor = false;
             this.cancelOrder.Click += new System.EventHandler(this.cancelOrder_Click);
             // 
             // pickupOrder
             // 
+            this.pickupOrder.BackColor = System.Drawing.Color.LightBlue;
             this.pickupOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pickupOrder.Location = new System.Drawing.Point(49, 180);
             this.pickupOrder.Name = "pickupOrder";
             this.pickupOrder.Size = new System.Drawing.Size(205, 65);
             this.pickupOrder.TabIndex = 2;
             this.pickupOrder.Text = "Pick Up";
-            this.pickupOrder.UseVisualStyleBackColor = true;
+            this.pickupOrder.UseVisualStyleBackColor = false;
             this.pickupOrder.Click += new System.EventHandler(this.pickupOrder_Click);
             // 
             // deliveryOrder
             // 
+            this.deliveryOrder.BackColor = System.Drawing.Color.LightBlue;
             this.deliveryOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.deliveryOrder.Location = new System.Drawing.Point(49, 87);
             this.deliveryOrder.Name = "deliveryOrder";
             this.deliveryOrder.Size = new System.Drawing.Size(205, 65);
             this.deliveryOrder.TabIndex = 1;
             this.deliveryOrder.Text = "Delivery";
-            this.deliveryOrder.UseVisualStyleBackColor = true;
+            this.deliveryOrder.UseVisualStyleBackColor = false;
             this.deliveryOrder.Click += new System.EventHandler(this.deliveryOrder_Click);
             // 
             // label11
@@ -325,22 +336,15 @@
             // 
             // returnToHome
             // 
+            this.returnToHome.BackColor = System.Drawing.Color.LightBlue;
             this.returnToHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.returnToHome.Location = new System.Drawing.Point(651, 408);
             this.returnToHome.Name = "returnToHome";
             this.returnToHome.Size = new System.Drawing.Size(148, 42);
             this.returnToHome.TabIndex = 19;
             this.returnToHome.Text = "Return to Home Page";
-            this.returnToHome.UseVisualStyleBackColor = true;
+            this.returnToHome.UseVisualStyleBackColor = false;
             this.returnToHome.Click += new System.EventHandler(this.returnToHome_Click);
-            // 
-            // addressField
-            // 
-            this.addressField.Location = new System.Drawing.Point(144, 328);
-            this.addressField.Name = "addressField";
-            this.addressField.Size = new System.Drawing.Size(100, 62);
-            this.addressField.TabIndex = 19;
-            this.addressField.Text = "";
             // 
             // StartOrderScreen
             // 

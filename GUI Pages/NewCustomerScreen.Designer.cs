@@ -120,24 +120,26 @@
             // 
             // cancelButton
             // 
+            this.cancelButton.BackColor = System.Drawing.Color.LightBlue;
             this.cancelButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancelButton.Location = new System.Drawing.Point(9, 400);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(79, 27);
             this.cancelButton.TabIndex = 28;
             this.cancelButton.Text = "Cancel";
-            this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.UseVisualStyleBackColor = false;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
             // submitButton
             // 
+            this.submitButton.BackColor = System.Drawing.Color.LightBlue;
             this.submitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.submitButton.Location = new System.Drawing.Point(347, 397);
             this.submitButton.Name = "submitButton";
             this.submitButton.Size = new System.Drawing.Size(81, 30);
             this.submitButton.TabIndex = 27;
             this.submitButton.Text = "Submit";
-            this.submitButton.UseVisualStyleBackColor = true;
+            this.submitButton.UseVisualStyleBackColor = false;
             this.submitButton.Click += new System.EventHandler(this.submitButton_Click);
             // 
             // phoneField
@@ -370,26 +372,27 @@
             // 
             // returnToHome
             // 
+            this.returnToHome.BackColor = System.Drawing.Color.LightBlue;
             this.returnToHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.returnToHome.Location = new System.Drawing.Point(651, 436);
             this.returnToHome.Name = "returnToHome";
             this.returnToHome.Size = new System.Drawing.Size(148, 42);
             this.returnToHome.TabIndex = 3;
             this.returnToHome.Text = "Return to Home Page";
-            this.returnToHome.UseVisualStyleBackColor = true;
+            this.returnToHome.UseVisualStyleBackColor = false;
             this.returnToHome.Click += new System.EventHandler(this.returnToHome_Click);
             // 
             // NewCustomerScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(800, 480);
             this.Controls.Add(this.returnToHome);
             this.Controls.Add(this.pageHeader);
             this.Controls.Add(this.panel1);
             this.Name = "NewCustomerScreen";
             this.Text = "New Customer";
-            this.Load += new System.EventHandler(this.NewCustomerScreen_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

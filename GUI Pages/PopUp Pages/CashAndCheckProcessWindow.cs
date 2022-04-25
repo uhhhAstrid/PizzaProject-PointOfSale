@@ -10,11 +10,19 @@ using System.Windows.Forms;
 
 namespace PizzaProject.GUI_Pages.PopUp_Pages
 {
-    public partial class CashAndCreditProcessWindow : Form
+    public partial class CashAndCheckProcessWindow : Form
     {
-        public CashAndCreditProcessWindow()
+        public CashAndCheckProcessWindow()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var receiptScreen = new ReceiptScreen();
+            receiptScreen.Show();
+            Owner.Close();
+            this.Close();
         }
     }
 }

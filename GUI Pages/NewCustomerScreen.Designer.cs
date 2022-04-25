@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.addressField = new System.Windows.Forms.RichTextBox();
             this.cancelButton = new System.Windows.Forms.Button();
             this.submitButton = new System.Windows.Forms.Button();
             this.phoneField = new System.Windows.Forms.TextBox();
@@ -64,6 +66,8 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.addressField);
             this.panel1.Controls.Add(this.cancelButton);
             this.panel1.Controls.Add(this.submitButton);
             this.panel1.Controls.Add(this.phoneField);
@@ -91,10 +95,28 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(243, 35);
+            this.panel1.Location = new System.Drawing.Point(198, 35);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(308, 433);
+            this.panel1.Size = new System.Drawing.Size(447, 433);
             this.panel1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(271, 146);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(147, 16);
+            this.label1.TabIndex = 30;
+            this.label1.Text = "Additional address info:";
+            // 
+            // addressField
+            // 
+            this.addressField.Location = new System.Drawing.Point(274, 166);
+            this.addressField.Name = "addressField";
+            this.addressField.Size = new System.Drawing.Size(154, 78);
+            this.addressField.TabIndex = 29;
+            this.addressField.Text = "";
             // 
             // cancelButton
             // 
@@ -110,7 +132,7 @@
             // submitButton
             // 
             this.submitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.submitButton.Location = new System.Drawing.Point(224, 400);
+            this.submitButton.Location = new System.Drawing.Point(347, 397);
             this.submitButton.Name = "submitButton";
             this.submitButton.Size = new System.Drawing.Size(81, 30);
             this.submitButton.TabIndex = 27;
@@ -120,42 +142,42 @@
             // 
             // phoneField
             // 
-            this.phoneField.Location = new System.Drawing.Point(113, 63);
+            this.phoneField.Location = new System.Drawing.Point(159, 65);
             this.phoneField.Name = "phoneField";
             this.phoneField.Size = new System.Drawing.Size(152, 20);
             this.phoneField.TabIndex = 26;
             // 
             // emailField
             // 
-            this.emailField.Location = new System.Drawing.Point(113, 89);
+            this.emailField.Location = new System.Drawing.Point(159, 91);
             this.emailField.Name = "emailField";
             this.emailField.Size = new System.Drawing.Size(152, 20);
             this.emailField.TabIndex = 25;
             // 
             // nameOnCardField
             // 
-            this.nameOnCardField.Location = new System.Drawing.Point(113, 282);
+            this.nameOnCardField.Location = new System.Drawing.Point(159, 291);
             this.nameOnCardField.Name = "nameOnCardField";
             this.nameOnCardField.Size = new System.Drawing.Size(152, 20);
             this.nameOnCardField.TabIndex = 24;
             // 
             // cardNumberField
             // 
-            this.cardNumberField.Location = new System.Drawing.Point(113, 308);
+            this.cardNumberField.Location = new System.Drawing.Point(159, 317);
             this.cardNumberField.Name = "cardNumberField";
             this.cardNumberField.Size = new System.Drawing.Size(152, 20);
             this.cardNumberField.TabIndex = 23;
             // 
             // cardTypeField
             // 
-            this.cardTypeField.Location = new System.Drawing.Point(113, 334);
+            this.cardTypeField.Location = new System.Drawing.Point(159, 343);
             this.cardTypeField.Name = "cardTypeField";
             this.cardTypeField.Size = new System.Drawing.Size(152, 20);
             this.cardTypeField.TabIndex = 22;
             // 
             // cvvField
             // 
-            this.cvvField.Location = new System.Drawing.Point(113, 363);
+            this.cvvField.Location = new System.Drawing.Point(159, 372);
             this.cvvField.Name = "cvvField";
             this.cvvField.Size = new System.Drawing.Size(152, 20);
             this.cvvField.TabIndex = 21;
@@ -190,7 +212,7 @@
             // 
             // nameField
             // 
-            this.nameField.Location = new System.Drawing.Point(113, 37);
+            this.nameField.Location = new System.Drawing.Point(159, 39);
             this.nameField.Name = "nameField";
             this.nameField.Size = new System.Drawing.Size(152, 20);
             this.nameField.TabIndex = 16;
@@ -240,7 +262,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(48, 122);
+            this.label11.Location = new System.Drawing.Point(122, 122);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(226, 20);
             this.label11.TabIndex = 11;
@@ -250,7 +272,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(56, 365);
+            this.label10.Location = new System.Drawing.Point(102, 374);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(37, 16);
             this.label10.TabIndex = 10;
@@ -260,7 +282,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(28, 336);
+            this.label9.Location = new System.Drawing.Point(74, 345);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(74, 16);
             this.label9.TabIndex = 9;
@@ -270,7 +292,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(18, 310);
+            this.label8.Location = new System.Drawing.Point(64, 319);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(90, 16);
             this.label8.TabIndex = 8;
@@ -280,7 +302,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(9, 284);
+            this.label7.Location = new System.Drawing.Point(55, 293);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(97, 16);
             this.label7.TabIndex = 7;
@@ -290,7 +312,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(33, 259);
+            this.label6.Location = new System.Drawing.Point(122, 268);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(247, 20);
             this.label6.TabIndex = 6;
@@ -300,7 +322,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(6, 65);
+            this.label5.Location = new System.Drawing.Point(52, 67);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(100, 16);
             this.label5.TabIndex = 5;
@@ -310,7 +332,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(52, 91);
+            this.label4.Location = new System.Drawing.Point(98, 93);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(44, 16);
             this.label4.TabIndex = 4;
@@ -320,7 +342,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(49, 40);
+            this.label3.Location = new System.Drawing.Point(95, 42);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(47, 16);
             this.label3.TabIndex = 3;
@@ -330,7 +352,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(76, 9);
+            this.label2.Location = new System.Drawing.Point(122, 11);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(163, 20);
             this.label2.TabIndex = 2;
@@ -340,7 +362,7 @@
             // 
             this.pageHeader.AutoSize = true;
             this.pageHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pageHeader.Location = new System.Drawing.Point(301, 7);
+            this.pageHeader.Location = new System.Drawing.Point(320, 9);
             this.pageHeader.Name = "pageHeader";
             this.pageHeader.Size = new System.Drawing.Size(196, 25);
             this.pageHeader.TabIndex = 1;
@@ -349,7 +371,7 @@
             // returnToHome
             // 
             this.returnToHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.returnToHome.Location = new System.Drawing.Point(640, 405);
+            this.returnToHome.Location = new System.Drawing.Point(651, 436);
             this.returnToHome.Name = "returnToHome";
             this.returnToHome.Size = new System.Drawing.Size(148, 42);
             this.returnToHome.TabIndex = 3;
@@ -407,5 +429,7 @@
         private System.Windows.Forms.TextBox stateField;
         private System.Windows.Forms.TextBox nameField;
         private System.Windows.Forms.Button returnToHome;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.RichTextBox addressField;
     }
 }

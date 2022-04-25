@@ -10,19 +10,23 @@ using System.Windows.Forms;
 
 namespace PizzaProject.GUI_Pages.PopUp_Pages
 {
-    public partial class FinilizeOrder : Form
+    public partial class FinalizeOrder : Form
     {
-        public FinilizeOrder()
+        public FinalizeOrder()
         {
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //todo: finalize order popup logic
             //take relevant order data and pass to payment screen, load payment screen 
-           // var paymentScreen = new ProcessPaymentScreen();
-           // paymentScreen.Show();
-            // this.Hide();
+            var paymentScreen = new ProcessPaymentScreen();
+            paymentScreen.Show();
+            Owner.Hide();
+            this.Hide();
+            
         }
+
     }
 }

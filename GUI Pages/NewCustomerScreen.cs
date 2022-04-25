@@ -29,32 +29,71 @@ namespace PizzaProject.GUI_Pages
 
         }
 
+        //this code could really be cleaned up; but it works for now.
         private void submitButton_Click(object sender, EventArgs e)
         {
-            //temporary popup for incomplete customer information
-            var incompleteCustomerInfoPopUp = new CustomerInfoIncomplete();
-            incompleteCustomerInfoPopUp.ShowDialog();
-            //temporary popup customer added!
-            var customerAddedPopUp = new CustomerAddedConfirmation();
-            customerAddedPopUp.ShowDialog();
-            //if (first set of fields filled out): add customer to database
-                //&if (second set of fields filled out): create new address, add to customer, add to database
-                //&if (third set of fields, but not second, filled out): create new payment, add to customer, add to database
-                //&if (all three sets of fields filled out): create new payment, create new address, add both to customer, add to database
-            //if (any set of fields has only some fields filled out): create pop-up message; error: must fill in all 'payment information' or 'address' (or both) fields
-            //if (first set of fields is missing any fields): create pop-up message; error: must fill in all 'customer information' fields
+
+            //based on the fields completed, create a new customer using the data, then tell the user a customer was created
+            //and give the option to start a new order with the customer,
+            //finally, add the customer to the database.
+
+            bool customerInfo = false, addressInfo = false, paymentInfo = false;
+
+            if(nameField.Text.Length >0 && phoneField.Text.Length > 0 && emailField.Text.Length > 0)
+            {
+                customerInfo = true;
+            }
+            if (stateField.Text.Length >0 && cityField.Text.Length > 0 && zipField.Text.Length > 0 && streetField.Text.Length>0 && addressField.Text.Length > 0)
+            {
+                addressInfo = true;
+            }
+            if (cardTypeField.Text.Length > 0 && nameOnCardField.Text.Length > 0 && cardNumberField.Text.Length > 0 && cvvField.Text.Length > 0)
+            {
+                paymentInfo = true;
+            }
+            
+            //Checks each condition from greatest amount of data included to least data included; 
+            //If no fields have enough data to create a customer, an error pop up is shown
+            if (customerInfo && addressInfo && paymentInfo)
+            {
+                Customer c = new Customer(nameField.Text, phoneField.Text, emailField.Text, cardTypeField.Text, nameOnCardField.Text, cardNumberField.Text, Int32.Parse(cvvField.Text), stateField.Text, cityField.Text, zipField.Text, streetField.Text, addressField.Text);
+                var customerAddedPopUp = new CustomerAddedConfirmation(c);
+                customerAddedPopUp.ShowDialog(this);
+            }
+            else if (customerInfo && addressInfo)
+            {
+                Customer c = new Customer(nameField.Text, phoneField.Text, emailField.Text, stateField.Text, cityField.Text, zipField.Text, streetField.Text, addressField.Text);
+                var customerAddedPopUp = new CustomerAddedConfirmation(c);
+                customerAddedPopUp.ShowDialog(this);
+            }
+            else if(customerInfo && paymentInfo)
+            {
+                Customer c = new Customer(nameField.Text, phoneField.Text, emailField.Text, cardTypeField.Text, nameOnCardField.Text, cardNumberField.Text, Int32.Parse(cvvField.Text));
+                var customerAddedPopUp = new CustomerAddedConfirmation(c);
+                customerAddedPopUp.ShowDialog(this);
+            }
+            else if (customerInfo)
+            {
+                Customer c = new Customer(nameField.Text, phoneField.Text, emailField.Text);
+                var customerAddedPopUp = new CustomerAddedConfirmation(c);
+                customerAddedPopUp.ShowDialog(this);
+            }
+            else
+            {
+                var incompleteCustomerInfoPopUp = new CustomerInfoIncomplete();
+                incompleteCustomerInfoPopUp.ShowDialog(this);
+            }
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
-            //pop up menu: This will cancel creating the current customer and return you to the Home Page. continue? y/n
-                //if (yes): homescreen.show, this.hide, popup.close
-                //if (no): popup.hide
+            var cancelAddCustomerPopUp = new CancelAddCustomer();
+            cancelAddCustomerPopUp.ShowDialog(this);
         }
 
         private void returnToHome_Click(object sender, EventArgs e)
         {
-            //depending on screen, may need to add logic for pop-up menu (this is copy and pasted)
+            //sends user to the home screen
             var homeScreen = new HomeScreen();
             homeScreen.Show();
             this.Hide();

@@ -47,7 +47,7 @@
             this.orderHeader = new System.Windows.Forms.Label();
             this.pageHeader = new System.Windows.Forms.Label();
             this.returnToHome = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
+            this.orderInfo = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -258,22 +258,22 @@
             this.returnToHome.UseVisualStyleBackColor = true;
             this.returnToHome.Click += new System.EventHandler(this.returnToHome_Click);
             // 
-            // label8
+            // orderInfo
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(142, 42);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(547, 29);
-            this.label8.TabIndex = 4;
-            this.label8.Text = "[orderType] Order #[orderID] for [customerName] ";
+            this.orderInfo.AutoSize = true;
+            this.orderInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.orderInfo.Location = new System.Drawing.Point(142, 42);
+            this.orderInfo.Name = "orderInfo";
+            this.orderInfo.Size = new System.Drawing.Size(547, 29);
+            this.orderInfo.TabIndex = 4;
+            this.orderInfo.Text = "[orderType] Order #[orderID] for [customerName] ";
             // 
             // MakeOrderScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 486);
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.orderInfo);
             this.Controls.Add(this.returnToHome);
             this.Controls.Add(this.pageHeader);
             this.Controls.Add(this.panel2);
@@ -310,6 +310,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button proceedToPayment;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label orderInfo;
     }
 }

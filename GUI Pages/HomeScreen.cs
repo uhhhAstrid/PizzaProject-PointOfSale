@@ -57,14 +57,20 @@ namespace PizzaProject
         //Search Customer Database for Customers matching the phone number in the search field
         private void searchCustomers_Click(object sender, EventArgs e)
         {
-            //temporary button test: Error popup
-            var customerNotFoundPopUp = new CustomerNotFound();
-            customerNotFoundPopUp.ShowDialog();
-            //the content of "customerLookup" can be pulled and then searched through JSONhandler
-            //string s = customerLookup.data
-            //Customer c = JSONHandler.searchCustomers(s);
-            //if(customer found) : 'customer found!' > create pop-up menu, 'start order with customer?'
-            //if(customer not found) : 'no customers found!' > create pop-up menu, 'add new customer?'
+            //the content of "customerLookup" is pulled and then the customer list is searched for a matching customer
+            string s = customerLookup.Text;
+            JSONHandler j = new JSONHandler();
+            Customer c = j.retrieveCustomer(s);
+            if(c != null)
+            {
+                var customerFoundHome = new CustomerFoundHome(c);
+                customerFoundHome.Show(this);
+            }
+            else
+            {
+                var customerNotFoundPopUp = new CustomerNotFound();
+                customerNotFoundPopUp.ShowDialog();
+            }
         }
 
         private void viewCustomersButton_Click(object sender, EventArgs e)

@@ -20,7 +20,7 @@ namespace PizzaProject.GUI_Pages
 
         private void returnToHome_Click(object sender, EventArgs e)
         {
-            //depending on screen, may need to add logic for pop-up menu (this is copy and pasted)
+            //returns user to home
             var homeScreen = new HomeScreen();
             homeScreen.Show();
             this.Hide();

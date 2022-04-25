@@ -13,15 +13,22 @@ namespace PizzaProject.GUI_Pages
 {
     public partial class StartOrderScreen : Form
     {
+        //fields
+        Customer customer;
+        bool delivery;
+
+        //constructors
         public StartOrderScreen()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        public StartOrderScreen(Customer c)
         {
-
+            InitializeComponent();
+            customer = c;
         }
+        //methods
 
         private void StartOrderScreen_Load(object sender, EventArgs e)
         {
@@ -35,43 +42,86 @@ namespace PizzaProject.GUI_Pages
 
         private void returnToHome_Click(object sender, EventArgs e)
         {
-            //depending on screen, may need to add logic for pop-up menu (this is copy and pasted)
-            var homeScreen = new HomeScreen();
-            homeScreen.Show();
-            this.Hide();
+            //confirms order cancellation
+            var cancelOrderPopup = new CancelOrder();
+            cancelOrderPopup.ShowDialog(this);
         }
 
         private void cancelOrder_Click(object sender, EventArgs e)
         {
-            //pop up menu, y/n
-            //y: home
-            //n: stay
+            var cancelOrderPopup = new CancelOrder();
+            cancelOrderPopup.ShowDialog(this);
         }
 
+        //this is really convoluted 3am code (do not read; I will fix before release -astrid)
+        //todo: fix before release
         private void deliveryOrder_Click(object sender, EventArgs e)
         {
-            var makeOrder = new MakeOrderScreen();
-            makeOrder.Show();
-            this.Hide();
-            //temporary popup for in address error
-            var invalidAddressPopUp = new DeliverAddressIncomplete();
-            invalidAddressPopUp.ShowDialog();
-            // temporary popup for customer information error
-            var invalidCustomerInfoPopUp = new CustomerInfoIncomplete();
-            invalidCustomerInfoPopUp.ShowDialog();
-            //todo: add logic to carry over that this order is type 'delivery', add customer phone # to the order.
-            //also: add logic to prevent proceeding unless the 'delivery' fields are filled out
+
+            //first, check fields for information and create a customer if it is all present
+            bool customerInfo = false, addressInfo = false;
+
+            if (customer != null || (nameField.Text.Length > 0 && phoneField.Text.Length > 0 && emailField.Text.Length > 0))
+            {
+                customerInfo = true;
+            }
+            if ((customer != null && customer.Address.Street != null ) || (stateField.Text.Length > 0 && cityField.Text.Length > 0 && zipField.Text.Length > 0 && streetField.Text.Length > 0 && addressField.Text.Length > 0))
+            {
+                addressInfo = true;
+            }
+
+            //only creates new customer if one does not exist
+            if (customerInfo && addressInfo && customer == null)
+            {
+                customer = new Customer(nameField.Text, phoneField.Text, emailField.Text, stateField.Text, cityField.Text, zipField.Text, streetField.Text, addressField.Text);
+            }
+            //since delivery cannot happen without address info; does not create a customer if address info is invalid.
+
+
+            //checks customer for info, throws error if it is not available.
+                if (customer != null && (addressInfo = false || customer.Address == null))
+                {
+                    var invalidAddressPopUp = new DeliverAddressIncomplete();
+                    invalidAddressPopUp.ShowDialog();
+                }
+                else if (customerInfo = false || customer == null)
+                {
+                    if (addressInfo = false)
+                    {
+                    var invalidAddressPopUp = new DeliverAddressIncomplete();
+                    invalidAddressPopUp.ShowDialog();
+                    }
+                    else
+                    {
+                    var invalidCustomerInfoPopUp = new CustomerInfoIncomplete();
+                    invalidCustomerInfoPopUp.ShowDialog();
+                    }
+                }
+            
+            if (customer != null && customer.PhoneNumber != null && customer.Address != null)
+            {
+                delivery = true;
+                var makeOrder = new MakeOrderScreen(delivery, customer);
+                makeOrder.Show();
+                this.Hide();
+            }
         }
 
         private void pickupOrder_Click(object sender, EventArgs e)
         {
-            var makeOrder = new MakeOrderScreen();
-            makeOrder.Show();
-            this.Hide();
-            // temporary popup for customer information error
-            var invalidCustomerInfoPopUp = new CustomerInfoIncomplete();
-            invalidCustomerInfoPopUp.ShowDialog();
-            //todo: add logic to carry over that this order is type 'pickup', add customer phone # to the order.
+            if (customer == null)
+            {
+                var invalidCustomerInfoPopUp = new CustomerInfoIncomplete();
+                invalidCustomerInfoPopUp.ShowDialog();
+            }
+            else
+            {
+                var makeOrder = new MakeOrderScreen(customer);
+                makeOrder.Show();
+                this.Hide();
+            }
         }
+
+       
     }
 }

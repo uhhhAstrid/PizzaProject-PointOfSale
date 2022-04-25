@@ -393,6 +393,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "NewCustomerScreen";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "New Customer";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

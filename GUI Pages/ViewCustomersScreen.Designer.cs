@@ -172,6 +172,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "ViewCustomersScreen";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "View or Edit Customer Records";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

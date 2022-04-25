@@ -37,17 +37,17 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label1.Location = new System.Drawing.Point(56, 9);
+            this.label1.Location = new System.Drawing.Point(66, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(128, 20);
+            this.label1.Size = new System.Drawing.Size(127, 20);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Customer Found";
+            this.label1.Text = "Customer found!";
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.LightBlue;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.button1.Location = new System.Drawing.Point(12, 50);
+            this.button1.Location = new System.Drawing.Point(12, 57);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(57, 28);
             this.button1.TabIndex = 1;
@@ -59,9 +59,9 @@
             // 
             this.button2.BackColor = System.Drawing.Color.LightBlue;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.button2.Location = new System.Drawing.Point(90, 50);
+            this.button2.Location = new System.Drawing.Point(84, 57);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(141, 28);
+            this.button2.Size = new System.Drawing.Size(171, 28);
             this.button2.TabIndex = 2;
             this.button2.Text = "Start order with customer";
             this.button2.UseVisualStyleBackColor = false;
@@ -70,7 +70,7 @@
             // CustomerFoundHome
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(243, 86);
+            this.ClientSize = new System.Drawing.Size(267, 97);
             this.ControlBox = false;
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -82,6 +82,7 @@
             this.Name = "CustomerFoundHome";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "CustomerFoundHome";
             this.ResumeLayout(false);
             this.PerformLayout();

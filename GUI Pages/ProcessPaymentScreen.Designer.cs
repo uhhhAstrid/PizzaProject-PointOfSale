@@ -296,6 +296,7 @@
             this.Controls.Add(this.label1);
             this.Name = "ProcessPaymentScreen";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Finalize Order";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

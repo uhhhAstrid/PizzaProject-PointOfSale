@@ -181,6 +181,7 @@ namespace PizzaProject
             this.Controls.Add(this.newOrderButton);
             this.Name = "HomeScreen";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home Page";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

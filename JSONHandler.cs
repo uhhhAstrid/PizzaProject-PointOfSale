@@ -190,10 +190,18 @@ namespace PizzaProject
                 for (int i = 0; i < users.Count; i++)
                 {
                     if (users[i].UserID == emp.UserID)
+                    {
                         throw new Exception("User already exists.");
+                    }
                 }
                 if (emp.UserName != null && emp.Password != null)
+                {
                     users.Add(emp);
+                }
+                else
+                {
+                    throw new Exception("User must have a username and password.");
+                }
             }
         }
         public void serializeUserList()

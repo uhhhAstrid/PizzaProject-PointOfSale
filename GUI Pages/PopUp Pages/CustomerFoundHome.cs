@@ -31,7 +31,7 @@ namespace PizzaProject.GUI_Pages.PopUp_Pages
             //todo: start order with customer (from home page search)
             var startNewOrder = new StartOrderScreen(customer);
             startNewOrder.Show();
-            Owner.Close();
+            Owner.Hide();
             this.Close();
         }
 

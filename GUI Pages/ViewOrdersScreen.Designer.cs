@@ -180,6 +180,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "ViewOrdersScreen";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "View Order Record";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

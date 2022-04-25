@@ -206,6 +206,7 @@
             this.Controls.Add(this.label1);
             this.Name = "ReceiptScreen";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Order Finished";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

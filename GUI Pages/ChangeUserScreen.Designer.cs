@@ -147,6 +147,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "ChangeUserScreen";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Change User";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

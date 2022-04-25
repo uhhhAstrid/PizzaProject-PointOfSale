@@ -1,10 +1,8 @@
 using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
-using System.Data;
 using System.Diagnostics;
 using System.IO;
-using System.Text;
 using System.Threading;
 using System.Text.RegularExpressions;
 
@@ -309,6 +307,10 @@ namespace PizzaProject
                 }
             }
             return orders;
+        }
+        public List<Order> retrieveOrdersByPhoneNumber(Customer c)
+        {
+            return retrieveOrdersByPhoneNumber(c.PhoneNumber);
         }
         public List<User> retrieveUsersByName(string name)
         {

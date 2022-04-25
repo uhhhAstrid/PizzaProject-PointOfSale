@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic; //Enables Lists
 using System.Windows.Forms; //Built-in C# library for handling GUI
-using Newtonsoft.Json; //enables JSON support
-using System.Diagnostics; //enables Debug.Write/Debug.Writeline, and other things
 
 namespace PizzaProject
 {

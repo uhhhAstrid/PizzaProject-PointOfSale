@@ -84,9 +84,9 @@ namespace PizzaProject.GUI_Pages
                     var invalidAddressPopUp = new DeliverAddressIncomplete();
                     invalidAddressPopUp.ShowDialog();
                 }
-                else if (customerInfo = false || customer == null)
+                else if (customerInfo == false || customer == null)
                 {
-                    if (addressInfo = false)
+                    if (addressInfo == false)
                     {
                     var invalidAddressPopUp = new DeliverAddressIncomplete();
                     invalidAddressPopUp.ShowDialog();

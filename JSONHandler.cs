@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Text;
 using System.Threading;
+using System.Text.RegularExpressions;
 
 namespace PizzaProject
 {
@@ -31,9 +32,9 @@ namespace PizzaProject
             // Read in the current list of orders, customers and leave them in memory
             this.checkJSON();
           
-            customers = this.deserializeCustomerList();
-            orders = this.deserializeOrderList();
-            users = this.deserializeUserList();
+            customers = this.deserializeCustomerList() ?? new List<Customer>(0);
+            orders = this.deserializeOrderList() ?? new List<Order>(0);
+            users = this.deserializeUserList() ?? new List<User>(0); ;
 
 
             Customer.setNextCustomerID(customers.Count);
@@ -173,7 +174,8 @@ namespace PizzaProject
             try
             {
                 String readOrders = File.ReadAllText(ordersPath);
-                return JsonConvert.DeserializeObject<List<Order>>(readOrders, serializerWithTypesSetting);
+                var existingOrders = JsonConvert.DeserializeObject<List<Order>>(readOrders, serializerWithTypesSetting);
+                return existingOrders ?? new List<Order>(0);
             }
             catch (IOException ex)
             {
@@ -231,10 +233,9 @@ namespace PizzaProject
                 return new List<User>(0);
             }
         }
-        public void phoneNumberValidator(String phone)
+        public bool phoneNumberValidator(string phone)
         {
-            //var re = "/ ^([+] ? 1[\s] ?) ? ((?:[(](?:[2 - 9]1[02 - 9] |[2 - 9][02 - 8][0 - 9])[)][\s]?)| (?: (?:[2 - 9]1[02 - 9] |[2 - 9][02 - 8][0 - 9])[\s.-]?)){ 1} ([2 - 9]1[02 - 9] |[2 - 9][02 - 9]1 |[2 - 9][02 - 9]{ 2}[\s.-]?){ 1} ([0 - 9]{ 4}){ 1}$/";
-            //return re.test(str);
+            return Regex.IsMatch("\\d{10,10}",phone);
         }
 
     }

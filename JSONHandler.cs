@@ -296,7 +296,7 @@ namespace PizzaProject
         }
         public List<Order> retrieveOrdersByPhoneNumber(string phone)
         {
-            if(phone == null && !phoneNumberValidator(phone))
+            if(phone == null || !phoneNumberValidator(phone))
             {
                 throw new Exception("Phone Number is invalid");
             }

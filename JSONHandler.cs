@@ -155,7 +155,7 @@ namespace PizzaProject
             {
                 String readCustomers = File.ReadAllText(customersPath);
                 List<Customer> existingCustomers = JsonConvert.DeserializeObject<List<Customer>>(readCustomers, serializerWithTypesSetting);
-                return existingCustomers ?? new List<Customer>(0);
+                return (existingCustomers == null) ? new List<Customer>(0) : existingCustomers;
             }
             catch (IOException ex)
             {
@@ -283,9 +283,9 @@ namespace PizzaProject
         {
             try
             {
-                String existingUsers = File.ReadAllText(usersPath);
-                var processed = JsonConvert.DeserializeObject<List<User>>(existingUsers, serializerWithTypesSetting);
-                return processed ?? new List<User>(0);
+                String readUsers = File.ReadAllText(usersPath);
+                List<User> existingUsers = JsonConvert.DeserializeObject<List<User>>(readUsers, serializerWithTypesSetting);
+                return existingUsers == null ? new List<User>(0) : existingUsers;
             }
             catch (IOException ex)
             {

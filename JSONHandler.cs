@@ -9,8 +9,6 @@ using System.Threading;
 
 namespace PizzaProject
 {
-    //Not sure if this class is necessary or not, but we'll find out soon :)
-    // Yes, yes it was.
     /* TODO: Figure out why reading and writing cause nulls to happen.
      */
     public class JSONHandler
@@ -26,10 +24,12 @@ namespace PizzaProject
         List<Order> orders;
         List<User> users;
 
+            //constructor
         public JSONHandler(){
             // On Startup, check JSON if exist
             // Read in the current list of orders, customers and leave them in memory
             this.checkJSON();
+          
             customers = this.readAllCustomers();
             orders = this.readAllOrders();
             users = this.readAllUsers();
@@ -100,6 +100,20 @@ namespace PizzaProject
                 return new List<Customer>(0);
             }
         }
+
+        //Searches customer list for specific customer
+        public Customer retrieveCustomer(string phone)
+        {
+            foreach (Customer c in customers)
+            {
+                if (c.PhoneNumber == phone)
+                {
+                    return c;
+                }
+            }
+            return null;
+        }
+
         // ORDER Section
         public void addOrder(Order order)
         {

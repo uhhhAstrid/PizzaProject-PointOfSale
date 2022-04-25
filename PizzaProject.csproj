@@ -76,17 +76,23 @@
     <Compile Include="GUI Pages\PopUp Pages\AddPizzaWindow.Designer.cs">
       <DependentUpon>AddPizzaWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI Pages\PopUp Pages\CancelAddCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI Pages\PopUp Pages\CancelAddCustomer.Designer.cs">
+      <DependentUpon>CancelAddCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI Pages\PopUp Pages\CancelOrder.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI Pages\PopUp Pages\CancelOrder.Designer.cs">
       <DependentUpon>CancelOrder.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI Pages\PopUp Pages\CashAndCreditProcessWindow.cs">
+    <Compile Include="GUI Pages\PopUp Pages\CashAndCheckProcessWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI Pages\PopUp Pages\CashAndCreditProcessWindow.Designer.cs">
-      <DependentUpon>CashAndCreditProcessWindow.cs</DependentUpon>
+    <Compile Include="GUI Pages\PopUp Pages\CashAndCheckProcessWindow.Designer.cs">
+      <DependentUpon>CashAndCheckProcessWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI Pages\PopUp Pages\ChangeUserInvalidLogin.cs">
       <SubType>Form</SubType>
@@ -142,11 +148,11 @@
     <Compile Include="GUI Pages\PopUp Pages\DeliverAddressIncomplete.Designer.cs">
       <DependentUpon>DeliverAddressIncomplete.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI Pages\PopUp Pages\FinilizeOrder.cs">
+    <Compile Include="GUI Pages\PopUp Pages\FinalizeOrder.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI Pages\PopUp Pages\FinilizeOrder.Designer.cs">
-      <DependentUpon>FinilizeOrder.cs</DependentUpon>
+    <Compile Include="GUI Pages\PopUp Pages\FinalizeOrder.Designer.cs">
+      <DependentUpon>FinalizeOrder.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI Pages\PopUp Pages\InvalidManagerOverride.cs">
       <SubType>Form</SubType>
@@ -246,11 +252,14 @@
     <EmbeddedResource Include="GUI Pages\PopUp Pages\AddPizzaWindow.resx">
       <DependentUpon>AddPizzaWindow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI Pages\PopUp Pages\CancelAddCustomer.resx">
+      <DependentUpon>CancelAddCustomer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI Pages\PopUp Pages\CancelOrder.resx">
       <DependentUpon>CancelOrder.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI Pages\PopUp Pages\CashAndCreditProcessWindow.resx">
-      <DependentUpon>CashAndCreditProcessWindow.cs</DependentUpon>
+    <EmbeddedResource Include="GUI Pages\PopUp Pages\CashAndCheckProcessWindow.resx">
+      <DependentUpon>CashAndCheckProcessWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI Pages\PopUp Pages\ChangeUserInvalidLogin.resx">
       <DependentUpon>ChangeUserInvalidLogin.cs</DependentUpon>
@@ -279,8 +288,8 @@
     <EmbeddedResource Include="GUI Pages\PopUp Pages\DeliverAddressIncomplete.resx">
       <DependentUpon>DeliverAddressIncomplete.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI Pages\PopUp Pages\FinilizeOrder.resx">
-      <DependentUpon>FinilizeOrder.cs</DependentUpon>
+    <EmbeddedResource Include="GUI Pages\PopUp Pages\FinalizeOrder.resx">
+      <DependentUpon>FinalizeOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI Pages\PopUp Pages\InvalidManagerOverride.resx">
       <DependentUpon>InvalidManagerOverride.cs</DependentUpon>
@@ -316,6 +325,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="packages.config" />
+    <None Include="ProjectDiagram.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

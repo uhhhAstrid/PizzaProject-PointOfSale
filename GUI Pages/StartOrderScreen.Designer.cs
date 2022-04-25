@@ -45,6 +45,7 @@
             this.zipField = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -54,6 +55,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.returnToHome = new System.Windows.Forms.Button();
+            this.addressField = new System.Windows.Forms.RichTextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -67,7 +69,6 @@
             this.label1.Size = new System.Drawing.Size(163, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Customer Information";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // nameField
             // 
@@ -201,6 +202,8 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.addressField);
+            this.panel1.Controls.Add(this.label14);
             this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.label9);
@@ -221,9 +224,19 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(88, 43);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(261, 345);
+            this.panel1.Size = new System.Drawing.Size(261, 395);
             this.panel1.TabIndex = 16;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(44, 329);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(94, 16);
+            this.label14.TabIndex = 18;
+            this.label14.Text = "Additional Info:";
             // 
             // label13
             // 
@@ -321,6 +334,14 @@
             this.returnToHome.UseVisualStyleBackColor = true;
             this.returnToHome.Click += new System.EventHandler(this.returnToHome_Click);
             // 
+            // addressField
+            // 
+            this.addressField.Location = new System.Drawing.Point(144, 328);
+            this.addressField.Name = "addressField";
+            this.addressField.Size = new System.Drawing.Size(100, 62);
+            this.addressField.TabIndex = 19;
+            this.addressField.Text = "";
+            // 
             // StartOrderScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -370,5 +391,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button returnToHome;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.RichTextBox addressField;
     }
 }

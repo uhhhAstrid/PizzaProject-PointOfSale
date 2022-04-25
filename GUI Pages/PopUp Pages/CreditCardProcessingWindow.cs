@@ -16,5 +16,14 @@ namespace PizzaProject.GUI_Pages.PopUp_Pages
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //todo: call processpayment()
+            var receiptScreen = new ReceiptScreen();
+            receiptScreen.Show();
+            Owner.Close();
+            this.Close();
+        }
     }
 }

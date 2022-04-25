@@ -17,5 +17,9 @@ namespace PizzaProject.GUI_Pages.PopUp_Pages
             InitializeComponent();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //todo: start order with customer logic
+        }
     }
 }

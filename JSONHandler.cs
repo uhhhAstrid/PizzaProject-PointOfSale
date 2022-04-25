@@ -294,6 +294,22 @@ namespace PizzaProject
                 return new List<User>(0);
             }
         }
+        public List<Order> retrieveOrdersByPhoneNumber(string phone)
+        {
+            if(phone == null && !phoneNumberValidator(phone))
+            {
+                throw new Exception("Phone Number is invalid");
+            }
+            List<Order> foundOrders = new List<Order>(0);
+            for(int i = 0; i < orders.Count; i++)
+            {
+                if (orders[i].CustomerPhone.Equals(phone))
+                {
+                    foundOrders.Add(orders[i]);
+                }
+            }
+            return orders;
+        }
         public bool phoneNumberValidator(string phone)
         {
             return (phone != null && Regex.IsMatch("\\d{10,10}",phone));

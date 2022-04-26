@@ -38,7 +38,7 @@ namespace PizzaProject.GUI_Pages
             string s = phoneField.Text;
             JSONHandler j = new JSONHandler();
             Customer c = j.retrieveCustomer(s);
-            List<Order> orders = j.retrieveOrders(c);
+            List<Order> orders = j.retrieveOrdersByPhoneNumber(c);
             
             if (c != null)
             {

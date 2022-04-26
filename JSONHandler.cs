@@ -1,11 +1,10 @@
 using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
-using System.Data;
 using System.Diagnostics;
 using System.IO;
-using System.Text;
 using System.Threading;
+using System.Text.RegularExpressions;
 
 namespace PizzaProject
 {
@@ -31,9 +30,9 @@ namespace PizzaProject
             // Read in the current list of orders, customers and leave them in memory
             this.checkJSON();
           
-            customers = this.deserializeCustomerList();
-            orders = this.deserializeOrderList();
-            users = this.deserializeUserList();
+            customers = this.deserializeCustomerList() ?? new List<Customer>(0);
+            orders = this.deserializeOrderList() ?? new List<Order>(0);
+            users = this.deserializeUserList() ?? new List<User>(0); ;
 
 
             Customer.setNextCustomerID(customers.Count);
@@ -117,6 +116,10 @@ namespace PizzaProject
         {  
             if(cust != null) 
             {
+                if (!this.phoneNumberValidator(cust.PhoneNumber))
+                {
+                    throw new Exception("Phone Number is invalid");
+                }
                 for (int i = 0; i < customers.Count; i++)
                 {
                     if (customers[i].PhoneNumber == cust.PhoneNumber)
@@ -162,6 +165,10 @@ namespace PizzaProject
         //Searches customer list for specific customer
         public Customer retrieveCustomer(string phone)
         {
+            if (!this.phoneNumberValidator(phone))
+            {
+                throw new Exception("Phone Number is invalid");
+            }
             foreach (Customer c in customers)
             {
                 if (c.PhoneNumber == phone)
@@ -177,6 +184,10 @@ namespace PizzaProject
         {
             if (order != null)
             {
+                if (!phoneNumberValidator(order.CustomerPhone))
+                {
+                    throw new Exception("Phone Number is invalid");
+                }
                 bool customerFound = false;
                 int customerIndex = 0;
                 for (int i = 0; i < customers.Count; i++)
@@ -270,9 +281,9 @@ namespace PizzaProject
         {
             try
             {
-                String existingUsers = File.ReadAllText(usersPath);
-                var processed = JsonConvert.DeserializeObject<List<User>>(existingUsers, serializerWithTypesSetting);
-                return processed;
+                String readUsers = File.ReadAllText(usersPath);
+                List<User> existingUsers = JsonConvert.DeserializeObject<List<User>>(readUsers, serializerWithTypesSetting);
+                return existingUsers == null ? new List<User>(0) : existingUsers;
             }
             catch (IOException ex)
             {
@@ -281,10 +292,45 @@ namespace PizzaProject
                 return new List<User>(0);
             }
         }
-        public void phoneNumberValidator(String phone)
+        public List<Order> retrieveOrdersByPhoneNumber(string phone)
         {
-            //var re = "/ ^([+] ? 1[\s] ?) ? ((?:[(](?:[2 - 9]1[02 - 9] |[2 - 9][02 - 8][0 - 9])[)][\s]?)| (?: (?:[2 - 9]1[02 - 9] |[2 - 9][02 - 8][0 - 9])[\s.-]?)){ 1} ([2 - 9]1[02 - 9] |[2 - 9][02 - 9]1 |[2 - 9][02 - 9]{ 2}[\s.-]?){ 1} ([0 - 9]{ 4}){ 1}$/";
-            //return re.test(str);
+            if(phone == null || !phoneNumberValidator(phone))
+            {
+                throw new Exception("Phone Number is invalid");
+            }
+            List<Order> foundOrders = new List<Order>(0);
+            for(int i = 0; i < orders.Count; i++)
+            {
+                if (String.Equals(customers[i].PhoneNumber, phone, StringComparison.OrdinalIgnoreCase))
+                {
+                    foundOrders.Add(orders[i]);
+                }
+            }
+            return orders;
+        }
+        public List<Order> retrieveOrdersByPhoneNumber(Customer c)
+        {
+            return retrieveOrdersByPhoneNumber(c.PhoneNumber);
+        }
+        public List<User> retrieveUsersByName(string name)
+        {
+            if(name == null)
+            {
+                throw new Exception("Name is invalid.");
+            }
+            List<User> foundUsers = new List<User>(0);
+            for (int i = 0; i < users.Count; i++)
+            {
+                if (String.Equals(users[i].Name,name,StringComparison.OrdinalIgnoreCase))
+                {
+                    foundUsers.Add(users[i]);
+                }
+            }
+            return foundUsers;
+        }
+        public bool phoneNumberValidator(string phone)
+        {
+            return (phone != null && Regex.IsMatch("\\d{10,10}",phone));
         }
 
     }

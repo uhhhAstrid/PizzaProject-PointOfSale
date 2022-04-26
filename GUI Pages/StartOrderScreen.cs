@@ -142,6 +142,7 @@ namespace PizzaProject.GUI_Pages
         private Customer createCustomer(bool delivery)
         {
             var c = new Customer();
+            JSONHandler j = new JSONHandler();
 
             if (verifyCustomerFields())
             {
@@ -173,6 +174,7 @@ namespace PizzaProject.GUI_Pages
                     return null;
                 }
             }
+            j.addCustomerToList(c);
             return c;
         }
         

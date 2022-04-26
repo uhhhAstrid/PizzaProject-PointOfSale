@@ -24,7 +24,7 @@ namespace PizzaProject
 
             //Once the following code is run, only events from the GUI will cause the code to progress forward;
             //because "EntryPoint" is single threaded
-            //code after 'Application.Run' will not run until it is closed.
+            //code after 'Application.Run' will not run.
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new LoginScreen());

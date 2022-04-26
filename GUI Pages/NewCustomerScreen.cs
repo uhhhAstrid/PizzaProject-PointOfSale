@@ -41,9 +41,18 @@ namespace PizzaProject.GUI_Pages
             {
                 addressInfo = true;
             }
+            else if(streetField.Text.Length > 0){
+                var customerInfoIncomplete = new CustomerInfoIncomplete();
+                customerInfoIncomplete.ShowDialog();
+            }
             if (cardTypeField.Text.Length > 0 && nameOnCardField.Text.Length > 0 && cardNumberField.Text.Length > 0 && cvvField.Text.Length > 0)
             {
                 paymentInfo = true;
+            }
+            else if(nameOnCardField.Text.Length > 0)
+            {
+                var customerInfoIncomplete = new CustomerInfoIncomplete();
+                customerInfoIncomplete.ShowDialog();
             }
 
             JSONHandler j = new JSONHandler();

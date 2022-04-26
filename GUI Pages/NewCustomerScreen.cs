@@ -46,7 +46,7 @@ namespace PizzaProject.GUI_Pages
                 paymentInfo = true;
             }
 
-            JSONHandler j = new JSONHandler;
+            JSONHandler j = new JSONHandler();
 
             //Checks each condition from greatest amount of data included to least data included; 
             //If no fields have enough data to create a customer, an error pop up is shown

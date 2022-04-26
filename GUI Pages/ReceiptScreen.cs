@@ -59,7 +59,7 @@ namespace PizzaProject.GUI_Pages
 
             total.Text = order.Total.ToString("0.##");
             subtotalField.Text = order.SubTotal.ToString("0.##");
-            taxField.Text = order.Tax.ToString("0.##")
+            taxField.Text = order.Tax.ToString("0.##");
             foreach (Item i in order.Items)
             {
                 var entry = new ListViewItem(new string[] { i.ItemType, i.Price.ToString(), i.toppingsToString(i.Toppings), i.Size, i.CrustType, i.Flavor });

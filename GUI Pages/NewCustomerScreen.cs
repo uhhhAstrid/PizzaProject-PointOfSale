@@ -45,30 +45,36 @@ namespace PizzaProject.GUI_Pages
             {
                 paymentInfo = true;
             }
-            
+
+            JSONHandler j = new JSONHandler;
+
             //Checks each condition from greatest amount of data included to least data included; 
             //If no fields have enough data to create a customer, an error pop up is shown
             if (customerInfo && addressInfo && paymentInfo)
             {
                 Customer c = new Customer(nameField.Text, phoneField.Text, emailField.Text, cardTypeField.Text, nameOnCardField.Text, cardNumberField.Text, Int32.Parse(cvvField.Text), stateField.Text, cityField.Text, zipField.Text, streetField.Text, addressField.Text);
+                j.addCustomerToList(c);
                 var customerAddedPopUp = new CustomerAddedConfirmation(c);
                 customerAddedPopUp.ShowDialog(this);
             }
             else if (customerInfo && addressInfo)
             {
                 Customer c = new Customer(nameField.Text, phoneField.Text, emailField.Text, stateField.Text, cityField.Text, zipField.Text, streetField.Text, addressField.Text);
+                j.addCustomerToList(c);
                 var customerAddedPopUp = new CustomerAddedConfirmation(c);
                 customerAddedPopUp.ShowDialog(this);
             }
             else if(customerInfo && paymentInfo)
             {
                 Customer c = new Customer(nameField.Text, phoneField.Text, emailField.Text, cardTypeField.Text, nameOnCardField.Text, cardNumberField.Text, Int32.Parse(cvvField.Text));
+                j.addCustomerToList(c);
                 var customerAddedPopUp = new CustomerAddedConfirmation(c);
                 customerAddedPopUp.ShowDialog(this);
             }
             else if (customerInfo)
             {
                 Customer c = new Customer(nameField.Text, phoneField.Text, emailField.Text);
+                j.addCustomerToList(c);
                 var customerAddedPopUp = new CustomerAddedConfirmation(c);
                 customerAddedPopUp.ShowDialog(this);
             }

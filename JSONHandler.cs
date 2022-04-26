@@ -30,7 +30,6 @@ namespace PizzaProject
         public JSONHandler(){
             // On Startup, check to see if the .json files already exist
             // then read in the current list of orders, customers, and users, and leave them in memory
-            Debug.WriteLine(folderPath);
             checkJSON();
         }
 

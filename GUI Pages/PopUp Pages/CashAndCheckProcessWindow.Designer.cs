@@ -92,6 +92,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Accept Payment";
+            this.Load += new System.EventHandler(this.CashAndCheckProcessWindow_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

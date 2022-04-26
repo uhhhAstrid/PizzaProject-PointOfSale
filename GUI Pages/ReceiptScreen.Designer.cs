@@ -30,26 +30,33 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
+            this.signatureField = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.total = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.subtotalField = new System.Windows.Forms.Label();
             this.taxField = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.receiptBanner = new System.Windows.Forms.Label();
             this.returnToHome = new System.Windows.Forms.Button();
+            this.itemListView = new System.Windows.Forms.ListView();
+            this.itemType = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.price = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.size = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.crustType = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.toppings = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.flavor = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1.SuspendLayout();
+            this.signatureField.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(244, 2);
+            this.label1.Location = new System.Drawing.Point(232, 2);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(367, 33);
             this.label1.TabIndex = 0;
@@ -58,31 +65,56 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.itemListView);
+            this.panel1.Controls.Add(this.signatureField);
+            this.panel1.Controls.Add(this.total);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.subtotalField);
             this.panel1.Controls.Add(this.taxField);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.label10);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.receiptBanner);
             this.panel1.Location = new System.Drawing.Point(92, 38);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(638, 354);
             this.panel1.TabIndex = 1;
             // 
-            // label7
+            // signatureField
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(420, 321);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(53, 24);
-            this.label7.TabIndex = 29;
-            this.label7.Text = "[total]";
+            this.signatureField.Controls.Add(this.label2);
+            this.signatureField.Controls.Add(this.richTextBox1);
+            this.signatureField.Location = new System.Drawing.Point(3, 260);
+            this.signatureField.Name = "signatureField";
+            this.signatureField.Size = new System.Drawing.Size(325, 89);
+            this.signatureField.TabIndex = 30;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(14, 18);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(291, 16);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "This was a credit card order. Please sign below.";
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(0, 37);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(325, 64);
+            this.richTextBox1.TabIndex = 0;
+            this.richTextBox1.Text = "";
+            // 
+            // total
+            // 
+            this.total.AutoSize = true;
+            this.total.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.total.Location = new System.Drawing.Point(420, 321);
+            this.total.Name = "total";
+            this.total.Size = new System.Drawing.Size(53, 24);
+            this.total.TabIndex = 29;
+            this.total.Text = "[total]";
             // 
             // label3
             // 
@@ -134,55 +166,15 @@
             this.label5.TabIndex = 24;
             this.label5.Text = "Subtotal:";
             // 
-            // label2
+            // receiptBanner
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(91, 214);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(105, 24);
-            this.label2.TabIndex = 23;
-            this.label2.Text = "[order data]";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(91, 157);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(105, 24);
-            this.label9.TabIndex = 22;
-            this.label9.Text = "[order data]";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(91, 100);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(105, 24);
-            this.label10.TabIndex = 21;
-            this.label10.Text = "[order data]";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(165, 56);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(299, 31);
-            this.label4.TabIndex = 20;
-            this.label4.Text = "[receipt data goes here]";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(50, 10);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(547, 29);
-            this.label8.TabIndex = 5;
-            this.label8.Text = "[orderType] Order #[orderID] for [customerName] ";
+            this.receiptBanner.AutoSize = true;
+            this.receiptBanner.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.receiptBanner.Location = new System.Drawing.Point(50, 10);
+            this.receiptBanner.Name = "receiptBanner";
+            this.receiptBanner.Size = new System.Drawing.Size(547, 29);
+            this.receiptBanner.TabIndex = 5;
+            this.receiptBanner.Text = "[orderType] Order #[orderID] for [customerName] ";
             // 
             // returnToHome
             // 
@@ -195,6 +187,55 @@
             this.returnToHome.Text = "Return to Home Page";
             this.returnToHome.UseVisualStyleBackColor = false;
             this.returnToHome.Click += new System.EventHandler(this.returnToHome_Click);
+            // 
+            // itemListView
+            // 
+            this.itemListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.itemType,
+            this.price,
+            this.toppings,
+            this.size,
+            this.crustType,
+            this.flavor});
+            this.itemListView.HideSelection = false;
+            this.itemListView.Location = new System.Drawing.Point(-1, 42);
+            this.itemListView.Name = "itemListView";
+            this.itemListView.Size = new System.Drawing.Size(634, 212);
+            this.itemListView.TabIndex = 18;
+            this.itemListView.UseCompatibleStateImageBehavior = false;
+            this.itemListView.View = System.Windows.Forms.View.Details;
+            // 
+            // itemType
+            // 
+            this.itemType.Text = "Item Type";
+            this.itemType.Width = 61;
+            // 
+            // price
+            // 
+            this.price.Text = "Price";
+            // 
+            // size
+            // 
+            this.size.DisplayIndex = 3;
+            this.size.Text = "Size";
+            this.size.Width = 70;
+            // 
+            // crustType
+            // 
+            this.crustType.DisplayIndex = 4;
+            this.crustType.Text = "Crust Type";
+            this.crustType.Width = 81;
+            // 
+            // toppings
+            // 
+            this.toppings.DisplayIndex = 2;
+            this.toppings.Text = "Toppings";
+            this.toppings.Width = 271;
+            // 
+            // flavor
+            // 
+            this.flavor.Text = "Flavor";
+            this.flavor.Width = 87;
             // 
             // ReceiptScreen
             // 
@@ -212,6 +253,8 @@
             this.Load += new System.EventHandler(this.ReceiptScreen_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.signatureField.ResumeLayout(false);
+            this.signatureField.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -222,16 +265,22 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button returnToHome;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label receiptBanner;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label subtotalField;
         private System.Windows.Forms.Label taxField;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label total;
+        private System.Windows.Forms.Panel signatureField;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.ListView itemListView;
+        private System.Windows.Forms.ColumnHeader itemType;
+        private System.Windows.Forms.ColumnHeader price;
+        private System.Windows.Forms.ColumnHeader size;
+        private System.Windows.Forms.ColumnHeader crustType;
+        private System.Windows.Forms.ColumnHeader toppings;
+        private System.Windows.Forms.ColumnHeader flavor;
     }
 }

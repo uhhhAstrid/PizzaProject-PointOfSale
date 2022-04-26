@@ -56,14 +56,17 @@ namespace PizzaProject.GUI_Pages
         private void addPizza_Click(object sender, EventArgs e)
         {
             //open 'add pizza' menu
-            var addPizzaPopUp = new AddPizzaWindow();
+            var toppings = new List<string>(0);
+            Item i = new Item(toppings, "", "");
+            var addPizzaPopUp = new AddPizzaWindow(i, this);
             addPizzaPopUp.ShowDialog(this);
         }
 
         private void addDrink_Click(object sender, EventArgs e)
         {
             //open 'add drink' menu
-            var addDrinkPopUp = new AddDrinkWindow();
+            Item i = new Item("", "");
+            var addDrinkPopUp = new AddDrinkWindow(i, this);
             addDrinkPopUp.ShowDialog(this);
         }
 
@@ -77,7 +80,7 @@ namespace PizzaProject.GUI_Pages
         private void proceedToPayment_Click(object sender, EventArgs e)
         { 
             //confirm finalization; popup handles logic
-            var finalizeOrderPopUp = new FinalizeOrder();
+            var finalizeOrderPopUp = new FinalizeOrder(order, customer);
             finalizeOrderPopUp.ShowDialog(this);
             
         }
@@ -91,7 +94,9 @@ namespace PizzaProject.GUI_Pages
 
         private void MakeOrderScreen_Load(object sender, EventArgs e)
         {
-
+            subtotalField.Text = "$0.00";
+            taxField.Text = "$0.00";
+            totalField.Text = "$0.00";
         }
 
         //credit to jeff for his code implementing list view technology
@@ -99,6 +104,31 @@ namespace PizzaProject.GUI_Pages
         {
             var entry = new ListViewItem(new string[] {i.ItemType, i.Price.ToString(), i.toppingsToString(i.Toppings), i.Size, i.CrustType, i.Flavor});
             itemListView.Items.Add(entry);
+        }
+
+        private void CalculateAndUpdate(Order o)
+        {
+            PaymentHandler p = new PaymentHandler();
+            var subtotal = p.CalculateSubtotalOfOrder(o);
+            var tax = p.CalculateTax(subtotal);
+            var total = p.CalculateOrderTotal(o);
+
+            order.Total = total;
+            order.SubTotal = subtotal;
+            order.Tax = tax;
+
+            subtotalField.Text = subtotal.ToString();
+            taxField.Text = tax.ToString();
+            totalField.Text = total.ToString();
+        }
+
+        public void GetDataFromPopup(Item i)
+        {
+            PaymentHandler p = new PaymentHandler();
+            i.Price = p.CalculatePriceOfItem(i);
+            AddItemToListView(i);
+            order.Items.Add(i);
+            CalculateAndUpdate(order);
         }
 
         private void MakeOrderScreen_FormClosing(object sender, FormClosingEventArgs e)

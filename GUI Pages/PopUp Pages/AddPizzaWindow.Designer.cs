@@ -78,6 +78,7 @@
             this.button1.TabIndex = 4;
             this.button1.Text = "Add Pizza";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // sizeBox
             // 
@@ -369,6 +370,7 @@
             this.button2.TabIndex = 15;
             this.button2.Text = "Cancel Item";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // AddPizzaWindow
             // 

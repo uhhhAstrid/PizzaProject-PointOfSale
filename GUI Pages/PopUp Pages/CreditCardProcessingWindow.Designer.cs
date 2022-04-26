@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.amountDue = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -52,15 +52,15 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Amount Due: ";
             // 
-            // label2
+            // amountDue
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.label2.Location = new System.Drawing.Point(213, 23);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 24);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "$[amount]";
+            this.amountDue.AutoSize = true;
+            this.amountDue.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.amountDue.Location = new System.Drawing.Point(213, 23);
+            this.amountDue.Name = "amountDue";
+            this.amountDue.Size = new System.Drawing.Size(93, 24);
+            this.amountDue.TabIndex = 1;
+            this.amountDue.Text = "$[amount]";
             // 
             // label3
             // 
@@ -167,7 +167,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.amountDue);
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -176,6 +176,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Proccess Credit Card";
+            this.Load += new System.EventHandler(this.CreditCardProcessingWindow_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -184,7 +185,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label amountDue;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;

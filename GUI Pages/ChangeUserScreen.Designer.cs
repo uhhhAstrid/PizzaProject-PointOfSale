@@ -37,6 +37,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pageHeader = new System.Windows.Forms.Label();
             this.returnToHome = new System.Windows.Forms.Button();
+            this.changeUserSuccess = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -136,12 +137,22 @@
             this.returnToHome.UseVisualStyleBackColor = false;
             this.returnToHome.Click += new System.EventHandler(this.returnToHome_Click);
             // 
+            // changeUserSuccess
+            // 
+            this.changeUserSuccess.AutoSize = true;
+            this.changeUserSuccess.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.changeUserSuccess.Location = new System.Drawing.Point(281, 84);
+            this.changeUserSuccess.Name = "changeUserSuccess";
+            this.changeUserSuccess.Size = new System.Drawing.Size(0, 24);
+            this.changeUserSuccess.TabIndex = 3;
+            // 
             // ChangeUserScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.changeUserSuccess);
             this.Controls.Add(this.returnToHome);
             this.Controls.Add(this.pageHeader);
             this.Controls.Add(this.panel1);
@@ -154,6 +165,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -168,5 +180,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button returnToHome;
+        private System.Windows.Forms.Label changeUserSuccess;
     }
 }

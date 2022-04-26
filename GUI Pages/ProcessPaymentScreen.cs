@@ -59,14 +59,14 @@ namespace PizzaProject.GUI_Pages
         private void cashPayment_Click(object sender, EventArgs e)
         {
             //pop up: collect payment from customer; then advances to receipt screen
-            var collectPaymentPopUp = new CashAndCheckProcessWindow();
+            var collectPaymentPopUp = new CashAndCheckProcessWindow(customer, order);
             collectPaymentPopUp.ShowDialog(this);
         }
 
         private void checkPayment_Click(object sender, EventArgs e)
         {
             //pop up: collect payment from customer (there we go)
-            var collectPaymentPopUp = new CashAndCheckProcessWindow();
+            var collectPaymentPopUp = new CashAndCheckProcessWindow(customer, order);
             collectPaymentPopUp.ShowDialog(this);
         }
 

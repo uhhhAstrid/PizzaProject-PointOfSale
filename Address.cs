@@ -62,7 +62,8 @@ namespace PizzaProject
             additionalAddressInfo = additionalInfo;
             customerPhone = phone;
         }
-        public Address(string phone) : this("GA", "N/A", "N/A", "N/A", "N/A", phone)
+        //do not fill in
+        public Address(string phone) : this("", "", "", "", "", phone)
         {
         }
             //methods

@@ -38,7 +38,7 @@ namespace PizzaProject.GUI_Pages
             if (customer != null) 
             { 
                 customerInfo = true;
-                if(customer.Address.Street.Length >= 1)
+                if(customer.Address.Street.Length >= 1 && customer.Address.Street != "N/A" && customer.Address.Street != "n/a")
                 {
                     addressInfo = true;
                 }

@@ -11,7 +11,7 @@ namespace PizzaProject
     public class JSONHandler
     {
             //filepaths and other constants
-        private static string folderPath = "C:\\Users\\" + Environment.UserName + "\\Documents\\PizzaProject";
+        private static string folderPath = System.Environment.GetEnvironmentVariable("USERPROFILE") + "\\Documents\\PizzaProject";
         private static string customersPath = folderPath + "\\customersJSON.json";
         private static string ordersPath = folderPath + "\\ordersJSON.json";
         private static string usersPath = folderPath + "\\usersJSON.json";
@@ -30,6 +30,7 @@ namespace PizzaProject
         public JSONHandler(){
             // On Startup, check to see if the .json files already exist
             // then read in the current list of orders, customers, and users, and leave them in memory
+            Debug.WriteLine(folderPath);
             checkJSON();
         }
 

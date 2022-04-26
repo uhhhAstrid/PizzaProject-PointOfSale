@@ -35,7 +35,7 @@ namespace PizzaProject.GUI_Pages.PopUp_Pages
 
         private void CashAndCheckProcessWindow_Load(object sender, EventArgs e)
         {
-            orderTotal.Text = order.Total.ToString();
+            orderTotal.Text = order.Total.ToString("0.##");
         }
     }
 }

@@ -117,9 +117,9 @@ namespace PizzaProject.GUI_Pages
             order.SubTotal = subtotal;
             order.Tax = tax;
 
-            subtotalField.Text = subtotal.ToString();
-            taxField.Text = tax.ToString();
-            totalField.Text = total.ToString();
+            subtotalField.Text = subtotal.ToString("0.##");
+            taxField.Text = tax.ToString("0.##");
+            totalField.Text = total.ToString("0.##");
         }
 
         public void GetDataFromPopup(Item i)

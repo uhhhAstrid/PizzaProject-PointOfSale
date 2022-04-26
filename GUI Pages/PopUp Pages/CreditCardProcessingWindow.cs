@@ -39,7 +39,7 @@ namespace PizzaProject.GUI_Pages.PopUp_Pages
 
         private void CreditCardProcessingWindow_Load(object sender, EventArgs e)
         {
-            amountDue.Text = order.Total.ToString();
+            amountDue.Text = order.Total.ToString("0.##");
         }
     }
 }

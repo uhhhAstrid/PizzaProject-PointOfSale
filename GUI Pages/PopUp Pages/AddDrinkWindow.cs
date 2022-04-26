@@ -21,5 +21,15 @@ namespace PizzaProject.GUI_Pages.PopUp_Pages
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //compile data from buttons, send off to MakeOrder()
+        }
     }
 }

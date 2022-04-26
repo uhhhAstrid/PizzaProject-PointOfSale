@@ -13,16 +13,21 @@ namespace PizzaProject.GUI_Pages
     public partial class ReceiptScreen : Form
     {
         bool creditPayment;
-
+        Customer customer;
+        Order order;
         public ReceiptScreen()
         {
             InitializeComponent();
         }
 
-        public ReceiptScreen(bool credit)
+        public ReceiptScreen(bool credit, Customer c, Order o)
         {
             InitializeComponent();
             creditPayment = credit;
+            customer = c;
+            order = o;
+            JSONHandler j = new JSONHandler();
+            j.addOrderToList(order);
         }
 
         private void returnToHome_Click(object sender, EventArgs e)
@@ -35,11 +40,31 @@ namespace PizzaProject.GUI_Pages
 
         private void ReceiptScreen_Load(object sender, EventArgs e)
         {
+
+            signatureField.Visible = false;
+
             if (creditPayment)
             {
-                //add/show signature field
+                signatureField.Visible = true;
             }
 
+            if (order.Delivery)
+            {
+                receiptBanner.Text = "Delivery Order #" + order.OrderID + " for " + customer.Name;
+            }
+            else
+            { 
+                receiptBanner.Text = "Carryout Order #" + order.OrderID + " for " + customer.Name;
+            }
+
+            total.Text = order.Total.ToString();
+            subtotalField.Text = order.SubTotal.ToString();
+            taxField.Text = order.Tax.ToString();
+            foreach (Item i in order.Items)
+            {
+                var entry = new ListViewItem(new string[] { i.ItemType, i.Price.ToString(), i.toppingsToString(i.Toppings), i.Size, i.CrustType, i.Flavor });
+                itemListView.Items.Add(entry);
+            }
         }
 
         private void ReceiptScreen_FormClosing(object sender, FormClosingEventArgs e)

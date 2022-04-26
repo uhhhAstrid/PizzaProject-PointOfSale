@@ -25,24 +25,22 @@ namespace PizzaProject.GUI_Pages
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            //temp code; shows error pop-up
-            var changeUserPopup = new ChangeUserInvalidLogin();
-            changeUserPopup.ShowDialog();
-            //temporary popup to confirm changing user
-            var changeUserConfirmation = new LogOutAlert();
-            changeUserConfirmation.ShowDialog();
-            //verify username and password with the User JSON information
-            //loop through users in JSON, if username matches:
-                //if (password.equals) : log-in user
-                    //log-in user: log-out current user, set current user to user.Name, set current user type to user.Usertype
-                //else () : throw error: 'password incorrect'
-            //else 'no users found with that username'
-
+            JSONHandler j = new JSONHandler();
+            if(j.validateUserLogin(usernameField.Text, passwordField.Text))
+            {
+                var changeUserConfirmation = new LogOutAlert();
+                changeUserConfirmation.ShowDialog();
+                changeUserSuccess.Text = "Successfully logged in as " + usernameField.Text;
+            }
+            else
+            {
+                var changeUserPopup = new ChangeUserInvalidLogin();
+                changeUserPopup.ShowDialog();
+            }
         }
 
         private void returnToHome_Click(object sender, EventArgs e)
         {
-            //depending on screen, may need to add logic for pop-up menu (this is copy and pasted)
             var homeScreen = new HomeScreen();
             homeScreen.Show();
             this.Hide();

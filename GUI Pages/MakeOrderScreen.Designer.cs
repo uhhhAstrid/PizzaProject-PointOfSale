@@ -116,7 +116,7 @@
             this.panel2.Controls.Add(this.orderHeader);
             this.panel2.Location = new System.Drawing.Point(358, 85);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(430, 503);
+            this.panel2.Size = new System.Drawing.Size(569, 503);
             this.panel2.TabIndex = 1;
             // 
             // cancelOrder
@@ -135,7 +135,7 @@
             // 
             this.subtotalField.AutoSize = true;
             this.subtotalField.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.subtotalField.Location = new System.Drawing.Point(341, 385);
+            this.subtotalField.Location = new System.Drawing.Point(309, 385);
             this.subtotalField.Name = "subtotalField";
             this.subtotalField.Size = new System.Drawing.Size(84, 24);
             this.subtotalField.TabIndex = 10;
@@ -145,7 +145,7 @@
             // 
             this.taxField.AutoSize = true;
             this.taxField.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.taxField.Location = new System.Drawing.Point(341, 409);
+            this.taxField.Location = new System.Drawing.Point(309, 409);
             this.taxField.Name = "taxField";
             this.taxField.Size = new System.Drawing.Size(44, 24);
             this.taxField.TabIndex = 9;
@@ -155,7 +155,7 @@
             // 
             this.totalField.AutoSize = true;
             this.totalField.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalField.Location = new System.Drawing.Point(341, 433);
+            this.totalField.Location = new System.Drawing.Point(309, 433);
             this.totalField.Name = "totalField";
             this.totalField.Size = new System.Drawing.Size(53, 24);
             this.totalField.TabIndex = 8;
@@ -165,7 +165,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(261, 433);
+            this.label7.Location = new System.Drawing.Point(229, 433);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(56, 24);
             this.label7.TabIndex = 7;
@@ -175,7 +175,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(261, 409);
+            this.label6.Location = new System.Drawing.Point(229, 409);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(47, 24);
             this.label6.TabIndex = 6;
@@ -185,7 +185,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(261, 385);
+            this.label5.Location = new System.Drawing.Point(229, 385);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(82, 24);
             this.label5.TabIndex = 5;
@@ -195,7 +195,7 @@
             // 
             this.proceedToPayment.BackColor = System.Drawing.Color.LightBlue;
             this.proceedToPayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.proceedToPayment.Location = new System.Drawing.Point(257, 466);
+            this.proceedToPayment.Location = new System.Drawing.Point(396, 466);
             this.proceedToPayment.Name = "proceedToPayment";
             this.proceedToPayment.Size = new System.Drawing.Size(168, 30);
             this.proceedToPayment.TabIndex = 1;
@@ -207,7 +207,7 @@
             // 
             this.orderHeader.AutoSize = true;
             this.orderHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.orderHeader.Location = new System.Drawing.Point(138, 13);
+            this.orderHeader.Location = new System.Drawing.Point(204, 11);
             this.orderHeader.Name = "orderHeader";
             this.orderHeader.Size = new System.Drawing.Size(181, 31);
             this.orderHeader.TabIndex = 0;
@@ -217,7 +217,7 @@
             // 
             this.pageHeader.AutoSize = true;
             this.pageHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pageHeader.Location = new System.Drawing.Point(328, 9);
+            this.pageHeader.Location = new System.Drawing.Point(409, 9);
             this.pageHeader.Name = "pageHeader";
             this.pageHeader.Size = new System.Drawing.Size(169, 33);
             this.pageHeader.TabIndex = 2;
@@ -227,7 +227,7 @@
             // 
             this.returnToHome.BackColor = System.Drawing.Color.LightBlue;
             this.returnToHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.returnToHome.Location = new System.Drawing.Point(652, 594);
+            this.returnToHome.Location = new System.Drawing.Point(790, 594);
             this.returnToHome.Name = "returnToHome";
             this.returnToHome.Size = new System.Drawing.Size(148, 42);
             this.returnToHome.TabIndex = 3;
@@ -239,7 +239,7 @@
             // 
             this.orderInfo.AutoSize = true;
             this.orderInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.orderInfo.Location = new System.Drawing.Point(253, 42);
+            this.orderInfo.Location = new System.Drawing.Point(357, 42);
             this.orderInfo.Name = "orderInfo";
             this.orderInfo.Size = new System.Drawing.Size(547, 29);
             this.orderInfo.TabIndex = 4;
@@ -250,14 +250,14 @@
             this.itemListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.itemType,
             this.price,
+            this.toppings,
             this.size,
             this.crustType,
-            this.toppings,
             this.flavor});
             this.itemListView.HideSelection = false;
             this.itemListView.Location = new System.Drawing.Point(3, 45);
             this.itemListView.Name = "itemListView";
-            this.itemListView.Size = new System.Drawing.Size(422, 337);
+            this.itemListView.Size = new System.Drawing.Size(561, 337);
             this.itemListView.TabIndex = 12;
             this.itemListView.UseCompatibleStateImageBehavior = false;
             this.itemListView.View = System.Windows.Forms.View.Details;
@@ -273,9 +273,8 @@
             // 
             // toppings
             // 
-            this.toppings.DisplayIndex = 2;
             this.toppings.Text = "Toppings";
-            this.toppings.Width = 120;
+            this.toppings.Width = 240;
             // 
             // size
             // 
@@ -297,7 +296,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 637);
+            this.ClientSize = new System.Drawing.Size(939, 637);
             this.Controls.Add(this.orderInfo);
             this.Controls.Add(this.returnToHome);
             this.Controls.Add(this.pageHeader);

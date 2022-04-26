@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,16 +13,20 @@ namespace PizzaProject.GUI_Pages.PopUp_Pages
 {
     public partial class AddDrinkWindow : Form
     {
+        MakeOrderScreen screen;
+        Item item;
+
         public AddDrinkWindow()
         {
             InitializeComponent();
         }
 
-        private void crustBox_SelectedIndexChanged(object sender, EventArgs e)
+        public AddDrinkWindow(Item item, MakeOrderScreen screen)
         {
-
+            InitializeComponent();
+            this.item = item;
+            this.screen = screen;
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -29,7 +34,12 @@ namespace PizzaProject.GUI_Pages.PopUp_Pages
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //compile data from buttons, send off to MakeOrder()
+            string flavor = flavorBox.SelectedItem.ToString();
+            string size = sizeBox.SelectedItem.ToString();
+            item.setSize(size);
+            item.setFlavor(flavor);
+            screen.GetDataFromPopup(item);
+            this.Close();
         }
     }
 }

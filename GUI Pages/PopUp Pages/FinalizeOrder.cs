@@ -12,16 +12,24 @@ namespace PizzaProject.GUI_Pages.PopUp_Pages
 {
     public partial class FinalizeOrder : Form
     {
+        Order order;
+        Customer customer;
+
         public FinalizeOrder()
         {
             InitializeComponent();
         }
 
+        public FinalizeOrder(Order o, Customer c)
+        {
+            InitializeComponent();
+            order = o;
+            customer = c;
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
-            //todo: finalize order popup logic
-            //take relevant order data and pass to payment screen, load payment screen 
-            var paymentScreen = new ProcessPaymentScreen();
+            var paymentScreen = new ProcessPaymentScreen(order, customer);
             paymentScreen.Show();
             Owner.Hide();
             this.Hide();

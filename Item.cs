@@ -99,9 +99,12 @@ namespace PizzaProject
         public string toppingsToString(List<string> toppings)
         {
             string toppingstring = "";
-            foreach(string t in toppings)
+            if (toppings != null)
             {
-                toppingstring += (t + " ");
+                foreach (string t in toppings)
+                {
+                    toppingstring += (t + ", ");
+                }
             }
             return toppingstring;
         }

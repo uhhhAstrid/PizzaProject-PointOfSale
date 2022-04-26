@@ -32,7 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.crustBox = new System.Windows.Forms.ListBox();
+            this.flavorBox = new System.Windows.Forms.ListBox();
             this.sizeBox = new System.Windows.Forms.ListBox();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -48,7 +48,7 @@
             // 
             this.button2.BackColor = System.Drawing.Color.LightBlue;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.button2.Location = new System.Drawing.Point(12, 311);
+            this.button2.Location = new System.Drawing.Point(3, 320);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(118, 28);
             this.button2.TabIndex = 30;
@@ -86,23 +86,22 @@
             this.label3.TabIndex = 21;
             this.label3.Text = "Sizes";
             // 
-            // crustBox
+            // flavorBox
             // 
-            this.crustBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.crustBox.FormattingEnabled = true;
-            this.crustBox.ItemHeight = 24;
-            this.crustBox.Items.AddRange(new object[] {
+            this.flavorBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flavorBox.FormattingEnabled = true;
+            this.flavorBox.ItemHeight = 24;
+            this.flavorBox.Items.AddRange(new object[] {
             "Water",
             "Coke",
             "Dr. Pepper",
             "Lemonade",
             "Root Beer",
             "Sprite"});
-            this.crustBox.Location = new System.Drawing.Point(207, 137);
-            this.crustBox.Name = "crustBox";
-            this.crustBox.Size = new System.Drawing.Size(120, 148);
-            this.crustBox.TabIndex = 19;
-            this.crustBox.SelectedIndexChanged += new System.EventHandler(this.crustBox_SelectedIndexChanged);
+            this.flavorBox.Location = new System.Drawing.Point(207, 137);
+            this.flavorBox.Name = "flavorBox";
+            this.flavorBox.Size = new System.Drawing.Size(120, 148);
+            this.flavorBox.TabIndex = 19;
             // 
             // sizeBox
             // 
@@ -123,7 +122,7 @@
             // 
             this.button1.BackColor = System.Drawing.Color.LightBlue;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.button1.Location = new System.Drawing.Point(249, 311);
+            this.button1.Location = new System.Drawing.Point(270, 320);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(118, 28);
             this.button1.TabIndex = 17;
@@ -202,7 +201,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.crustBox);
+            this.Controls.Add(this.flavorBox);
             this.Controls.Add(this.sizeBox);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
@@ -226,7 +225,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ListBox crustBox;
+        private System.Windows.Forms.ListBox flavorBox;
         private System.Windows.Forms.ListBox sizeBox;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel1;

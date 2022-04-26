@@ -12,17 +12,30 @@ namespace PizzaProject.GUI_Pages.PopUp_Pages
 {
     public partial class CashAndCheckProcessWindow : Form
     {
+        Order order;
+        Customer customer;
         public CashAndCheckProcessWindow()
         {
             InitializeComponent();
         }
 
+        public CashAndCheckProcessWindow(Customer c, Order o)
+        {
+            customer = c;
+            order = o;
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
-            var receiptScreen = new ReceiptScreen();
+            var receiptScreen = new ReceiptScreen(false, customer, order);
             receiptScreen.Show();
             Owner.Close();
             this.Close();
+        }
+
+        private void CashAndCheckProcessWindow_Load(object sender, EventArgs e)
+        {
+            orderTotal.Text = order.Total.ToString();
         }
     }
 }

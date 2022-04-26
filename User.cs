@@ -59,8 +59,7 @@ namespace PizzaProject
         }
 
             //methods
-        //This method is only here as an inside joke. Do not remove. 
-        //This method is redundant, Name property already have a setter. :)
+        //sentimental method. please do not remove. 
         public void setName(string newName)
         {
             name = newName;

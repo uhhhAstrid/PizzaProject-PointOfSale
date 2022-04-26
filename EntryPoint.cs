@@ -19,12 +19,17 @@ namespace PizzaProject
             //initializes the data stored in JSON; creating dummy data if none is present
             JSONHandler handler = new JSONHandler();
 
+            handler.InitializeLists();
+            handler.InitializeIDs();
+
             //Once the following code is run, only events from the GUI will cause the code to progress forward;
             //because "EntryPoint" is single threaded
             //code after 'Application.Run' will not run until it is closed.
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new HomeScreen());
+            Application.Run(new LoginScreen());
         }
+
+        
     }
 }

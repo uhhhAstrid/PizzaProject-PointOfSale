@@ -30,7 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.overrideField = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -55,12 +55,12 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Code to perform this action";
             // 
-            // textBox1
+            // overrideField
             // 
-            this.textBox1.Location = new System.Drawing.Point(75, 62);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 2;
+            this.overrideField.Location = new System.Drawing.Point(75, 62);
+            this.overrideField.Name = "overrideField";
+            this.overrideField.Size = new System.Drawing.Size(100, 20);
+            this.overrideField.TabIndex = 2;
             // 
             // label3
             // 
@@ -91,7 +91,7 @@
             this.ClientSize = new System.Drawing.Size(264, 91);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.overrideField);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
@@ -110,7 +110,7 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox overrideField;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button1;
     }

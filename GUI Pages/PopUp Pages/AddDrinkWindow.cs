@@ -16,5 +16,10 @@ namespace PizzaProject.GUI_Pages.PopUp_Pages
         {
             InitializeComponent();
         }
+
+        private void crustBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

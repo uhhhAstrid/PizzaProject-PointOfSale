@@ -36,7 +36,7 @@ namespace PizzaProject.GUI_Pages
             InitializeComponent();
             this.delivery = delivery;
             customer = c;
-            order = new Order("", true, c.PhoneNumber);
+            order = new Order("", delivery, c.PhoneNumber);
             SetBannerText(delivery, order, c);
         }
 
@@ -44,11 +44,11 @@ namespace PizzaProject.GUI_Pages
         {
             if (delivery)
             {
-                orderInfo.Text = "Delivery Order " + order.OrderID + " for " + customer.Name; 
+                orderInfo.Text = "Delivery Order #" + order.OrderID + " for " + customer.Name; 
             }
             else
             {
-                orderInfo.Text = "Carryout Order " + order.OrderID + " for " + customer.Name;
+                orderInfo.Text = "Carryout Order #" + order.OrderID + " for " + customer.Name;
             }
           
         }
@@ -89,6 +89,24 @@ namespace PizzaProject.GUI_Pages
             cancelOrderPopUp.ShowDialog(this);
         }
 
-       
+        private void MakeOrderScreen_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        //credit to jeff for his code implementing list view technology
+        public void AddItemToListView(Item i)
+        {
+            var entry = new ListViewItem(new string[] {i.ItemType, i.Price.ToString(), i.toppingsToString(i.Toppings), i.Size, i.CrustType, i.Flavor});
+            itemListView.Items.Add(entry);
+        }
+
+        private void MakeOrderScreen_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            JSONHandler j = new JSONHandler();
+            j.serializeCustomerList();
+            j.serializeOrderList();
+            j.serializeUserList();
+        }
     }
 }

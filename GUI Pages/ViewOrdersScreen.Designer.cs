@@ -29,14 +29,18 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.nameSearch = new System.Windows.Forms.Button();
             this.phoneSearch = new System.Windows.Forms.Button();
-            this.nameField = new System.Windows.Forms.TextBox();
             this.phoneField = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.orderListView = new System.Windows.Forms.ListView();
+            this.OrderID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.CustomerName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Date = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Total = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.PaymentType = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.DeliveryType = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.returnToHome = new System.Windows.Forms.Button();
@@ -47,29 +51,14 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.nameSearch);
             this.panel1.Controls.Add(this.phoneSearch);
-            this.panel1.Controls.Add(this.nameField);
             this.panel1.Controls.Add(this.phoneField);
-            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(31, 46);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(256, 191);
+            this.panel1.Size = new System.Drawing.Size(256, 91);
             this.panel1.TabIndex = 0;
-            // 
-            // nameSearch
-            // 
-            this.nameSearch.BackColor = System.Drawing.Color.LightBlue;
-            this.nameSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.nameSearch.Location = new System.Drawing.Point(166, 80);
-            this.nameSearch.Name = "nameSearch";
-            this.nameSearch.Size = new System.Drawing.Size(75, 23);
-            this.nameSearch.TabIndex = 9;
-            this.nameSearch.Text = "Search";
-            this.nameSearch.UseVisualStyleBackColor = false;
-            this.nameSearch.Click += new System.EventHandler(this.nameSearch_Click);
             // 
             // phoneSearch
             // 
@@ -83,29 +72,12 @@
             this.phoneSearch.UseVisualStyleBackColor = false;
             this.phoneSearch.Click += new System.EventHandler(this.phoneSearch_Click);
             // 
-            // nameField
-            // 
-            this.nameField.Location = new System.Drawing.Point(63, 82);
-            this.nameField.Name = "nameField";
-            this.nameField.Size = new System.Drawing.Size(100, 20);
-            this.nameField.TabIndex = 5;
-            // 
             // phoneField
             // 
             this.phoneField.Location = new System.Drawing.Point(63, 49);
             this.phoneField.Name = "phoneField";
             this.phoneField.Size = new System.Drawing.Size(100, 20);
             this.phoneField.TabIndex = 4;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(10, 83);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(47, 16);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Name:";
             // 
             // label2
             // 
@@ -131,11 +103,54 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.orderListView);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Location = new System.Drawing.Point(331, 46);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(457, 334);
             this.panel2.TabIndex = 1;
+            // 
+            // orderListView
+            // 
+            this.orderListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.OrderID,
+            this.CustomerName,
+            this.Date,
+            this.Total,
+            this.PaymentType,
+            this.DeliveryType});
+            this.orderListView.HideSelection = false;
+            this.orderListView.Location = new System.Drawing.Point(4, 37);
+            this.orderListView.Name = "orderListView";
+            this.orderListView.Size = new System.Drawing.Size(448, 292);
+            this.orderListView.TabIndex = 1;
+            this.orderListView.UseCompatibleStateImageBehavior = false;
+            this.orderListView.View = System.Windows.Forms.View.Details;
+            // 
+            // OrderID
+            // 
+            this.OrderID.Text = "OrderID";
+            // 
+            // CustomerName
+            // 
+            this.CustomerName.Text = "Customer";
+            // 
+            // Date
+            // 
+            this.Date.Text = "Date";
+            // 
+            // Total
+            // 
+            this.Total.Text = "Total Cost";
+            this.Total.Width = 76;
+            // 
+            // PaymentType
+            // 
+            this.PaymentType.Text = "Payment";
+            // 
+            // DeliveryType
+            // 
+            this.DeliveryType.Text = "Delivery";
             // 
             // label5
             // 
@@ -182,6 +197,8 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "View Order Record";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ViewOrdersScreen_FormClosing);
+            this.Load += new System.EventHandler(this.ViewOrdersScreen_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -194,16 +211,20 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button nameSearch;
         private System.Windows.Forms.Button phoneSearch;
-        private System.Windows.Forms.TextBox nameField;
         private System.Windows.Forms.TextBox phoneField;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button returnToHome;
+        private System.Windows.Forms.ListView orderListView;
+        private System.Windows.Forms.ColumnHeader OrderID;
+        private System.Windows.Forms.ColumnHeader CustomerName;
+        private System.Windows.Forms.ColumnHeader Date;
+        private System.Windows.Forms.ColumnHeader Total;
+        private System.Windows.Forms.ColumnHeader PaymentType;
+        private System.Windows.Forms.ColumnHeader DeliveryType;
     }
 }

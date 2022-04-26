@@ -17,40 +17,38 @@ namespace PizzaProject.GUI_Pages
         {
             InitializeComponent();
         }
-
-        //implementing this method is OPTIONAL and has NO EFFECT on our grade
-        private void nameSearch_Click(object sender, EventArgs e)
-        {
-            //search order.json using "name" as the parameter
-            //call json handler, call orders by name, return a list
-            //then call a method to add those orders to the gui
-            //temporary customer found popup
-            var customerFoundPopUp = new OrderSearchComplete();
-            customerFoundPopUp.ShowDialog();
-        }
-
-        //implementing this method is mandatory though
+        
+        //searches for customer orders given phone #
         private void phoneSearch_Click(object sender, EventArgs e)
         {     
             //the content of "customerLookup" is pulled and then the customer list is searched for a matching customer
             //then, orders are searched using the customers phone #
-
             string s = phoneField.Text;
             JSONHandler j = new JSONHandler();
             Customer c = j.retrieveCustomer(s);
-            List<Order> orders = j.retrieveOrdersByPhoneNumber(c);
+            List<Order> orders = null;
+            if (c != null) {  orders = j.retrieveOrdersByPhoneNumber(c); }
             
-            if (c != null)
+            
+            if (c != null && orders != null)
             {
-                var customerFoundPopUp = new OrderSearchComplete();
-                customerFoundPopUp.ShowDialog(this);
+                var customerFoundPopUp = new OrderSearchComplete(orders.Count);
+                customerFoundPopUp.Show();
+                foreach(Order o in orders)
+                {
+                    AddOrderToListView(o, c);
+                }
+            }
+            else if (c != null)
+            {
+                var orderSearchComplete = new OrderSearchComplete();
+                orderSearchComplete.Show();
             }
             else
             {
-                var orderSearchComplete = new OrderSearchComplete();
-                orderSearchComplete.ShowDialog(this);
+                var customerNotFound = new CustomerNotFound();
+                customerNotFound.ShowDialog();
             }
-       
         }
 
         private void returnToHome_Click(object sender, EventArgs e)
@@ -59,6 +57,26 @@ namespace PizzaProject.GUI_Pages
             var homeScreen = new HomeScreen();
             homeScreen.Show();
             this.Hide();
+        }
+
+        //credit to jeff for his code implementing list view technology
+        public void AddOrderToListView(Order order, Customer customer)
+        {
+            var entry = new ListViewItem(new string[] {order.OrderID.ToString(), customer.Name, order.Date.ToShortDateString(), order.Total.ToString(),
+            order.PayType, order.Delivery.ToString()});
+            orderListView.Items.Add(entry);
+        }
+
+        private void ViewOrdersScreen_Load(object sender, EventArgs e)
+        {
+
+        }
+        private void ViewOrdersScreen_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            JSONHandler j = new JSONHandler();
+            j.serializeCustomerList();
+            j.serializeOrderList();
+            j.serializeUserList();
         }
     }
 }

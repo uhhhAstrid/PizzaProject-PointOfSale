@@ -149,6 +149,8 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Change User";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ChangeUser_FormClosing);
+            this.Load += new System.EventHandler(this.ChangeUserScreen_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

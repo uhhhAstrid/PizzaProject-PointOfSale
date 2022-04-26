@@ -8,15 +8,17 @@ using System.Text.RegularExpressions;
 
 namespace PizzaProject
 {
-    /* TODO: Figure out why reading and writing cause nulls to happen.
-     */
     public class JSONHandler
     {
+            //filepaths and other constants
         private static string folderPath = "C:\\Users\\" + Environment.UserName + "\\Documents\\PizzaProject";
         private static string customersPath = folderPath + "\\customersJSON.json";
         private static string ordersPath = folderPath + "\\ordersJSON.json";
         private static string usersPath = folderPath + "\\usersJSON.json";
         private static List<string> allFiles = new List<string> {customersPath,ordersPath, usersPath};
+
+
+
         JsonSerializerSettings serializerWithTypesSetting = new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.All };
 
         //ensures all instances of JSONHandler use the same data.
@@ -26,20 +28,12 @@ namespace PizzaProject
 
             //constructor
         public JSONHandler(){
-            // On Startup, check JSON if exist
-            // Read in the current list of orders, customers and leave them in memory
-            this.checkJSON();
-          
-            customers = this.deserializeCustomerList() ?? new List<Customer>(0);
-            orders = this.deserializeOrderList() ?? new List<Order>(0);
-            users = this.deserializeUserList() ?? new List<User>(0); ;
-
-
-            Customer.setNextCustomerID(customers.Count);
-            Order.setNextOrderID(orders.Count);
-            User.setNextUserID(users.Count);
+            // On Startup, check to see if the .json files already exist
+            // then read in the current list of orders, customers, and users, and leave them in memory
+            checkJSON();
         }
 
+        //adds filler data to the .JSON files on first program run
         public void firstRunDataInitialization(int i)
         {
             switch (i)
@@ -47,30 +41,32 @@ namespace PizzaProject
                 //customer initialization
                 case 0:
                     {
-                        addCustomerToList(new Customer("huan", "3073142718", "hmai10@students.kennesaw.edu", "ga", "tucker", "30084", "marietta pkwy", "no"));
-                        addCustomerToList(new Customer("will", "1234567890", "wswift1@students.kennesaw.edu", "credit", "yeff", "1234567890", 420));
-                        addCustomerToList(new Customer("will", "1234567891", "tayloswift@kennesaw.edu", "credit", "baylor swift", "1234567890", 421));
-                        addCustomerToList(new Customer("well", "9324567891", "carlosswift@kennesaw.edu", "credit", "baylor swift", "1234567890", 422));
-                        addCustomerToList(new Customer("swill", "7214567891", "alejandroswift@kennesaw.edu", "credit", "baylor swift", "1234567890", 423));
+                        customers = new List<Customer>();
+                        customers.Add(new Customer("huan", "3073142718", "hmai10@students.kennesaw.edu", "ga", "tucker", "30084", "marietta pkwy", "no"));
+                        customers.Add(new Customer("will", "1234567890", "wswift1@students.kennesaw.edu", "credit", "yeff", "1234567890", 420));
+                        customers.Add(new Customer("will", "1234567891", "tayloswift@kennesaw.edu", "credit", "baylor swift", "1234567890", 421));
+                        customers.Add(new Customer("well", "9324567891", "carlosswift@kennesaw.edu", "credit", "baylor swift", "1234567890", 422));
+                        customers.Add(new Customer("swill", "7214567891", "alejandroswift@kennesaw.edu", "credit", "baylor swift", "1234567890", 423));
                         serializeCustomerList();
                         break;
                     }
                 //orders initialization
                 case 1:
                     {
+                        orders = new List<Order>();
                         Order testOrderCredit = new Order("credit", true, "3073142718");
 
                         OrderHandler.currentOrder = testOrderCredit;
                         OrderHandler.AddItemToOrder(new Item("2-Litre", "Pepsi"));
                         OrderHandler.AddItemToOrder(new Item(new List<string> { "Extra-Cheese", "Pepperoni", "Pineapple" }, "Deep Dish", "18"));
-
+                        orders.Add(testOrderCredit);
+                        
                         Order testOrderCash = new Order("cash", false, "1234567890");
                         OrderHandler.currentOrder = testOrderCash;
                         OrderHandler.AddItemToOrder(new Item("Small", "Lemonade"));
-                        OrderHandler.AddItemToOrder(new Item(new List<string> { "Mushrooms", "Pineapple"}, "Thin Crust", "12"));
-
-                        addOrderToList(testOrderCredit);
-                        addOrderToList(testOrderCash);
+                        OrderHandler.AddItemToOrder(new Item(new List<string> { "Mushrooms", "Pineapple"}, "Thin Crust", "12"));                
+                        orders.Add(testOrderCash);
+                        Thread.Sleep(1000);
 
                         serializeOrderList();
                         break;
@@ -78,14 +74,34 @@ namespace PizzaProject
                 //users initialization
                 case 2:
                     {
-                        addUserToList(new Employee("huan", "password", "quan"));
-                        addUserToList(new Manager("tcarreo1", "bruhmoment", "tenonch", 9018));
+                        users = new List<User>();
+                        users.Add(new Employee("username", "password", "default user"));
+                        addUserToList(new Manager("admin", "management", "default manager"));
+                        Thread.Sleep(1000);
                         serializeUserList();
                         break;
                     }
             }
         }
-        
+
+        //initializes static variables once on program startup
+        public void InitializeLists()
+        {
+            customers = deserializeCustomerList() ?? new List<Customer>(0);
+            orders = deserializeOrderList() ?? new List<Order>(0);
+            users = deserializeUserList() ?? new List<User>(0);
+        }
+
+        //initializes static variables once on program startup
+        public void InitializeIDs()
+        {
+            Customer.setNextCustomerID(customers.Count);
+            Order.setNextOrderID(orders.Count);
+            User.setNextUserID(users.Count);
+        }
+
+        //creates a folder called "Pizza Project" in "Documents",
+        //then creates 3 .json files for storing project info
         protected void checkJSON()
         {
             try
@@ -93,17 +109,15 @@ namespace PizzaProject
                 if (!Directory.Exists(folderPath))
                 {
                     Directory.CreateDirectory(folderPath);
-                    for (int i = 0; i < allFiles.Count; i++)
+                }
+                for (int i = 0; i < allFiles.Count; i++)
+                {
+                    //since File.WriteAllText creates a file if none is found; the files do not need to be created here.
+                    if (!File.Exists(allFiles[i]))
                     {
-                        if (!File.Exists(allFiles[i]))
-                        {
-                            File.Create(allFiles[i]);
-                            Thread.Sleep(1000);
-                            firstRunDataInitialization(i);
-                        }
+                        firstRunDataInitialization(i);
                     }
                 }
-                
             }
             catch (IOException ex)
             {
@@ -113,18 +127,20 @@ namespace PizzaProject
 
         //verifies customer is not already in the system, then adds them
         public void addCustomerToList(Customer cust)
-        {  
+        {
             if(cust != null) 
             {
                 if (!this.phoneNumberValidator(cust.PhoneNumber))
                 {
-                    throw new Exception("Phone Number is invalid");
+                    return;
+                    //throw new Exception("Phone Number is invalid");
                 }
                 for (int i = 0; i < customers.Count; i++)
                 {
                     if (customers[i].PhoneNumber == cust.PhoneNumber)
                     {
-                        throw new Exception("Customer already exists.");
+                        //throw new Exception("Customer already exists.");
+                        return;
                     }
                 }
                 customers.Add(cust);
@@ -165,28 +181,48 @@ namespace PizzaProject
         //Searches customer list for specific customer
         public Customer retrieveCustomer(string phone)
         {
-            if (!this.phoneNumberValidator(phone))
+            if (this.phoneNumberValidator(phone))
             {
-                throw new Exception("Phone Number is invalid");
-            }
-            foreach (Customer c in customers)
-            {
-                if (c.PhoneNumber == phone)
+                foreach (Customer c in customers)
                 {
-                    return c;
+                    if (c.PhoneNumber == phone)
+                    {
+                        return c;
+                    }
                 }
+            }
+            else
+            {
+                return null;
+                //throw new Exception("Phone Number is invalid");
             }
             return null;
         }
 
+        //update the information of a customer in the list;
+        //phone number required in case that field has also changed
+        public void updateCustomer(Customer updatedC, string phone)
+        {
+            for(int i = 0; i < customers.Count; i++)
+            {
+                if(customers[i].PhoneNumber == phone)
+                {
+                    customers[i] = updatedC;
+                    break;
+                }
+            }
+        }
+
         // ORDER Section
+        //adds a new order to memory
         public void addOrderToList(Order order)
         {
             if (order != null)
             {
                 if (!phoneNumberValidator(order.CustomerPhone))
                 {
-                    throw new Exception("Phone Number is invalid");
+                    return;
+                    //throw new Exception("Phone Number is invalid") do not uncomment these yet please.
                 }
                 bool customerFound = false;
                 int customerIndex = 0;
@@ -201,14 +237,8 @@ namespace PizzaProject
                 }
                 if (!customerFound)
                 {
-                    throw new Exception("Customer does not exist.");
-                }
-                else if (order.Delivery)
-                {
-                    if (customers[customerIndex].Address.Equals(new Address(customers[customerIndex].PhoneNumber)))
-                    {
-                        throw new Exception("Customer's address is blank and the order is for deivery");
-                    }
+                    return;
+                    //throw new Exception("Customer does not exist.").
                 }
                 else
                 {
@@ -216,6 +246,8 @@ namespace PizzaProject
                 }
             }
         }
+        
+        //saves orders from memory into JSON
         public void serializeOrderList()
         {
             try
@@ -228,6 +260,8 @@ namespace PizzaProject
                 Debug.WriteLine(ex.Message);
             }
         }
+
+        //loads orders from JSON into memory
         protected List<Order> deserializeOrderList()
         {
             try
@@ -244,15 +278,17 @@ namespace PizzaProject
         }
         
         // Users Section
+        //writes new user into memory
         public void addUserToList(User emp)
         {
-            if (emp != null)
+            if(emp != null)
             {
                 for (int i = 0; i < users.Count; i++)
                 {
                     if (users[i].UserID == emp.UserID)
                     {
-                        throw new Exception("User already exists.");
+                        return;
+                        //throw new Exception("User already exists.");
                     }
                 }
                 if (emp.UserName != null && emp.Password != null)
@@ -261,10 +297,13 @@ namespace PizzaProject
                 }
                 else
                 {
-                    throw new Exception("User must have a username and password.");
+                    return;
+                    //throw new Exception("User must have a username and password.");
                 }
             }
         }
+
+        //saves users from memory into JSON
         public void serializeUserList()
         {
             try
@@ -277,6 +316,8 @@ namespace PizzaProject
                 Debug.WriteLine("Could not write to users.json.");
             }
         }
+        
+        //loads users from JSON into memory
         protected List<User> deserializeUserList()
         {
             try
@@ -292,45 +333,97 @@ namespace PizzaProject
                 return new List<User>(0);
             }
         }
+        
+        //searches order list for orders matching a customer's phone number
+        //then creates a new list of those orders and returns it
         public List<Order> retrieveOrdersByPhoneNumber(string phone)
         {
             if(phone == null || !phoneNumberValidator(phone))
             {
-                throw new Exception("Phone Number is invalid");
+                return null;
+                //throw new Exception("Phone Number is invalid");
             }
             List<Order> foundOrders = new List<Order>(0);
             for(int i = 0; i < orders.Count; i++)
             {
-                if (String.Equals(customers[i].PhoneNumber, phone, StringComparison.OrdinalIgnoreCase))
+                if (String.Equals(orders[i].CustomerPhone, phone, StringComparison.OrdinalIgnoreCase))
                 {
                     foundOrders.Add(orders[i]);
                 }
             }
-            return orders;
+            if(foundOrders.Count == 0) { return null; }
+            return foundOrders;
         }
+
+        //overload, in case customer information is not available to the calling class
         public List<Order> retrieveOrdersByPhoneNumber(Customer c)
         {
             return retrieveOrdersByPhoneNumber(c.PhoneNumber);
         }
-        public List<User> retrieveUsersByName(string name)
+        
+        //searches currently loaded list of users for one with a
+        //matching username and password. otherwise, returns null.
+        public User retrieveUser(string username, string password)
         {
-            if(name == null)
+            if(username == null || password == null)
             {
-                throw new Exception("Name is invalid.");
+                return null;
+                //throw new Exception("Name is invalid.");
             }
-            List<User> foundUsers = new List<User>(0);
+            
+            
             for (int i = 0; i < users.Count; i++)
             {
-                if (String.Equals(users[i].Name,name,StringComparison.OrdinalIgnoreCase))
+                if (String.Equals(users[i].UserName,username,StringComparison.OrdinalIgnoreCase) && String.Equals(users[i].Password,password))
                 {
-                    foundUsers.Add(users[i]);
+                    return users[i];
                 }
             }
-            return foundUsers;
+            return null;
         }
+
+        public bool validateUserLogin(string username, string password)
+        {
+            if (username == null || password == null)
+            {
+                return false;
+                //throw new Exception("username or password invalid.");
+            }
+
+
+            for (int i = 0; i < users.Count; i++)
+            {
+                if (String.Equals(users[i].UserName, username, StringComparison.OrdinalIgnoreCase) && String.Equals(users[i].Password, password))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        //due to the structure of the inheritance,
+        //children of "user" cannot be accessed once created (and are probably caught by garbage cleanup)
+        //in the interest of time, overridecode had to be changed to use the user's password instead.
+        public bool validateOverride(string overrideCode)
+        {
+            foreach(User u in users)
+            {
+                if(u.UserType == "Manager")
+                {
+                    if(overrideCode == u.Password)
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+            
+
+        //makes sure phone number strings are exactly 10 digits 
         public bool phoneNumberValidator(string phone)
         {
-            return (phone != null && Regex.IsMatch("\\d{10,10}",phone));
+            return (phone != null && phone.Length > 7); //&& Regex.IsMatch("\\d{10,10}",phone)
         }
 
     }

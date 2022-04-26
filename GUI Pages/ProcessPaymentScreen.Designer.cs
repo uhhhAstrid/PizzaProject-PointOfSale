@@ -298,6 +298,8 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Finalize Order";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ProcessPaymentScreen_FormClosing);
+            this.Load += new System.EventHandler(this.ProcessPaymentScreen_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

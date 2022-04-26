@@ -28,7 +28,6 @@ namespace PizzaProject.GUI_Pages.PopUp_Pages
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //todo: start order with customer (from home page search)
             var startNewOrder = new StartOrderScreen(customer);
             startNewOrder.Show();
             Owner.Hide();

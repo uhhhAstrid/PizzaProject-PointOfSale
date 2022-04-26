@@ -92,5 +92,18 @@ namespace PizzaProject.GUI_Pages
             homeScreen.Show();
             this.Hide();
         }
+
+        private void NewCustomerScreen_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void NewCustomerScreen_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            JSONHandler j = new JSONHandler();
+            j.serializeCustomerList();
+            j.serializeOrderList();
+            j.serializeUserList();
+        }
     }
 }

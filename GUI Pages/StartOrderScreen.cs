@@ -13,33 +13,59 @@ namespace PizzaProject.GUI_Pages
 {
     public partial class StartOrderScreen : Form
     {
-        //fields
+            //fields
         Customer customer;
-        bool delivery;
+        bool customerInfo;
+        bool addressInfo;
 
-        //constructors
+            //constructors
         public StartOrderScreen()
         {
             InitializeComponent();
+            customerInfo = false;
         }
 
         public StartOrderScreen(Customer c)
         {
             InitializeComponent();
             customer = c;
+            customerInfo = true;
         }
-        //methods
-
+        
+            //methods
         private void StartOrderScreen_Load(object sender, EventArgs e)
         {
-
+            if (customer != null) 
+            { 
+                customerInfo = true;
+                if(customer.Address.Street.Length >= 1)
+                {
+                    addressInfo = true;
+                }
+                else
+                {
+                    addressInfo = false;
+                }
+                PopulateInfoFields(customer);
+            }
         }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
+       
+        private void PopulateInfoFields(Customer c) 
         {
+            nameField.Text = c.Name;
+            emailField.Text = c.Email;
+            phoneField.Text = c.PhoneNumber;
 
+            if (addressInfo)
+            {
+                streetField.Text = c.Address.Street;
+                cityField.Text = c.Address.City;
+                stateField.Text = c.Address.State;
+                zipField.Text = c.Address.Zip;
+                addressField.Text = c.Address.AdditionalAddressInfo;
+            }
         }
-
+     
         private void returnToHome_Click(object sender, EventArgs e)
         {
             //confirms order cancellation
@@ -53,75 +79,141 @@ namespace PizzaProject.GUI_Pages
             cancelOrderPopup.ShowDialog(this);
         }
 
-        //this is really convoluted 3am code (do not read; I will fix before release -astrid)
-        //todo: fix before release
         private void deliveryOrder_Click(object sender, EventArgs e)
         {
-
-            //first, check fields for information and create a customer if it is all present
-            bool customerInfo = false, addressInfo = false;
-
-            if (customer != null || (nameField.Text.Length > 0 && phoneField.Text.Length > 0 && emailField.Text.Length > 0))
+            if (customerInfo && addressInfo)
             {
-                customerInfo = true;
+                proceedToDeliveryOrder(customer);
             }
-            if ((customer != null && customer.Address.Street != null ) || (stateField.Text.Length > 0 && cityField.Text.Length > 0 && zipField.Text.Length > 0 && streetField.Text.Length > 0 && addressField.Text.Length > 0))
+            else if(customerInfo)
             {
-                addressInfo = true;
-            }
-
-            //only creates new customer if one does not exist
-            if (customerInfo && addressInfo && customer == null)
-            {
-                customer = new Customer(nameField.Text, phoneField.Text, emailField.Text, stateField.Text, cityField.Text, zipField.Text, streetField.Text, addressField.Text);
-            }
-            //since delivery cannot happen without address info; does not create a customer if address info is invalid.
-
-
-            //checks customer for info, throws error if it is not available.
-                if (customer != null && (addressInfo = false || customer.Address == null))
+                addAddressToCustomer(customer);
+                if (addressInfo)
                 {
-                    var invalidAddressPopUp = new DeliverAddressIncomplete();
-                    invalidAddressPopUp.ShowDialog();
-                }
-                else if (customerInfo == false || customer == null)
-                {
-                    if (addressInfo == false)
-                    {
-                    var invalidAddressPopUp = new DeliverAddressIncomplete();
-                    invalidAddressPopUp.ShowDialog();
-                    }
-                    else
-                    {
-                    var invalidCustomerInfoPopUp = new CustomerInfoIncomplete();
-                    invalidCustomerInfoPopUp.ShowDialog();
-                    }
-                }
-            
-            if (customer != null && customer.PhoneNumber != null && customer.Address != null)
-            {
-                delivery = true;
-                var makeOrder = new MakeOrderScreen(delivery, customer);
-                makeOrder.Show();
-                this.Hide();
-            }
-        }
-
-        private void pickupOrder_Click(object sender, EventArgs e)
-        {
-            if (customer == null)
-            {
-                var invalidCustomerInfoPopUp = new CustomerInfoIncomplete();
-                invalidCustomerInfoPopUp.ShowDialog();
+                    proceedToDeliveryOrder(customer);
+                }    
             }
             else
             {
-                var makeOrder = new MakeOrderScreen(customer);
-                makeOrder.Show();
-                this.Hide();
+                var c = createCustomer(true);
+                if (c != null && addressInfo)
+                {
+                    proceedToDeliveryOrder(c);
+                }
+            }
+        }
+        
+        private void pickupOrder_Click(object sender, EventArgs e)
+        {
+            if (customerInfo)
+            {
+                proceedToPickupOrder(customer);
+            }
+            else
+            {
+                var c = createCustomer(false);
+                if (c != null)
+                {
+                    proceedToPickupOrder(c);
+                }
             }
         }
 
-       
+        private bool verifyCustomerFields()
+        {
+            if (nameField.TextLength > 0 && phoneField.TextLength > 0 && emailField.TextLength > 0)
+            {
+                customerInfo = true;
+                return true;
+            }
+            else { customerInfo = false;  return false; }
+        }
+
+        private bool verifyAddressFields()
+        {
+            if (stateField.TextLength > 0 && cityField.TextLength > 0 && zipField.TextLength > 0 && streetField.TextLength > 0 && addressField.TextLength > 0)
+            {
+                addressInfo = true;
+                return true;
+            }
+            else { addressInfo = false;  return false; }
+        }
+
+        private Customer createCustomer(bool delivery)
+        {
+            var c = new Customer();
+
+            if (verifyCustomerFields())
+            {
+                c.Name = nameField.Text;
+                c.PhoneNumber = phoneField.Text;
+                c.Email = emailField.Text;   
+            }
+            else
+            {
+                var invalidCustomerInfo = new CustomerInfoIncomplete();
+                invalidCustomerInfo.ShowDialog();
+                return null;
+            }
+            
+            if (delivery)
+            {
+                if (verifyAddressFields())
+                {
+                    c.Address.State = stateField.Text;
+                    c.Address.City = cityField.Text;
+                    c.Address.Zip = zipField.Text;
+                    c.Address.Street = streetField.Text;
+                    c.Address.AdditionalAddressInfo = addressField.Text;
+                }
+                else
+                {
+                    var invalidAddressPopup = new DeliverAddressIncomplete();
+                    invalidAddressPopup.ShowDialog();
+                    return null;
+                }
+            }
+            return c;
+        }
+        
+        private void addAddressToCustomer(Customer c)
+        {
+            if (verifyAddressFields())
+            {
+                c.Address.State = stateField.Text;
+                c.Address.City = cityField.Text;
+                c.Address.Zip = zipField.Text;
+                c.Address.Street = streetField.Text;
+                c.Address.AdditionalAddressInfo = addressField.Text;
+            }
+            else
+            {
+                addressInfo = false;
+                var invalidAddressPopup = new DeliverAddressIncomplete();
+                invalidAddressPopup.ShowDialog();
+            }
+        }
+
+        private void proceedToDeliveryOrder(Customer c)
+        {
+            var makeOrder = new MakeOrderScreen(true, c);
+            makeOrder.Show();
+            this.Hide();
+        }
+
+        private void proceedToPickupOrder(Customer c)
+        {
+            var makeOrder = new MakeOrderScreen(false, c);
+            makeOrder.Show();
+            this.Hide();
+        }
+
+        private void StartOrderScreen_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            JSONHandler j = new JSONHandler();
+            j.serializeCustomerList();
+            j.serializeOrderList();
+            j.serializeUserList();
+        }
     }
 }

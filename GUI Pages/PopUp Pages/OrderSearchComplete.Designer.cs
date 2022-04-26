@@ -76,7 +76,7 @@
             this.Name = "OrderSearchComplete";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Customer Found";
             this.Load += new System.EventHandler(this.OrderSearchComplete_Load);
             this.ResumeLayout(false);

@@ -79,6 +79,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Error";
+            this.Load += new System.EventHandler(this.CustomerNotFound_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

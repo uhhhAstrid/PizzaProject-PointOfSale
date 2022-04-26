@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace PizzaProject.GUI_Pages.PopUp_Pages
 {
-    public partial class CustomerNotFound : Form
+    public partial class CustomerUpdated : Form
     {
-        public CustomerNotFound()
+        public CustomerUpdated()
         {
             InitializeComponent();
-        }
-
-        private void CustomerNotFound_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

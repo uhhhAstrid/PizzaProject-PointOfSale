@@ -11,7 +11,7 @@ namespace PizzaProject {
 
         public static void AddItemToOrder(Item item)
         {
-            currentOrder.Items.Add(item); //todo: test this
+            currentOrder.Items.Add(item); 
         }
         public static decimal OrderTotal()
         {

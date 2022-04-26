@@ -45,5 +45,18 @@ namespace PizzaProject.GUI_Pages
             var collectPaymentPopUp = new CashAndCheckProcessWindow();
             collectPaymentPopUp.ShowDialog(this);
         }
+
+        private void ProcessPaymentScreen_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ProcessPaymentScreen_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            JSONHandler j = new JSONHandler();
+            j.serializeCustomerList();
+            j.serializeOrderList();
+            j.serializeUserList();
+        }
     }
 }

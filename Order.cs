@@ -64,6 +64,12 @@ namespace PizzaProject {
             set { customerPhone = value; }
         }
 
+        public decimal Tax
+        {
+            get { return tax; }
+            set { tax = value; }
+        }
+
         public static void setNextOrderID(int newID)
         {
             nextOrderID = newID;

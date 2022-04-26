@@ -14,14 +14,15 @@ namespace PizzaProject
         private string crustType;
         private string size;
         private string flavor;
-        
-            //properties (read only, call methods to write)
+        private decimal price;
+
+        //properties (read only, call methods to write)
         public string ItemType
         {
             get { return itemType; }
             set { itemType = value; }
         }
-        public List<string> Toppings 
+        public List<string> Toppings
         {
             get { return toppings; }
             set { toppings = value; }
@@ -31,7 +32,7 @@ namespace PizzaProject
             get { return crustType; }
             set { crustType = value; }
         }
-        public string Size 
+        public string Size
         {
             get { return size; }
             set { size = value; }
@@ -41,8 +42,12 @@ namespace PizzaProject
             get { return flavor; }
             set { flavor = value; }
         }
-          
-            //constructors
+        public decimal Price
+        {
+            get { return price; }
+            set { price = value; }
+        }
+        //constructors
         //blank constructor; order initializes with an empty List<Item>.
         public Item()
         {
@@ -67,8 +72,9 @@ namespace PizzaProject
             this.flavor = flavor;
             this.crustType = "N/A";
         }
-            //methods
+        //methods
         //set values of various item fields; not sure how this is different from setting in properties but it feels right. 
+
         public void AddToppingToItem(string topping)
         {
             toppings.Add(topping);
@@ -88,6 +94,16 @@ namespace PizzaProject
         public void setFlavor(string flavor)
         {
             this.flavor = flavor;
+        }
+
+        public string toppingsToString(List<string> toppings)
+        {
+            string toppingstring = "";
+            foreach(string t in toppings)
+            {
+                toppingstring += (t + " ");
+            }
+            return toppingstring;
         }
     }
 }

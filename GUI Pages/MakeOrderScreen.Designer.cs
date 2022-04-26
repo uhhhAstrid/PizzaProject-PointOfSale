@@ -40,14 +40,18 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.proceedToPayment = new System.Windows.Forms.Button();
             this.orderHeader = new System.Windows.Forms.Label();
             this.pageHeader = new System.Windows.Forms.Label();
             this.returnToHome = new System.Windows.Forms.Button();
             this.orderInfo = new System.Windows.Forms.Label();
+            this.itemListView = new System.Windows.Forms.ListView();
+            this.itemType = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.price = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.toppings = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.size = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.crustType = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.flavor = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -100,6 +104,7 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.itemListView);
             this.panel2.Controls.Add(this.cancelOrder);
             this.panel2.Controls.Add(this.subtotalField);
             this.panel2.Controls.Add(this.taxField);
@@ -107,21 +112,18 @@
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.proceedToPayment);
             this.panel2.Controls.Add(this.orderHeader);
             this.panel2.Location = new System.Drawing.Point(358, 85);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(430, 342);
+            this.panel2.Size = new System.Drawing.Size(430, 503);
             this.panel2.TabIndex = 1;
             // 
             // cancelOrder
             // 
             this.cancelOrder.BackColor = System.Drawing.Color.LightBlue;
             this.cancelOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancelOrder.Location = new System.Drawing.Point(13, 309);
+            this.cancelOrder.Location = new System.Drawing.Point(3, 466);
             this.cancelOrder.Name = "cancelOrder";
             this.cancelOrder.Size = new System.Drawing.Size(114, 30);
             this.cancelOrder.TabIndex = 11;
@@ -133,7 +135,7 @@
             // 
             this.subtotalField.AutoSize = true;
             this.subtotalField.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.subtotalField.Location = new System.Drawing.Point(343, 228);
+            this.subtotalField.Location = new System.Drawing.Point(341, 385);
             this.subtotalField.Name = "subtotalField";
             this.subtotalField.Size = new System.Drawing.Size(84, 24);
             this.subtotalField.TabIndex = 10;
@@ -143,7 +145,7 @@
             // 
             this.taxField.AutoSize = true;
             this.taxField.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.taxField.Location = new System.Drawing.Point(351, 252);
+            this.taxField.Location = new System.Drawing.Point(341, 409);
             this.taxField.Name = "taxField";
             this.taxField.Size = new System.Drawing.Size(44, 24);
             this.taxField.TabIndex = 9;
@@ -153,7 +155,7 @@
             // 
             this.totalField.AutoSize = true;
             this.totalField.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalField.Location = new System.Drawing.Point(351, 276);
+            this.totalField.Location = new System.Drawing.Point(341, 433);
             this.totalField.Name = "totalField";
             this.totalField.Size = new System.Drawing.Size(53, 24);
             this.totalField.TabIndex = 8;
@@ -163,7 +165,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(265, 276);
+            this.label7.Location = new System.Drawing.Point(261, 433);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(56, 24);
             this.label7.TabIndex = 7;
@@ -173,7 +175,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(265, 252);
+            this.label6.Location = new System.Drawing.Point(261, 409);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(47, 24);
             this.label6.TabIndex = 6;
@@ -183,47 +185,17 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(265, 228);
+            this.label5.Location = new System.Drawing.Point(261, 385);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(82, 24);
             this.label5.TabIndex = 5;
             this.label5.Text = "Subtotal:";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(22, 169);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(105, 24);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "[order data]";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(22, 112);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(105, 24);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "[order data]";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(22, 55);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 24);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "[order data]";
-            // 
             // proceedToPayment
             // 
             this.proceedToPayment.BackColor = System.Drawing.Color.LightBlue;
             this.proceedToPayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.proceedToPayment.Location = new System.Drawing.Point(259, 309);
+            this.proceedToPayment.Location = new System.Drawing.Point(257, 466);
             this.proceedToPayment.Name = "proceedToPayment";
             this.proceedToPayment.Size = new System.Drawing.Size(168, 30);
             this.proceedToPayment.TabIndex = 1;
@@ -255,7 +227,7 @@
             // 
             this.returnToHome.BackColor = System.Drawing.Color.LightBlue;
             this.returnToHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.returnToHome.Location = new System.Drawing.Point(652, 443);
+            this.returnToHome.Location = new System.Drawing.Point(652, 594);
             this.returnToHome.Name = "returnToHome";
             this.returnToHome.Size = new System.Drawing.Size(148, 42);
             this.returnToHome.TabIndex = 3;
@@ -267,17 +239,65 @@
             // 
             this.orderInfo.AutoSize = true;
             this.orderInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.orderInfo.Location = new System.Drawing.Point(142, 42);
+            this.orderInfo.Location = new System.Drawing.Point(253, 42);
             this.orderInfo.Name = "orderInfo";
             this.orderInfo.Size = new System.Drawing.Size(547, 29);
             this.orderInfo.TabIndex = 4;
             this.orderInfo.Text = "[orderType] Order #[orderID] for [customerName] ";
             // 
+            // itemListView
+            // 
+            this.itemListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.itemType,
+            this.price,
+            this.size,
+            this.crustType,
+            this.toppings,
+            this.flavor});
+            this.itemListView.HideSelection = false;
+            this.itemListView.Location = new System.Drawing.Point(3, 45);
+            this.itemListView.Name = "itemListView";
+            this.itemListView.Size = new System.Drawing.Size(422, 337);
+            this.itemListView.TabIndex = 12;
+            this.itemListView.UseCompatibleStateImageBehavior = false;
+            this.itemListView.View = System.Windows.Forms.View.Details;
+            // 
+            // itemType
+            // 
+            this.itemType.Text = "Item Type";
+            this.itemType.Width = 61;
+            // 
+            // price
+            // 
+            this.price.Text = "Price";
+            // 
+            // toppings
+            // 
+            this.toppings.DisplayIndex = 2;
+            this.toppings.Text = "Toppings";
+            this.toppings.Width = 120;
+            // 
+            // size
+            // 
+            this.size.DisplayIndex = 3;
+            this.size.Text = "Size";
+            this.size.Width = 45;
+            // 
+            // crustType
+            // 
+            this.crustType.DisplayIndex = 4;
+            this.crustType.Text = "Crust Type";
+            this.crustType.Width = 73;
+            // 
+            // flavor
+            // 
+            this.flavor.Text = "Flavor";
+            // 
             // MakeOrderScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 486);
+            this.ClientSize = new System.Drawing.Size(800, 637);
             this.Controls.Add(this.orderInfo);
             this.Controls.Add(this.returnToHome);
             this.Controls.Add(this.pageHeader);
@@ -287,6 +307,8 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Create Order";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MakeOrderScreen_FormClosing);
+            this.Load += new System.EventHandler(this.MakeOrderScreen_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -313,10 +335,14 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button proceedToPayment;
         private System.Windows.Forms.Label orderInfo;
+        private System.Windows.Forms.ListView itemListView;
+        private System.Windows.Forms.ColumnHeader itemType;
+        private System.Windows.Forms.ColumnHeader price;
+        private System.Windows.Forms.ColumnHeader size;
+        private System.Windows.Forms.ColumnHeader crustType;
+        private System.Windows.Forms.ColumnHeader toppings;
+        private System.Windows.Forms.ColumnHeader flavor;
     }
 }

@@ -226,7 +226,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(261, 395);
             this.panel1.TabIndex = 16;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // addressField
             // 
@@ -294,7 +293,7 @@
             // 
             this.pickupOrder.BackColor = System.Drawing.Color.LightBlue;
             this.pickupOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pickupOrder.Location = new System.Drawing.Point(49, 180);
+            this.pickupOrder.Location = new System.Drawing.Point(49, 179);
             this.pickupOrder.Name = "pickupOrder";
             this.pickupOrder.Size = new System.Drawing.Size(205, 65);
             this.pickupOrder.TabIndex = 2;
@@ -359,6 +358,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Initial Order Info";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.StartOrderScreen_FormClosing);
             this.Load += new System.EventHandler(this.StartOrderScreen_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

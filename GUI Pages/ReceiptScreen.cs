@@ -12,9 +12,17 @@ namespace PizzaProject.GUI_Pages
 {
     public partial class ReceiptScreen : Form
     {
+        bool creditPayment;
+
         public ReceiptScreen()
         {
             InitializeComponent();
+        }
+
+        public ReceiptScreen(bool credit)
+        {
+            InitializeComponent();
+            creditPayment = credit;
         }
 
         private void returnToHome_Click(object sender, EventArgs e)
@@ -23,6 +31,23 @@ namespace PizzaProject.GUI_Pages
             var homeScreen = new HomeScreen();
             homeScreen.Show();
             this.Hide();
+        }
+
+        private void ReceiptScreen_Load(object sender, EventArgs e)
+        {
+            if (creditPayment)
+            {
+                //add/show signature field
+            }
+
+        }
+
+        private void ReceiptScreen_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            JSONHandler j = new JSONHandler();
+            j.serializeCustomerList();
+            j.serializeOrderList();
+            j.serializeUserList();
         }
     }
 }

@@ -12,11 +12,17 @@ namespace PizzaProject.GUI_Pages.PopUp_Pages
 {
     public partial class OrderSearchComplete : Form
     {
+        int ordersfound;
         public OrderSearchComplete()
         {
             InitializeComponent();
         }
 
+        public OrderSearchComplete(int ordersfound)
+        {
+            InitializeComponent();
+            this.ordersfound = ordersfound;
+        }
         private void button1_Click(object sender, EventArgs e)
         {
 
@@ -29,7 +35,7 @@ namespace PizzaProject.GUI_Pages.PopUp_Pages
 
         private void OrderSearchComplete_Load(object sender, EventArgs e)
         {
-
+            numOrdersFound.Text = ordersfound.ToString();
         }
     }
 }

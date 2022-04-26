@@ -12,14 +12,24 @@ namespace PizzaProject.GUI_Pages.PopUp_Pages
 {
     public partial class CustomerFoundConfirmationCR : Form
     {
+        Customer customer;
+
         public CustomerFoundConfirmationCR()
         {
             InitializeComponent();
         }
 
+        public CustomerFoundConfirmationCR(Customer c)
+        {
+            InitializeComponent();
+            customer = c;
+        }
         private void button1_Click(object sender, EventArgs e)
         {
-            //todo: start order with customer logic
+            var startNewOrder = new StartOrderScreen(customer);
+            startNewOrder.Show();
+            Owner.Hide();
+            this.Close();
         }
     }
 }

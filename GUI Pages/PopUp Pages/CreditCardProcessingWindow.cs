@@ -33,7 +33,7 @@ namespace PizzaProject.GUI_Pages.PopUp_Pages
         {
             var receiptScreen = new ReceiptScreen(creditCardOrder, customer, order);
             receiptScreen.Show();
-            Owner.Close();
+            Owner.Hide();
             this.Close();
         }
 

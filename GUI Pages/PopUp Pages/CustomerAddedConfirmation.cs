@@ -31,7 +31,7 @@ namespace PizzaProject.GUI_Pages.PopUp_Pages
             var startOrderWithCustomer = new StartOrderScreen(customer);
             startOrderWithCustomer.Show();
             this.Close();
-            Owner.Close();
+            Owner.Hide();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -39,7 +39,7 @@ namespace PizzaProject.GUI_Pages.PopUp_Pages
             var homeScreen = new HomeScreen();
             homeScreen.Show();
             this.Close();
-            Owner.Close();
+            Owner.Hide();
         }
     }
 }

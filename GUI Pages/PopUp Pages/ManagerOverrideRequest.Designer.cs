@@ -101,6 +101,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Manager Override";
+            this.Load += new System.EventHandler(this.ManagerOverrideRequest_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -47,6 +47,7 @@ namespace PizzaProject
             j.serializeCustomerList();
             j.serializeOrderList();
             j.serializeUserList();
+            Application.Exit();
         }
     }
 }

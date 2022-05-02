@@ -57,6 +57,7 @@ namespace PizzaProject.GUI_Pages
             j.serializeCustomerList();
             j.serializeOrderList();
             j.serializeUserList();
+            Application.Exit();
         }
     }
 }

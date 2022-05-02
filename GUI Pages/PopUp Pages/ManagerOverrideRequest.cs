@@ -43,5 +43,10 @@ namespace PizzaProject.GUI_Pages.PopUp_Pages
             }
 
         }
+
+        private void ManagerOverrideRequest_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

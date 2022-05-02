@@ -21,7 +21,7 @@ namespace PizzaProject.GUI_Pages.PopUp_Pages
         {
             var homeScreen = new HomeScreen();
             homeScreen.Show();
-            Owner.Close();
+            Owner.Hide();
             this.Close();
         }
 

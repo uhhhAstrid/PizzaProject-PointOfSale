@@ -16,5 +16,10 @@ namespace PizzaProject.GUI_Pages.PopUp_Pages
         {
             InitializeComponent();
         }
+
+        private void CustomerUpdated_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

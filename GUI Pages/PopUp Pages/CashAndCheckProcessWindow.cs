@@ -21,6 +21,7 @@ namespace PizzaProject.GUI_Pages.PopUp_Pages
 
         public CashAndCheckProcessWindow(Customer c, Order o)
         {
+            InitializeComponent();
             customer = c;
             order = o;
         }

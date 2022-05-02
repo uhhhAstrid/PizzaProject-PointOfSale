@@ -76,7 +76,7 @@ namespace PizzaProject
                 }
                 else
                 {
-                    if (i.Size == "Smalll")
+                    if (i.Size == "Small")
                     {
                         price += 1.5M;
                     }
